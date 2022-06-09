@@ -1,16 +1,25 @@
-<template lang="pug">
-	input(:id="getFieldID(schema)", type="checkbox", v-model="value", :autocomplete="schema.autocomplete", :disabled="disabled", :name="schema.inputName", :class="schema.fieldClasses", :required="schema.required", v-attributes="'input'")
+<template>
+	<input :id="fieldID"
+		type="checkbox"
+		v-model="value"
+		:autocomplete="fieldOptions.autocomplete"
+		:disabled="disabled"
+		:name="inputName"
+		:class="fieldClasses"
+		:required="required"
+		v-attributes="'input'" >
 </template>
 
 <script>
 import abstractField from "../abstractField";
 
 export default {
+	name: "field-checkbox",
 	mixins: [abstractField]
 };
 </script>
 
-<style lang="scss">
+<style>
 .vue-form-generator .field-checkbox input {
 	margin-left: 12px;
 }

@@ -1,21 +1,54 @@
-<template lang="pug">
-	.wrapper(v-attributes="'wrapper'")
-		.listbox.form-control(v-if="schema.listBox", :disabled="disabled")
-			.list-row(v-for="item in items", :class="{'is-checked': isItemChecked(item)}")
-				label
-					input(:id="getFieldID(schema, true)", type="checkbox", :checked="isItemChecked(item)", :disabled="disabled", @change="onChanged($event, item)", :name="getInputName(item)", v-attributes="'input'")
-					| {{ getItemName(item) }}
+<template>
+	<div class="wrapper"
+		v-attributes="'wrapper'">
+		<div class="listbox form-control"
+			v-if="useListBox"
+			:disabled="disabled">
+			<div class="list-row"
+				v-for="item in items"
+				:key="getItemValue(item)"
+				:class="{'is-checked': isItemChecked(item)}">
+				<label>
+					<input :id="fieldID"
+						type="checkbox"
+						:checked="isItemChecked(item)"
+						:disabled="disabled"
+						@change="onChanged($event, item)"
+						:name="getInputName(item)"
+						v-attributes="'input'">{{ getItemName(item) }}
+				</label>
+			</div>
+		</div>
+		<div class="combobox form-control"
+			v-if="!useListBox"
+			:disabled="disabled">
+			<div class="mainRow"
+				@click="onExpandCombo"
+				:class="{ expanded: comboExpanded }">
+				<div class="info"> {{ selectedCount }} selected</div>
+				<div class="arrow"></div>
+			</div>
 
-		.combobox.form-control(v-if="!schema.listBox", :disabled="disabled")
-			.mainRow(@click="onExpandCombo", :class="{ expanded: comboExpanded }")
-				.info {{ selectedCount }} selected
-				.arrow
-
-			.dropList
-				.list-row(v-if="comboExpanded", v-for="item in items", :class="{'is-checked': isItemChecked(item)}")
-					label
-						input(:id="getFieldID(schema, true)", type="checkbox", :checked="isItemChecked(item)", :disabled="disabled", @change="onChanged($event, item)", :name="getInputName(item)", v-attributes="'input'")
-						| {{ getItemName(item) }}
+			<div class="dropList">
+				<div class="list-row"
+					v-if="comboExpanded"
+					v-for="item in items"
+					:key="getItemValue(item)"
+					:class="{'is-checked': isItemChecked(item)}">
+					<label>
+						<input :id="fieldID"
+							type="checkbox"
+							:checked="isItemChecked(item)"
+							:disabled="disabled"
+							@change="onChanged($event, item)"
+							:name="getInputName(item)"
+							v-attributes="'input'" >
+						{{ getItemName(item) }}
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
@@ -24,6 +57,7 @@ import abstractField from "../abstractField";
 import { slugify } from "../../utils/schema";
 
 export default {
+	name: "field-checklist",
 	mixins: [abstractField],
 
 	data() {
@@ -39,31 +73,33 @@ export default {
 				return values.apply(this, [this.model, this.schema]);
 			} else return values;
 		},
-
 		selectedCount() {
 			if (this.value) return this.value.length;
 
 			return 0;
+		},
+		useListBox() {
+			return this.fieldOptions.listBox;
 		}
 	},
 
 	methods: {
 		getInputName(item) {
-			if (this.schema && this.schema.inputName && this.schema.inputName.length > 0) {
-				return slugify(this.schema.inputName + "_" + this.getItemValue(item));
+			if (this.inputName && this.inputName.length > 0) {
+				return slugify(this.inputName + "_" + this.getItemValue(item));
 			}
 			return slugify(this.getItemValue(item));
 		},
 
 		getItemValue(item) {
 			if (isObject(item)) {
-				if (typeof this.schema["checklistOptions"] !== "undefined" && typeof this.schema["checklistOptions"]["value"] !== "undefined") {
-					return item[this.schema.checklistOptions.value];
+				if (typeof this.fieldOptions["value"] !== "undefined") {
+					return item[this.fieldOptions.value];
 				} else {
 					if (typeof item["value"] !== "undefined") {
 						return item.value;
 					} else {
-						throw "`value` is not defined. If you want to use another key name, add a `value` property under `checklistOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
+						throw "`value` is not defined. If you want to use another key name, add a `value` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
 					}
 				}
 			} else {
@@ -72,13 +108,13 @@ export default {
 		},
 		getItemName(item) {
 			if (isObject(item)) {
-				if (typeof this.schema["checklistOptions"] !== "undefined" && typeof this.schema["checklistOptions"]["name"] !== "undefined") {
-					return item[this.schema.checklistOptions.name];
+				if (typeof this.fieldOptions["name"] !== "undefined") {
+					return item[this.fieldOptions.name];
 				} else {
 					if (typeof item["name"] !== "undefined") {
 						return item.name;
 					} else {
-						throw "`name` is not defined. If you want to use another key name, add a `name` property under `checklistOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
+						throw "`name` is not defined. If you want to use another key name, add a `name` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
 					}
 				}
 			} else {
@@ -91,11 +127,12 @@ export default {
 		},
 
 		onChanged(event, item) {
+			let isChecked = event.target.checked;
 			if (isNil(this.value) || !Array.isArray(this.value)) {
 				this.value = [];
 			}
 
-			if (event.target.checked) {
+			if (isChecked) {
 				// Note: If you modify this.value array, it won't trigger the `set` in computed field
 				const arr = clone(this.value);
 				arr.push(this.getItemValue(item));
@@ -116,59 +153,49 @@ export default {
 </script>
 
 
-<style lang="scss">
-.vue-form-generator .field-checklist {
-	.listbox,
-	.dropList {
-		height: auto;
-		max-height: 150px;
-		overflow: auto;
+<style >
+.vue-form-generator .field-checklist .list-row label{
+	font-weight: initial;
+}
 
-		.list-row {
-			label {
-				font-weight: initial;
-			}
+.vue-form-generator .field-checklist .list-row input {
+	margin-right: 0.3em;
+}
+.vue-form-generator .field-checklist .listbox, .vue-form-generator .field-checklist .dropList {
+	height: auto;
+	max-height: 150px;
+	overflow: auto;
+}
+.vue-form-generator .field-checklist .combobox .mainRow .arrow {
+	position: absolute;
+	right: -9px;
+	top: 3px;
+	width: 16px;
+	height: 16px;
 
-			input {
-				margin-right: 0.3em;
-			}
-		}
-	}
+	transform: rotate(0deg);
+	transition: transform 0.5s;
 
-	.combobox {
-		height: initial;
-		overflow: hidden;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGdJREFUOI3tzjsOwjAURNGDUqSgTxU5K2AVrJtswjUsgHSR0qdxAZZFPrS+3ZvRzBsqf9MUtBtazJk+oMe0VTriiZCFX8nbpENMgfARjsn74vKj5IFruhfc8d6zIF9S/Hyk5HS4spMVeFcOjszaOwMAAAAASUVORK5CYII=");
+	background-repeat: no-repeat;
+}
+.vue-form-generator .field-checklist .combobox .mainRow {
+	cursor: pointer;
+	position: relative;
+	padding-right: 10px;
 
-		.mainRow {
-			cursor: pointer;
-			position: relative;
-			padding-right: 10px;
 
-			.arrow {
-				position: absolute;
-				right: -9px;
-				top: 3px;
-				width: 16px;
-				height: 16px;
+}
+.vue-form-generator .field-checklist .combobox .mainRow.expanded .arrow {
+	transform: rotate(-180deg);
+}
+.vue-form-generator .field-checklist .combobox {
+	height: initial;
+	overflow: hidden;
 
-				transform: rotate(0deg);
-				transition: transform 0.5s;
 
-				background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGdJREFUOI3tzjsOwjAURNGDUqSgTxU5K2AVrJtswjUsgHSR0qdxAZZFPrS+3ZvRzBsqf9MUtBtazJk+oMe0VTriiZCFX8nbpENMgfARjsn74vKj5IFruhfc8d6zIF9S/Hyk5HS4spMVeFcOjszaOwMAAAAASUVORK5CYII=");
-				background-repeat: no-repeat;
-			}
-
-			&.expanded {
-				.arrow {
-					transform: rotate(-180deg);
-				}
-			}
-		}
-
-		.dropList {
-			transition: height 0.5s;
-			//margin-top: 0.5em;
-		}
-	}
+}
+.vue-form-generator .field-checklist .combobox .dropList {
+	transition: height 0.5s;
 }
 </style>

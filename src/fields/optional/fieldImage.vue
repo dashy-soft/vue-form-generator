@@ -1,20 +1,40 @@
-<template lang="pug">
-	div.wrapper
-		input.form-control.link(type="text", v-show="schema.hideInput !== true", v-model="wrappedValue", :autocomplete="schema.autocomplete", :disabled="disabled", :placeholder="schema.placeholder", :readonly="schema.readonly")
-		input.form-control.file(type="file", v-if="schema.browse !== false", :disabled="disabled", @change="fileChanged", :name="schema.inputName")
-		.preview(:style="previewStyle")
-			.remove(title="Remove image", @click="remove")
+<template>
+	<div class="wrapper">
+		<input class="form-control link"
+			type="text"
+			v-show="fieldOptions.hideInput !== true"
+			v-model="wrappedValue"
+			:autocomplete="fieldOptions.autocomplete"
+			:disabled="disabled"
+			:placeholder="placeholder"
+			:readonly="readonly">
+
+		<input class="form-control file"
+			type="file"
+			v-if="fieldOptions.browse !== false"
+			:disabled="disabled"
+			@change="fileChanged"
+			:name="inputName">
+
+		<div class="preview"
+			:style="previewStyle">
+			<div class="remove"
+				title="Remove image"
+				@click="remove"></div>
+		</div>
+	</div>
 </template>
 
 <script>
 import abstractField from "../abstractField";
 
 export default {
+	name: "field-image",
 	mixins: [abstractField],
 
 	computed: {
 		previewStyle() {
-			if (this.schema.preview !== false) {
+			if (this.fieldOptions.preview !== false) {
 				return {
 					display: "block",
 					"background-image": this.value != null ? "url(" + this.value + ")" : "none"
@@ -42,7 +62,7 @@ export default {
 	watch: {
 		model() {
 			let el = this.$el.querySelector("input.file");
-			if(el) {
+			if (el) {
 				el.value = "";
 			}
 		}
@@ -55,7 +75,7 @@ export default {
 
 		fileChanged(event) {
 			let reader = new FileReader();
-			reader.onload = e => {
+			reader.onload = (e) => {
 				this.value = e.target.result;
 			};
 
@@ -67,40 +87,37 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.vue-form-generator .field-image {
-	.wrapper {
-		width: 100%;
-	}
+<style>
+.vue-form-generator .field-image .wrapper {
+	width: 100%;
+}
+.vue-form-generator .field-image .preview {
+	position: relative;
+	margin-top: 5px;
+	height: 100px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 
-	.preview {
-		position: relative;
-		margin-top: 5px;
-		height: 100px;
-		background-repeat: no-repeat;
-		background-size: contain;
-		background-position: center center;
-		border: 1px solid #ccc;
-		border-radius: 3px;
-		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.vue-form-generator .field-image .preview .remove {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXUlEQVR42u2SwQoAIAhD88vVLy8KBlaS0i1oJwP3piGVg0Skmpq8HjqZrWl9uwCbGAmwKYGZs/6iqgMyAdJuM8W2QmYKpLt/0AG9ASCv/oAnANd3AEjmAlFT1BypAV+PnRH5YehvAAAAAElFTkSuQmCC");
+	width: 16px;
+	height: 16px;
 
-		.remove {
-			background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXUlEQVR42u2SwQoAIAhD88vVLy8KBlaS0i1oJwP3piGVg0Skmpq8HjqZrWl9uwCbGAmwKYGZs/6iqgMyAdJuM8W2QmYKpLt/0AG9ASCv/oAnANd3AEjmAlFT1BypAV+PnRH5YehvAAAAAElFTkSuQmCC");
-			width: 16px;
-			height: 16px;
+	font-size: 1.2em;
 
-			font-size: 1.2em;
+	position: absolute;
+	right: 0.2em;
+	bottom: 0.2em;
+	opacity: 0.7;
 
-			position: absolute;
-			right: 0.2em;
-			bottom: 0.2em;
-			opacity: 0.7;
-
-			&:hover {
-				opacity: 1;
-				cursor: pointer;
-			}
-		}
-	}
+}
+.vue-form-generator .field-image .preview .remove:hover {
+	opacity: 1;
+	cursor: pointer;
 }
 </style>
