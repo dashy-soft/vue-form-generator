@@ -6,7 +6,7 @@
 
 <script>
 import abstractField from "../abstractField";
-import { isArray, defaults } from "lodash";
+import { isArray } from "lodash";
 
 export default {
 	name: "field-noUiSlider",
@@ -76,16 +76,15 @@ export default {
 		this.$nextTick(() => {
 			if (window.noUiSlider) {
 				this.slider = this.$el;
-				window.noUiSlider.create(
-					this.slider,
-					defaults(this.fieldOptions || {}, {
-						start: this.getStartValue(),
-						range: {
-							min: this.fieldOptions.min,
-							max: this.fieldOptions.max
-						}
-					})
-				);
+				const opts = {
+					start: this.getStartValue(),
+					range: {
+						min: this.fieldOptions.min,
+						max: this.fieldOptions.max
+					},
+					...this.fieldOptions,
+				};
+				window.noUiSlider.create(this.slider, opts);
 				this.slider.noUiSlider.on("change", this.onChange.bind(this));
 			} else {
 				console.warn(

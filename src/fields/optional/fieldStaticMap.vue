@@ -4,7 +4,6 @@
 
 <script>
 import abstractField from "../abstractField";
-import { defaults } from "lodash";
 
 export default {
 	name: "field-staticmap",
@@ -14,20 +13,21 @@ export default {
 		mapLink() {
 			if (this.value) {
 				let lat, lng;
-				let options = defaults(this.fieldOptions, {
+				const opts = {
 					lat: "lat",
 					lng: "lng",
 					zoom: 8,
 					sizeX: 640,
-					sizeY: 640
-				});
+					sizeY: 640,
+					...this.fieldOptions,
+				}
 
-				lat = this.value[options.lat];
-				lng = this.value[options.lng];
+				lat = this.value[opts.lat];
+				lng = this.value[opts.lng];
 
 				let url = `http://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${
-					options.zoom
-				}&size=${options.sizeX}x${options.sizeY}`;
+					opts.zoom
+				}&size=${opts.sizeX}x${opts.sizeY}`;
 
 				let props = [
 					"scale",
@@ -43,8 +43,8 @@ export default {
 					"signature"
 				];
 				for (let prop of props) {
-					if (typeof options[prop] !== "undefined") {
-						url += `&${prop}=${options[prop]}`;
+					if (typeof opts[prop] !== "undefined") {
+						url += `&${prop}=${opts[prop]}`;
 					}
 				}
 				if (lat && lng) {

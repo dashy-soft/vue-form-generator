@@ -14,7 +14,7 @@
 <script>
 /* global $ */
 import abstractField from "../abstractField";
-import { defaults, isArray } from "lodash";
+import { isArray } from "lodash";
 
 export default {
 	name: "field-rangeSlider",
@@ -53,22 +53,22 @@ export default {
 				} else valueFrom = this.value;
 
 				let self = this;
-				$(this.$el).ionRangeSlider(
-					defaults(this.fieldOptions, {
-						type: "single",
-						grid: true,
-						hide_min_max: true,
-						from: valueFrom,
-						to: valueTo,
-						onChange(slider) {
-							if (self.slider.options.type === "double") {
-								self.value = [slider.from, slider.to];
-							} else {
-								self.value = slider.from;
-							}
+				const opts = {
+					type: "single",
+					grid: true,
+					hide_min_max: true,
+					from: valueFrom,
+					to: valueTo,
+					onChange(slider) {
+						if (self.slider.options.type === "double") {
+							self.value = [slider.from, slider.to];
+						} else {
+							self.value = slider.from;
 						}
-					})
-				);
+					},
+					...this.fieldOptions,
+				};
+				$(this.$el).ionRangeSlider(opts);
 				this.slider = $(this.$el).data("ionRangeSlider");
 			} else {
 				console.warn(

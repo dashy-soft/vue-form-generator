@@ -11,7 +11,6 @@
 
 <script>
 import abstractField from "../abstractField";
-import { defaults, get as objGet } from "lodash";
 import dateFieldHelper from "../../utils/dateFieldHelper";
 
 export default {
@@ -30,15 +29,15 @@ export default {
 	mounted() {
 		this.$nextTick(() => {
 			if (window.Pikaday) {
-				this.picker = new window.Pikaday(
-					defaults(this.fieldOptions, {
+				const opts = {
 						field: this.$el, // bind the datepicker to a form field
 						onSelect: () => {
 							this.value = this.picker.toString();
-						}
+						},
 						// trigger: , // use a different element to trigger opening the datepicker, see [trigger example][] (default to `field`)
-					})
-				);
+						...this.fieldOptions,
+					};
+				this.picker = new window.Pikaday(opts);
 			} else {
 				console.warn(
 					"Pikaday is missing. Please download from https://github.com/dbushell/Pikaday/ and load the script and CSS in the HTML head section!"

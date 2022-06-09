@@ -34,12 +34,12 @@ export default {
 		this.$nextTick(() => {
 			if (window.$ && window.$.fn.datetimepicker) {
 				let input = this.$el.querySelector(".form-control");
+				const opts = {
+					format: this.getDefaultInputFormat(),
+					...this.fieldOptions,
+				};
 				$(this.$el)
-					.datetimepicker(
-						defaults(this.fieldOptions, {
-							format: this.getDefaultInputFormat()
-						})
-					)
+					.datetimepicker(opts)
 					.on("dp.change", () => {
 						this.value = input.value;
 					});

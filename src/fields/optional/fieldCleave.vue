@@ -12,7 +12,6 @@
 
 <script>
 import abstractField from "../abstractField";
-import { defaults } from "lodash";
 
 export default {
 	name: "field-cleave",
@@ -27,33 +26,32 @@ export default {
 	mounted() {
 		this.$nextTick(function() {
 			if (window.Cleave) {
-				this.cleave = new window.Cleave(
-					this.$el,
-					defaults(this.fieldOptions, {
-						// Credit Card
-						creditCard: false,
-						// onCreditCardTypeChanged: onCreditCardTypeChanged.bind(this),
-						// Phone
-						phone: false,
-						phoneRegionCode: "AU",
-						// Date
-						date: false,
-						datePattern: ["d", "m", "Y"],
-						// Numerals
-						numeral: false,
-						numeralThousandsGroupStyle: "thousand",
-						numeralDecimalScale: 2,
-						numeralDecimalMark: ".",
-						// General
-						blocks: [],
-						delimiter: " ",
-						prefix: null,
-						numericOnly: false,
-						uppercase: false,
-						lowercase: false,
-						maxLength: 0
-					})
-				);
+				const opts = {
+					// Credit Card
+					creditCard: false,
+					// onCreditCardTypeChanged: onCreditCardTypeChanged.bind(this),
+					// Phone
+					phone: false,
+					phoneRegionCode: "AU",
+					// Date
+					date: false,
+					datePattern: ["d", "m", "Y"],
+					// Numerals
+					numeral: false,
+					numeralThousandsGroupStyle: "thousand",
+					numeralDecimalScale: 2,
+					numeralDecimalMark: ".",
+					// General
+					blocks: [],
+					delimiter: " ",
+					prefix: null,
+					numericOnly: false,
+					uppercase: false,
+					lowercase: false,
+					maxLength: 0,
+					...this.fieldOptions,
+				}
+				this.cleave = new window.Cleave(this.$el, opts);
 
 				if (this.cleave.properties && this.cleave.properties.hasOwnProperty("result")) {
 					this.$watch("cleave.properties.result", () => {

@@ -38,20 +38,20 @@ export default {
 	mounted() {
 		this.$nextTick(function() {
 			if (window.$ && window.$.fn.spectrum) {
+				const opts = {
+					showInput: true,
+					showAlpha: true,
+					disabled: this.schema.disabled,
+					allowEmpty: !this.schema.required,
+					preferredFormat: "hex",
+					change: (color) => {
+						this.value = color ? color.toString() : null;
+					},
+					...this.fieldOptions,
+				};
 				this.picker = $(this.$el)
 					.spectrum("destroy")
-					.spectrum(
-						defaults(this.fieldOptions, {
-							showInput: true,
-							showAlpha: true,
-							disabled: this.schema.disabled,
-							allowEmpty: !this.schema.required,
-							preferredFormat: "hex",
-							change: (color) => {
-								this.value = color ? color.toString() : null;
-							}
-						})
-					);
+					.spectrum(opts);
 				this.picker.spectrum("set", this.value);
 			} else {
 				console.warn(

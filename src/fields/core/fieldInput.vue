@@ -46,7 +46,7 @@
 
 <script>
 import abstractField from "../abstractField";
-import { debounce, get as objGet, isFunction, isNumber } from "lodash";
+import { debounce, isFunction, isNumber } from "lodash";
 import fecha from "fecha";
 
 const DATETIME_FORMATS = {
@@ -130,7 +130,7 @@ export default {
 					(newValue, oldValue) => {
 						this.formatNumberToModel(newValue, oldValue);
 					},
-					parseInt(objGet(this.schema, "debounceFormatTimeout", 1000)),
+					parseInt(this.schema.debounceFormatTimeout || 1000),
 					{
 						trailing: true,
 						leading: false
@@ -145,7 +145,7 @@ export default {
 					(newValue, oldValue) => {
 						this.formatDatetimeToModel(newValue, oldValue);
 					},
-					parseInt(objGet(this.schema, "debounceFormatTimeout", 1000)),
+					parseInt(this.schema.debounceFormatTimeout || 1000),
 					{
 						trailing: true,
 						leading: false
