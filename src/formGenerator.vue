@@ -128,7 +128,6 @@ export default {
 				return {
 					validateAfterLoad: false,
 					validateAfterChanged: false,
-					fieldIdPrefix: "",
 					validateAsync: false,
 					validationErrorClass: "error",
 					validationSuccessClass: ""

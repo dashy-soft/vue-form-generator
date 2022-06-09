@@ -34,12 +34,6 @@ describe("Validators", () => {
 			check(v.number, null, field, 1);
 		});
 
-		it("should give error if value is NaN or Infinity", () => {
-			check(v.number, NaN, field, 1);
-			check(v.number, Infinity, field, 1);
-			check(v.number, -Infinity, field, 1);
-		});
-
 		it("should give error if value is smaller than min", () => {
 			check(v.number, -1, field, 1);
 			check(v.number, 0, field, 1);
@@ -77,7 +71,7 @@ describe("Validators", () => {
 			// invalid integer
 			check(v.integer, 3.14, field, 1);
 			// invalid number, invalid integer
-			check(v.integer, NaN, field, 2);
+			check(v.integer, "3.14", field, 2);
 		});
 
 		it("should not give error if value is integer", () => {

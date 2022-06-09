@@ -151,7 +151,7 @@ const validators = {
 		if (res != null) return res;
 
 		let m = new Date(value);
-		if (isNaN(m.getDate())) {
+		if (!m) {
 			return [msg(messages.invalidDate)];
 		}
 

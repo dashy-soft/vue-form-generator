@@ -74,12 +74,6 @@ export default {
 				return item;
 			}
 		},
-		getItemCssClasses(item) {
-			return {
-				"is-checked": this.isItemChecked(item),
-				"is-disabled": this.isItemDisabled(item)
-			};
-		},
 		onSelection(item) {
 			this.value = this.getItemValue(item);
 		},
@@ -87,16 +81,6 @@ export default {
 			let currentValue = this.getItemValue(item);
 			return currentValue === this.value;
 		},
-		isItemDisabled(item) {
-			if (this.disabled) {
-				return true;
-			}
-			let disabled = objGet(item, "disabled", false);
-			if (isFunction(disabled)) {
-				return disabled(this.model);
-			}
-			return disabled;
-		}
 	}
 };
 </script>
