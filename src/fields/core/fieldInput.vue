@@ -86,7 +86,7 @@ export default {
 			return value;
 		},
 		formatValueToField(value) {
-			switch(this.schema.inputType.toLowerCase()) {
+			switch (this.schema.inputType.toLowerCase()) {
 				case "date":
 				case "datetime":
 				case "datetime-local":
@@ -107,16 +107,16 @@ export default {
 			this.updateModelValue(newValue, oldValue);
 		},
 		formatDatetimeValueToField(value) {
-			if(value === null || undefined === value) {
+			if (value === null || undefined === value) {
 				return null;
 			}
 
 			let defaultFormat = DATETIME_FORMATS[this.schema.inputType.toLowerCase()];
 			let m = value;
-			if(!isNumber(value)) {
+			if (!isNumber(value)) {
 				m = fecha.parse(value, defaultFormat);
 			}
-			if(m !== false) {
+			if (m !== false) {
 				return fecha.format(m, defaultFormat);
 			}
 			return value;

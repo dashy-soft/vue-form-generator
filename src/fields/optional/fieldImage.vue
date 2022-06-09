@@ -101,7 +101,6 @@ export default {
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-
 }
 .vue-form-generator .field-image .preview .remove {
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXUlEQVR42u2SwQoAIAhD88vVLy8KBlaS0i1oJwP3piGVg0Skmpq8HjqZrWl9uwCbGAmwKYGZs/6iqgMyAdJuM8W2QmYKpLt/0AG9ASCv/oAnANd3AEjmAlFT1BypAV+PnRH5YehvAAAAAElFTkSuQmCC");
@@ -114,7 +113,6 @@ export default {
 	right: 0.2em;
 	bottom: 0.2em;
 	opacity: 0.7;
-
 }
 .vue-form-generator .field-image .preview .remove:hover {
 	opacity: 1;

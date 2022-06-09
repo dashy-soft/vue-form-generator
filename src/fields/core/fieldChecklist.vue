@@ -154,14 +154,15 @@ export default {
 
 
 <style >
-.vue-form-generator .field-checklist .list-row label{
+.vue-form-generator .field-checklist .list-row label {
 	font-weight: initial;
 }
 
 .vue-form-generator .field-checklist .list-row input {
 	margin-right: 0.3em;
 }
-.vue-form-generator .field-checklist .listbox, .vue-form-generator .field-checklist .dropList {
+.vue-form-generator .field-checklist .listbox,
+.vue-form-generator .field-checklist .dropList {
 	height: auto;
 	max-height: 150px;
 	overflow: auto;
@@ -183,8 +184,6 @@ export default {
 	cursor: pointer;
 	position: relative;
 	padding-right: 10px;
-
-
 }
 .vue-form-generator .field-checklist .combobox .mainRow.expanded .arrow {
 	transform: rotate(-180deg);
@@ -192,8 +191,6 @@ export default {
 .vue-form-generator .field-checklist .combobox {
 	height: initial;
 	overflow: hidden;
-
-
 }
 .vue-form-generator .field-checklist .combobox .dropList {
 	transition: height 0.5s;

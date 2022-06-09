@@ -1,4 +1,4 @@
-import { defaults, isNil, isNumber, isInteger, isString, isArray, isFunction, isFinite } from "lodash";
+import { defaults, isNil, isNumber, isInteger, isString, isArray, isFunction } from "lodash";
 import fecha from "fecha";
 
 let resources = {

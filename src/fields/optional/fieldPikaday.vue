@@ -18,7 +18,7 @@ export default {
 	name: "field-pikaday",
 	mixins: [abstractField],
 	data() {
-		return { 
+		return {
 			picker: null,
 			options: null
 		};

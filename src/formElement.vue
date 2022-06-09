@@ -1,19 +1,16 @@
 <template>
-	<div
-		class="form-element"
+	<div class="form-element" 
 		:class="[fieldRowClasses]">
 		<label
 			v-if="fieldTypeHasLabel"
 			:for="fieldID"
 			:class="field.labelClasses">
-			<slot
-				name="label"
-				:field="field"
-				:getValueFromOption="getValueFromOption"></slot>
-			<slot
-				name="help"
-				:field="field"
-				:getValueFromOption="getValueFromOption"></slot>
+			<slot name="label" 
+				:field="field" 
+				:getValueFromOption="getValueFromOption" ></slot>
+			<slot name="help" 
+				:field="field" 
+				:getValueFromOption="getValueFromOption" ></slot>
 		</label>
 
 		<div class="field-wrap">
@@ -26,7 +23,7 @@
 				:event-bus="eventBus"
 				:field-id="fieldID"
 				@field-touched="onFieldTouched"
-				@errors-updated="onChildValidated"></component>
+				@errors-updated="onChildValidated" ></component>
 			<div
 				v-if="buttonsAreVisible"
 				class="buttons">
@@ -40,10 +37,9 @@
 		</div>
 
 		<template v-if="fieldHasHint">
-			<slot
-				name="hint"
-				:field="field"
-				:getValueFromOption="getValueFromOption"></slot>
+			<slot name="hint" 
+				:field="field" 
+				:getValueFromOption="getValueFromOption" ></slot>
 		</template>
 
 		<template v-if="fieldHasErrors">
@@ -51,7 +47,7 @@
 				name="errors"
 				:childErrors="childErrors"
 				:field="field"
-				:getValueFromOption="getValueFromOption" ></slot>
+				:getValueFromOption="getValueFromOption"></slot>
 		</template>
 	</div>
 </template>
@@ -183,48 +179,48 @@ export default {
 	vertical-align: top;
 	margin-bottom: 1rem;
 }
-	.form-element label {
-		font-weight: 400;
-	}
-	.form-element label > :first-child {
-		display: inline-block;
-	}
+.form-element label {
+	font-weight: 400;
+}
+.form-element label > :first-child {
+	display: inline-block;
+}
 
-	.form-element.featured > label {
-		font-weight: bold;
-	}
+.form-element.featured > label {
+	font-weight: bold;
+}
 
-	.form-element.required > label:after {
-		content: "*";
-		font-weight: normal;
-		color: Red;
-		padding-left: 0.2em;
-		font-size: 1em;
-	}
+.form-element.required > label:after {
+	content: "*";
+	font-weight: normal;
+	color: Red;
+	padding-left: 0.2em;
+	font-size: 1em;
+}
 
-	.form-element.disabled > label {
-		color: #666;
-		font-style: italic;
-	}
+.form-element.disabled > label {
+	color: #666;
+	font-style: italic;
+}
 
-	.form-element.error input:not([type="checkbox"]),
-	.form-element.error textarea,
-	.form-element.error select {
-		border: 1px solid #f00;
-		background-color: rgba(#f00, 0.15);
-	}
+.form-element.error input:not([type="checkbox"]),
+.form-element.error textarea,
+.form-element.error select {
+	border: 1px solid #f00;
+	background-color: rgba(#f00, 0.15);
+}
 
-	.form-element.error .errors span {
-		display: block;
-		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVR4Xt2TMQoCQQxF3xdhu72MpZU3GU/meBFLOztPYrVWsQmEWSaMsIXgK8P8RyYkMjO2sAN+K9gTIAmDAlzoUzE7p4IFytvDCQWJKSStYB2efcAvqZFM0BcstMx5naSDYFzfLhh/4SmRM+6Agw/xIX0tKEDFufeDNRUc4XqLRz3qabVIf3BMHwl6Ktexn3nmAAAAAElFTkSuQmCC");
-		background-repeat: no-repeat;
-		padding-left: 17px;
-		padding-top: 0px;
-		margin-top: 0.2em;
-		font-weight: 600;
-	}
-	.form-element.error .errors {
-		color: #f00;
-		font-size: 0.8em;
-	}
+.form-element.error .errors span {
+	display: block;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAiklEQVR4Xt2TMQoCQQxF3xdhu72MpZU3GU/meBFLOztPYrVWsQmEWSaMsIXgK8P8RyYkMjO2sAN+K9gTIAmDAlzoUzE7p4IFytvDCQWJKSStYB2efcAvqZFM0BcstMx5naSDYFzfLhh/4SmRM+6Agw/xIX0tKEDFufeDNRUc4XqLRz3qabVIf3BMHwl6Ktexn3nmAAAAAElFTkSuQmCC");
+	background-repeat: no-repeat;
+	padding-left: 17px;
+	padding-top: 0px;
+	margin-top: 0.2em;
+	font-weight: 600;
+}
+.form-element.error .errors {
+	color: #f00;
+	font-size: 0.8em;
+}
 </style>
