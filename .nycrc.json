@@ -1,0 +1,22 @@
+{
+	"check-coverage": false,
+	"per-file": true,
+	"include": [
+		"src/**/*.{js,vue}"
+	],
+	"exclude": [
+		"src/*.js"
+	],
+	"extension": [
+		".js"
+	],
+	"reporter": [
+		"lcov",
+		"text",
+		"text-summary"
+	],
+	"report-dir": "./tests/unit/coverage",
+	"temp-dir": "./tests/unit/coverage/.nyc_output",
+	"cache": true,
+	"all": true
+}

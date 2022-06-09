@@ -13,7 +13,6 @@
 		"coverall": "cat ./tests/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
 		"changelog": "conventional-changelog -i CHANGELOG.md -s",
 		"changelog:full": "conventional-changelog -i CHANGELOG.md -s -r 0",
-		"docs": "cd docs && gitbook serve",
 		"version": "bumped release"
 	},
 	"keywords": [
@@ -26,7 +25,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/vue-generators/vue-form-generator.git"
+		"url": "https://github.com/dashy-soft/vue-form-generator.git"
 	},
 	"files": [
 		"dist/vfg.common.js",
@@ -84,28 +83,6 @@
 		"last 2 versions",
 		"not ie <= 8"
 	],
-	"nyc": {
-		"check-coverage": false,
-		"per-file": true,
-		"include": [
-			"src/**/*.{js,vue}"
-		],
-		"exclude": [
-			"src/*.js"
-		],
-		"extension": [
-			".js"
-		],
-		"reporter": [
-			"lcov",
-			"text",
-			"text-summary"
-		],
-		"report-dir": "./tests/unit/coverage",
-		"temp-dir": "./tests/unit/coverage/.nyc_output",
-		"cache": true,
-		"all": true
-	},
 	"publishConfig": {
 		"access": "public"
 	}
