@@ -153,59 +153,49 @@ export default {
 </script>
 
 
-<style lang="scss">
-.vue-form-generator .field-checklist {
-	.listbox,
-	.dropList {
-		height: auto;
-		max-height: 150px;
-		overflow: auto;
+<style >
+.vue-form-generator .field-checklist .list-row label{
+	font-weight: initial;
+}
 
-		.list-row {
-			label {
-				font-weight: initial;
-			}
+.vue-form-generator .field-checklist .list-row input {
+	margin-right: 0.3em;
+}
+.vue-form-generator .field-checklist .listbox, .vue-form-generator .field-checklist .dropList {
+	height: auto;
+	max-height: 150px;
+	overflow: auto;
+}
+.vue-form-generator .field-checklist .combobox .mainRow .arrow {
+	position: absolute;
+	right: -9px;
+	top: 3px;
+	width: 16px;
+	height: 16px;
 
-			input {
-				margin-right: 0.3em;
-			}
-		}
-	}
+	transform: rotate(0deg);
+	transition: transform 0.5s;
 
-	.combobox {
-		height: initial;
-		overflow: hidden;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGdJREFUOI3tzjsOwjAURNGDUqSgTxU5K2AVrJtswjUsgHSR0qdxAZZFPrS+3ZvRzBsqf9MUtBtazJk+oMe0VTriiZCFX8nbpENMgfARjsn74vKj5IFruhfc8d6zIF9S/Hyk5HS4spMVeFcOjszaOwMAAAAASUVORK5CYII=");
+	background-repeat: no-repeat;
+}
+.vue-form-generator .field-checklist .combobox .mainRow {
+	cursor: pointer;
+	position: relative;
+	padding-right: 10px;
 
-		.mainRow {
-			cursor: pointer;
-			position: relative;
-			padding-right: 10px;
 
-			.arrow {
-				position: absolute;
-				right: -9px;
-				top: 3px;
-				width: 16px;
-				height: 16px;
+}
+.vue-form-generator .field-checklist .combobox .mainRow.expanded .arrow {
+	transform: rotate(-180deg);
+}
+.vue-form-generator .field-checklist .combobox {
+	height: initial;
+	overflow: hidden;
 
-				transform: rotate(0deg);
-				transition: transform 0.5s;
 
-				background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAGdJREFUOI3tzjsOwjAURNGDUqSgTxU5K2AVrJtswjUsgHSR0qdxAZZFPrS+3ZvRzBsqf9MUtBtazJk+oMe0VTriiZCFX8nbpENMgfARjsn74vKj5IFruhfc8d6zIF9S/Hyk5HS4spMVeFcOjszaOwMAAAAASUVORK5CYII=");
-				background-repeat: no-repeat;
-			}
-
-			&.expanded {
-				.arrow {
-					transform: rotate(-180deg);
-				}
-			}
-		}
-
-		.dropList {
-			transition: height 0.5s;
-			//margin-top: 0.5em;
-		}
-	}
+}
+.vue-form-generator .field-checklist .combobox .dropList {
+	transition: height 0.5s;
 }
 </style>

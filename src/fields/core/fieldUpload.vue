@@ -34,13 +34,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.vue-form-generator .field-input {
-	.wrapper {
-		width: 100%;
-	}
-	.helper {
-		margin: auto 0.5em;
-	}
+<style scoped>
+.wrapper {
+	width: 100%;
+}
+.helper {
+	margin: auto 0.5em;
 }
 </style>

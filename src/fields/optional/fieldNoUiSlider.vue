@@ -101,20 +101,18 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.vue-form-generator .field-noUiSlider {
-	.field-wrap {
-		display: block;
-	}
-	.contain-pips {
-		margin-bottom: 30px;
-	}
-	.contain-tooltip {
-		margin-top: 30px;
-	}
-	.noUi-vertical {
-		height: 200px;
-		margin: 10px 0;
-	}
+<style scoped>
+.field-wrap {
+	display: block;
+}
+.contain-pips {
+	margin-bottom: 30px;
+}
+.contain-tooltip {
+	margin-top: 30px;
+}
+.noUi-vertical {
+	height: 200px;
+	margin: 10px 0;
 }
 </style>

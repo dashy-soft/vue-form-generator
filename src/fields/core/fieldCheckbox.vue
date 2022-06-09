@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .vue-form-generator .field-checkbox input {
 	margin-left: 12px;
 }

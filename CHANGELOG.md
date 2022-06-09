@@ -1,3 +1,36 @@
+## 3.0.0-beta.7 (2022-06-08)
+
+*  #509 ([96aea0c](https://github.com/vue-generators/vue-form-generator/commit/96aea0c)), closes [#509](https://github.com/vue-generators/vue-form-generator/issues/509)
+* #501 ([7adcc11](https://github.com/vue-generators/vue-form-generator/commit/7adcc11)), closes [#501](https://github.com/vue-generators/vue-form-generator/issues/501)
+* #521 ([10840a8](https://github.com/vue-generators/vue-form-generator/commit/10840a8)), closes [#521](https://github.com/vue-generators/vue-form-generator/issues/521)
+* #522 ([f21b73a](https://github.com/vue-generators/vue-form-generator/commit/f21b73a)), closes [#522](https://github.com/vue-generators/vue-form-generator/issues/522)
+* Add Help in `form-group` ([13fa07f](https://github.com/vue-generators/vue-form-generator/commit/13fa07f))
+* Bump version ([3999dc7](https://github.com/vue-generators/vue-form-generator/commit/3999dc7))
+* Bump version to 3.0.0-beta.7 ([449da34](https://github.com/vue-generators/vue-form-generator/commit/449da34))
+* Bumped version to test package with dev submodule ([ad715d7](https://github.com/vue-generators/vue-form-generator/commit/ad715d7))
+* Clean useless folders ([b603196](https://github.com/vue-generators/vue-form-generator/commit/b603196))
+* Custom legend block for group ([b694fae](https://github.com/vue-generators/vue-form-generator/commit/b694fae))
+* Dev submodule ([f4c3b26](https://github.com/vue-generators/vue-form-generator/commit/f4c3b26))
+* Drop node 6 support as vue-cli don't support it ([6f222ec](https://github.com/vue-generators/vue-form-generator/commit/6f222ec))
+* Expose fieldLoader ([7c9b937](https://github.com/vue-generators/vue-form-generator/commit/7c9b937))
+* Fix code coverage ([e15672b](https://github.com/vue-generators/vue-form-generator/commit/e15672b))
+* Fix Coverall path to "lcov.info" ([67f8ebd](https://github.com/vue-generators/vue-form-generator/commit/67f8ebd))
+* Fix deep property path not working ([e49a969](https://github.com/vue-generators/vue-form-generator/commit/e49a969))
+* Fix submodule version ([3b8abe6](https://github.com/vue-generators/vue-form-generator/commit/3b8abe6))
+* Fix tests ([e6fa363](https://github.com/vue-generators/vue-form-generator/commit/e6fa363))
+* Fix tests ([18f52a4](https://github.com/vue-generators/vue-form-generator/commit/18f52a4))
+* formGroup now use the correct class name for error when looking for them ([c865489](https://github.com/vue-generators/vue-form-generator/commit/c865489))
+* Improve code coverage score ([46fd658](https://github.com/vue-generators/vue-form-generator/commit/46fd658))
+* Improve field loading method ([cc52011](https://github.com/vue-generators/vue-form-generator/commit/cc52011))
+* Remove dev (preparing for submodule) ([c5d5d77](https://github.com/vue-generators/vue-form-generator/commit/c5d5d77))
+* remove event listeners in abstractField for current context only ([ffb839f](https://github.com/vue-generators/vue-form-generator/commit/ffb839f))
+* Remove Pug from project ([672e5e0](https://github.com/vue-generators/vue-form-generator/commit/672e5e0))
+* Single export ([2b31d12](https://github.com/vue-generators/vue-form-generator/commit/2b31d12))
+* Update submodule dev ([c611132](https://github.com/vue-generators/vue-form-generator/commit/c611132))
+* Use stronger Eslint rules ([8d82279](https://github.com/vue-generators/vue-form-generator/commit/8d82279))
+
+
+
 <a name="2.2.2"></a>
 ## 2.2.2 (2018-04-24)
 * Fix NaN with value 0 on input type number/range.

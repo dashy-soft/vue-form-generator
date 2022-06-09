@@ -96,10 +96,8 @@ export default {
 </script>
 
 
-<style lang="scss">
-.vue-form-generator .field-selectEx .bootstrap-select {
-	.dropdown-menu li.selected .text {
-		font-weight: bold;
-	}
+<style>
+.vue-form-generator .field-selectEx .bootstrap-select .dropdown-menu li.selected .text {
+  font-weight: bold;
 }
 </style>

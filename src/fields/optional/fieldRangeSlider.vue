@@ -85,7 +85,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style>
 .vue-form-generator .field-rangeSlider .irs {
 	width: 100%;
 }

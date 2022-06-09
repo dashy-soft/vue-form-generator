@@ -14,7 +14,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
 .vue-form-generator .field-label span {
 	display: block;
 	width: 100%;

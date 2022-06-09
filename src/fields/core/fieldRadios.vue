@@ -85,15 +85,11 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.vue-form-generator .field-radios {
-	.radio-list {
-		label {
-			display: block;
-			input[type="radio"] {
-				margin-right: 5px;
-			}
-		}
-	}
+<style scoped>
+label {
+	display: block;
+}
+input[type="radio"] {
+	margin-right: 5px;
 }
 </style>

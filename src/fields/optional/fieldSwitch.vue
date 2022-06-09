@@ -40,7 +40,8 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style>
+/*
 $field-switch-width: 120px;
 $field-switch-height: 30px;
 
@@ -138,10 +139,11 @@ $field-switch-height: 30px;
 	}
 
 	/* Transition
-		========================== */
+		========================== * /
 	.label,
 	.handle {
 		transition: all 0.3s ease;
 	}
 }
+*/
 </style>
