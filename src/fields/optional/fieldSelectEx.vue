@@ -18,7 +18,6 @@
 
 <script>
 /* global $ */
-import { isObject } from "lodash";
 import abstractField from "../abstractField";
 
 export default {
@@ -36,7 +35,7 @@ export default {
 
 	methods: {
 		getItemValue(item) {
-			if (isObject(item)) {
+			if (item instanceof Object) {
 				if (typeof this.fieldOptions["value"] !== "undefined") {
 					return item[this.fieldOptions.value];
 				} else {
@@ -53,7 +52,7 @@ export default {
 		},
 
 		getItemName(item) {
-			if (isObject(item)) {
+			if (item instanceof Object) {
 				if (typeof this.fieldOptions["name"] !== "undefined") {
 					return item[this.fieldOptions.name];
 				} else {

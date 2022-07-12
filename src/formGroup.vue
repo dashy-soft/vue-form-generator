@@ -62,7 +62,6 @@
 </template>
 <script>
 import formMixin from "./formMixin.js";
-import { get as objGet, isFunction, isNil } from "lodash";
 
 export default {
 	name: "form-group",
@@ -129,7 +128,7 @@ export default {
 			let baseClasses = {
 				"field-group": true
 			};
-			if (!isNil(this.group)) {
+			if (!this.group == null) {
 				baseClasses = this.getStyleClasses(this.group, baseClasses);
 			}
 			return baseClasses;
@@ -138,11 +137,11 @@ export default {
 	methods: {
 		// Get visible prop of field
 		fieldVisible(field) {
-			if (isFunction(field.visible)) {
+			if (typeof field.visible === "function") {
 				return field.visible.call(this, this.model, field, this);
 			}
 
-			if (isNil(field.visible)) {
+			if (field.visible == null) {
 				return true;
 			}
 
@@ -150,7 +149,7 @@ export default {
 		},
 
 		getGroupTag(field) {
-			if (!isNil(field.tag)) {
+			if (!field.tag == null) {
 				return field.tag;
 			} else {
 				return this.tag;
@@ -162,11 +161,11 @@ export default {
 			this.$nextTick(() => {
 				let containFieldWithError =
 					this.$refs.group.querySelector(
-						".form-element." + objGet(this.options, "validationErrorClass", "error")
+						".form-element." + this.options.validationErrorClass || "error"
 					) !== null;
 				this.validationClass = {
-					[objGet(this.options, "validationErrorClass", "error")]: containFieldWithError,
-					[objGet(this.options, "validationSuccessClass", "valid")]: !containFieldWithError
+					[this.options.validationErrorClass || "error"]: containFieldWithError,
+					[this.options.validationSuccessClass || "valid"]: !containFieldWithError
 				};
 			});
 		});

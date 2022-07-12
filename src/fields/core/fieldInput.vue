@@ -46,7 +46,7 @@
 
 <script>
 import abstractField from "../abstractField";
-import { debounce, isFunction, isNumber } from "lodash";
+import { debounce, isNumber } from "lodash";
 import fecha from "fecha";
 
 const DATETIME_FORMATS = {
@@ -116,7 +116,7 @@ export default {
 			this.value = value;
 		},
 		onBlur() {
-			if (isFunction(this.debouncedFormatFunc)) {
+			if (typeof this.debouncedFormatFunc === "function") {
 				this.debouncedFormatFunc.flush();
 			}
 		}

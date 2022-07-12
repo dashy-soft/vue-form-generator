@@ -18,14 +18,13 @@
 
 <script>
 import abstractField from "../abstractField";
-import { isFunction } from "lodash";
 
 export default {
 	name: "field-upload",
 	mixins: [abstractField],
 	methods: {
 		onChange($event) {
-			if (isFunction(this.fieldOptions.onChanged)) {
+			if (typeof this.fieldOptions.onChanged === "function") {
 				// Schema has defined onChange method.
 				this.fieldOptions.onChanged.call(this, this.model, this.schema, $event, this);
 			}

@@ -6,7 +6,6 @@
 
 <script>
 import abstractField from "../abstractField";
-import { isArray } from "lodash";
 
 export default {
 	name: "field-noUiSlider",
@@ -37,7 +36,7 @@ export default {
 
 	methods: {
 		onChange(value) {
-			if (isArray(value)) {
+			if (Array.isArray(value)) {
 				// Array (range)
 				this.value = [parseFloat(value[0]), parseFloat(value[1])];
 			} else {

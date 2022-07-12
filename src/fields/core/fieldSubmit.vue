@@ -11,7 +11,7 @@
 
 <script>
 import abstractField from "../abstractField";
-import { isFunction, isEmpty } from "lodash";
+import { isEmpty } from "lodash";
 
 export default {
 	name: "field-submit",
@@ -26,13 +26,13 @@ export default {
 
 				this.eventBus.$emit("fields-validation-trigger");
 				this.eventBus.$on("fields-validation-terminated", (formErrors) => {
-					if (!isEmpty(formErrors) && isFunction(this.fieldOptions.onValidationError)) {
+					if (!isEmpty(formErrors) && typeof this.fieldOptions.onValidationError === "function") {
 						this.fieldOptions.onValidationError(this.model, this.schema, formErrors, $event);
-					} else if (isFunction(this.fieldOptions.onSubmit)) {
+					} else if (typeof this.fieldOptions.onSubmit === "function") {
 						this.fieldOptions.onSubmit(this.model, this.schema, $event);
 					}
 				});
-			} else if (isFunction(this.fieldOptions.onSubmit)) {
+			} else if (typeof this.fieldOptions.onSubmit === "function") {
 				// if we aren't validating, just pass the onSubmit handler the $event
 				// so it can be handled there
 				this.fieldOptions.onSubmit(this.model, this.schema, $event);

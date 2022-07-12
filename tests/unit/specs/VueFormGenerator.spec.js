@@ -916,9 +916,17 @@ describe("VueFormGenerator.vue", () => {
 			expect(form.errors).to.be.length(0);
 		});
 
-		it("should be validation error if model value is not valid", () => {
+		it("should be validation error if model value is not valid", async () => {
+			const sleep = ms => new Promise(r => setTimeout(r, ms));
+
 			formGenerator.setProps({ model: { name: "A" } });
-			form.validate();
+			await sleep(3);
+			try {
+				await form.validate();
+
+			} catch (e) {
+				console.error('validate error');
+			}
 
 			expect(form.errors).to.be.length(1);
 			expect(formGenerator.emitted().validated).to.be.an.instanceof(Array);

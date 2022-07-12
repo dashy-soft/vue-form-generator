@@ -19,7 +19,6 @@
  */
 
 import abstractField from "../abstractField";
-import { isFunction } from "lodash";
 
 /* global google */
 export default {
@@ -86,7 +85,7 @@ export default {
 				}
 
 				// Call event in schema
-				if (isFunction(this.fieldOptions.onPlaceChanged))
+				if (typeof this.fieldOptions.onPlaceChanged === "function")
 					this.fieldOptions.onPlaceChanged(this.value, data, place, this.model, this.schema);
 			}
 		},

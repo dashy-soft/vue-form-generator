@@ -100,7 +100,6 @@
 
 <script>
 import Vue from "vue";
-import { get as objGet, isArray } from "lodash";
 import formGroup from "./formGroup.vue";
 import formElement from "./formElement.vue";
 
@@ -193,8 +192,14 @@ export default {
 	},
 
 	methods: {
+		fieldVisible(field) {
+			if (typeof field.visible === 'function') return field.visible.call(this, this.model, field, this);
+			if (field.visible == null) return true;
+			return field.visible;
+		},
+
 		fillErrors(fieldErrors, errors, uid) {
-			if (isArray(fieldErrors) && fieldErrors.length > 0) {
+			if (Array.isArray(fieldErrors) && fieldErrors.length > 0) {
 				fieldErrors.forEach((error) => {
 					errors.push({
 						uid,
@@ -241,7 +246,7 @@ export default {
 
 					if (fieldsValidated === this.totalNumberOfFields) {
 						this.eventBus.$off("field-validated", counter);
-						if (objGet(this.options, "validateAfterChanged", false)) {
+						if (this.options.validateAfterChanged || false) {
 							this.eventBus.$on("field-validated", this.onFieldValidated);
 						}
 						this.errors = formErrors;
@@ -256,7 +261,7 @@ export default {
 						}
 					}
 				};
-				if (objGet(this.options, "validateAfterChanged", false)) {
+				if (this.options.validateAfterChanged || false) {
 					this.eventBus.$off("field-validated", this.onFieldValidated);
 				}
 				this.eventBus.$on("field-validated", counter);
@@ -272,7 +277,7 @@ export default {
 	},
 
 	created() {
-		if (objGet(this.options, "validateAfterChanged", false)) {
+		if (this.options.validateAfterChanged || false) {
 			this.eventBus.$on("field-validated", this.onFieldValidated);
 		}
 		this.eventBus.$on("model-updated", this.onModelUpdated);

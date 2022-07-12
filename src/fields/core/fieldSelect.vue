@@ -29,7 +29,6 @@
 </template>
 
 <script>
-import { isObject, isNil, find } from "lodash";
 import abstractField from "../abstractField";
 
 export default {
@@ -47,7 +46,7 @@ export default {
 
 	methods: {
 		formatValueToField(value) {
-			if (isNil(value)) {
+			if (value == null) {
 				return null;
 			}
 			return value;
@@ -60,11 +59,11 @@ export default {
 			values.forEach((item) => {
 				arrayElement = null;
 
-				if (item.group && isObject(item)) {
+				if (item.group && item instanceof Object) {
 					// There is in a group.
 
 					// Find element with this group.
-					arrayElement = find(array, (i) => i.group === item.group);
+					arrayElement = array.find(i => i.group === item.group);
 
 					if (arrayElement) {
 						// There is such a group.
@@ -113,7 +112,7 @@ export default {
 		},
 
 		getItemValue(item) {
-			if (isObject(item)) {
+			if (item instanceof Object) {
 				if (typeof this.fieldOptions["value"] !== "undefined") {
 					return item[this.fieldOptions.value];
 				} else {
@@ -130,7 +129,7 @@ export default {
 		},
 
 		getItemName(item) {
-			if (isObject(item)) {
+			if (item instanceof Object) {
 				if (typeof this.fieldOptions["name"] !== "undefined") {
 					return item[this.fieldOptions.name];
 				} else {

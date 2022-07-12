@@ -1,5 +1,6 @@
 import { get as objGet, forEach, isFunction, isString, isArray, debounce, isNil, uniqueId } from "lodash";
 import validators from "../utils/validators";
+import { slugifyFormID } from "../utils/schema";
 
 const convertValidator = (validator) => {
 	if (isString(validator)) {
@@ -49,7 +50,7 @@ export default {
 			touched: false,
 			errors: [],
 			debouncedValidateFunc: null,
-			debouncedFormatFunc: null
+			debouncedFormatFunction: null
 		};
 	},
 
@@ -123,6 +124,11 @@ export default {
 	},
 
 	methods: {
+		getFieldID(schema, unique = false) {
+			const idPrefix = objGet(this.formOptions, "fieldIdPrefix", "");
+			return slugifyFormID(schema, idPrefix) + (unique ? "-" + uniqueId() : "");
+		},
+
 		getValueFromOption(field, option, defaultValue) {
 			if (isFunction(this.$parent.getValueFromOption)) {
 				return this.$parent.getValueFromOption(field, option, defaultValue);
@@ -343,9 +349,9 @@ export default {
 		if (this.schema) {
 			let currentKeys = Object.keys(this.schema);
 			let result = diff(allowedKeys, currentKeys);
-			if (result.length > 0) {
+			/*if (result.length > 0) {
 				console.log("diff", result, this.schema.type, this.schema.model);
-			}
+			}*/
 		}
 	},
 	beforeDestroy() {

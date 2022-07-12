@@ -1,12 +1,12 @@
-import { get, set, each, isObject, isArray, isFunction, isNil, cloneDeep } from "lodash";
+import { get, set, each, cloneDeep } from "lodash";
 
 // Create a new model by schema default values
 const createDefaultObject = (schema, obj = {}) => {
 	each(schema.fields, (field) => {
 		if (get(obj, field.model) === undefined && field.default !== undefined) {
-			if (isFunction(field.default)) {
+			if (typeof field.default === "function") {
 				set(obj, field.model, field.default(field, schema, obj));
-			} else if (isObject(field.default) || isArray(field.default)) {
+			} else if (field.default instanceof Object || Array.isArray(field.default)) {
 				set(obj, field.model, cloneDeep(field.default));
 			} else set(obj, field.model, field.default);
 		}
@@ -54,7 +54,7 @@ const mergeMultiObjectFields = (schema, objs) => {
 const slugifyFormID = (schema, prefix = "") => {
 	// Try to get a reasonable default id from the schema,
 	// then slugify it.
-	if (!isNil(schema.id)) {
+	if (!schema.id == null) {
 		// If an ID's been explicitly set, use it unchanged
 		return prefix + schema.id;
 	} else {

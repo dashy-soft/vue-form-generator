@@ -9,7 +9,7 @@ export default {
 				styleClasses.forEach((c) => {
 					baseClasses[c] = true;
 				});
-			} else if (isString(styleClasses)) {
+			} else if (isString(styleClasses) && styleClasses !== '') {
 				baseClasses[styleClasses] = true;
 			}
 			return baseClasses;

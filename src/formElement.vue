@@ -52,7 +52,7 @@
 	</div>
 </template>
 <script>
-import { get as objGet, isArray, isFunction, isNil } from "lodash";
+import { isNil } from "lodash";
 import { slugifyFormID } from "./utils/schema";
 import formMixin from "./formMixin.js";
 
@@ -97,7 +97,7 @@ export default {
 	},
 	computed: {
 		fieldID() {
-			const idPrefix = objGet(this.options, "fieldIdPrefix", "");
+			const idPrefix = this.options.fieldIdPrefix || "";
 			return slugifyFormID(this.field, idPrefix);
 		},
 		// Get type of field 'field-xxx'. It'll be the name of HTML element
@@ -124,9 +124,9 @@ export default {
 		},
 		fieldRowClasses() {
 			let baseClasses = {
-				[objGet(this.options, "validationErrorClass", "error")]: this.fieldHasErrors,
-				[objGet(this.options, "validationSuccessClass", "valid")]: !this.fieldHasErrors && this.childTouched,
-				[objGet(this.options, "validationCleanClass", "clean")]: !this.fieldHasErrors && !this.childTouched,
+				[this.options.validationErrorClass || "error"]: this.fieldHasErrors,
+				[this.options.validationSuccessClass || "valid"]: !this.fieldHasErrors && this.childTouched,
+				[this.options.validationCleanClass || "clean"]: !this.fieldHasErrors && !this.childTouched,
 				disabled: this.getValueFromOption(this.field, "disabled"),
 				readonly: this.getValueFromOption(this.field, "readonly"),
 				featured: this.getValueFromOption(this.field, "featured"),
@@ -142,19 +142,18 @@ export default {
 			return baseClasses;
 		},
 		buttonsAreVisible() {
-			return isArray(this.field.buttons) && this.field.buttons.length > 0;
+			return Array.isArray(this.field.buttons) && this.field.buttons.length > 0;
 		}
 	},
 	methods: {
 		getValueFromOption(field, option, defaultValue = false) {
-			if (isFunction(field[option])) {
+			if (typeof field[option] === "function") {
 				return field[option].call(this, this.model, field, this);
 			}
 
 			if (isNil(field[option])) {
 				return defaultValue;
 			}
-
 			return field[option];
 		},
 

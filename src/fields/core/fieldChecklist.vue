@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { isObject, isNil, clone } from "lodash";
+import { clone } from "lodash";
 import abstractField from "../abstractField";
 import { slugify } from "../../utils/schema";
 
@@ -92,7 +92,7 @@ export default {
 		},
 
 		getItemValue(item) {
-			if (isObject(item)) {
+			if (item instanceof Object) {
 				if (typeof this.fieldOptions["value"] !== "undefined") {
 					return item[this.fieldOptions.value];
 				} else {
@@ -107,7 +107,7 @@ export default {
 			}
 		},
 		getItemName(item) {
-			if (isObject(item)) {
+			if (item instanceof Object) {
 				if (typeof this.fieldOptions["name"] !== "undefined") {
 					return item[this.fieldOptions.name];
 				} else {
@@ -128,7 +128,7 @@ export default {
 
 		onChanged(event, item) {
 			let isChecked = event.target.checked;
-			if (isNil(this.value) || !Array.isArray(this.value)) {
+			if (this.value == null || !Array.isArray(this.value)) {
 				this.value = [];
 			}
 

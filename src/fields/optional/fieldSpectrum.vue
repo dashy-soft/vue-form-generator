@@ -11,7 +11,7 @@
 <script>
 /* global $ */
 import abstractField from "../abstractField";
-import { defaults } from "lodash";
+
 export default {
 	name: "field-spectrum",
 	mixins: [abstractField],

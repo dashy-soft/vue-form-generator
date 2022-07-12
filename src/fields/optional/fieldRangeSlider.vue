@@ -14,7 +14,6 @@
 <script>
 /* global $ */
 import abstractField from "../abstractField";
-import { isArray } from "lodash";
 
 export default {
 	name: "field-rangeSlider",
@@ -30,7 +29,7 @@ export default {
 		model: function() {
 			if (window.$ && window.$.fn.ionRangeSlider) {
 				let valueFrom, valueTo;
-				if (isArray(this.value)) {
+				if (Array.isArray(this.value)) {
 					[valueFrom, valueTo] = this.value;
 				} else valueFrom = this.value;
 
@@ -48,7 +47,7 @@ export default {
 		this.$nextTick(function() {
 			if (window.$ && window.$.fn.ionRangeSlider) {
 				let valueFrom, valueTo;
-				if (isArray(this.value)) {
+				if (Array.isArray(this.value)) {
 					[valueFrom, valueTo] = this.value;
 				} else valueFrom = this.value;
 

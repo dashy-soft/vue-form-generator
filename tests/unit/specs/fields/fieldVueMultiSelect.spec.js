@@ -126,11 +126,11 @@ describe("fieldVueMultiSelect.vue", () => {
 				name: "Vue.js",
 				language: "JavaScript"
 			};
-			let schema = { ...schema };
+			let newSchema = { ...schema };
 			let model = {
 				city: [option]
 			};
-			schema.values = [
+			newSchema.values = [
 				{
 					name: "Vue.js",
 					language: "JavaScript"
@@ -144,23 +144,23 @@ describe("fieldVueMultiSelect.vue", () => {
 					language: "Ruby"
 				}
 			];
-			schema.fieldOptions = {};
+			newSchema.fieldOptions = {};
 
 			before(() => {
-				createField({ schema, model });
+				createField({ newSchema, model });
 			});
 
 			it("model value should work with objects", () => {
-				schema.fieldOptions = { label: "name", trackBy: "name" };
-				wrapper.setProps({ schema: { ...schema } });
+				newSchema.fieldOptions = { label: "name", trackBy: "name" };
+				wrapper.setProps({ schema: { ...newSchema } });
 
 				expect(wrapper.props().model.city.length).to.be.equal(1);
-				expect(wrapper.props().model.city[0]).to.be.deep.equal(schema.values[0]);
+				expect(wrapper.props().model.city[0]).to.be.deep.equal(newSchema.values[0]);
 			});
 
 			it("options should contain only text specified in label", (done) => {
-				schema.fieldOptions = { label: "language", trackBy: "language" };
-				wrapper.setProps({ schema: { ...schema } });
+				newSchema.fieldOptions = { label: "language", trackBy: "language" };
+				wrapper.setProps({ schema: { ...newSchema } });
 
 				Vue.config.errorHandler = done;
 				Vue.nextTick(() => {
@@ -177,14 +177,14 @@ describe("fieldVueMultiSelect.vue", () => {
 			});
 
 			it("options should contain custom text specified in customLabel", (done) => {
-				schema.fieldOptions = {
+				newSchema.fieldOptions = {
 					label: "name",
 					trackBy: "name",
 					customLabel: ({ name, language }) => {
 						return `${name}-${language}`;
 					}
 				};
-				wrapper.setProps({ schema: { ...schema } });
+				wrapper.setProps({ schema: { ...newSchema } });
 
 				Vue.config.errorHandler = done;
 				Vue.nextTick(() => {
