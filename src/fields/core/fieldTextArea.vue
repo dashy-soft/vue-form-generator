@@ -4,12 +4,12 @@
 		:id="fieldID"
 		:class="fieldClasses"
 		:disabled="disabled"
-		:maxlength="fieldOptions.max"
-		:minlength="fieldOptions.min"
+		:maxlength="schema.max"
+		:minlength="schema.min"
 		:placeholder="placeholder"
 		:required="required"
 		:readonly="readonly"
-		:rows="fieldOptions.rows || 2"
+		:rows="schema.rows || 2"
 		:name="inputName"
 		v-attributes="'input'"></textarea>
 </template>

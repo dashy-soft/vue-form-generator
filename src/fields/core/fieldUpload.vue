@@ -6,8 +6,8 @@
 			type="file"
 			:name="inputName"
 			@change="onChange"
-			:accept="fieldOptions.accept"
-			:multiple="fieldOptions.multiple"
+			:accept="schema.accept"
+			:multiple="schema.multiple"
 			:placeholder="placeholder"
 			:readonly="readonly"
 			:required="schema.required"
@@ -24,9 +24,9 @@ export default {
 	mixins: [abstractField],
 	methods: {
 		onChange($event) {
-			if (typeof this.fieldOptions.onChanged === "function") {
+			if (typeof this.schema.onChanged === "function") {
 				// Schema has defined onChange method.
-				this.fieldOptions.onChanged.call(this, this.model, this.schema, $event, this);
+				this.schema.onChanged.call(this, this.model, this.schema, $event, this);
 			}
 		}
 	}

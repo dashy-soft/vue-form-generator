@@ -6,9 +6,9 @@
 		:id="fieldID"
 		:class="fieldClasses"
 		v-attributes="'input'">
-		<option v-if="!fieldOptions.hideNoneSelectedText"
+		<option v-if="!schema.hideNoneSelectedText"
 			:disabled="schema.required"
-			:value="null"> {{ fieldOptions.noneSelectedText || "&lt;Nothing selected&gt;" }}
+			:value="null"> {{ schema.noneSelectedText || "&lt;Nothing selected&gt;" }}
 		</option>
 
 		<template v-for="item in items">
@@ -113,14 +113,14 @@ export default {
 
 		getItemValue(item) {
 			if (item instanceof Object) {
-				if (typeof this.fieldOptions["value"] !== "undefined") {
-					return item[this.fieldOptions.value];
+				if (typeof this.schema["value"] !== "undefined") {
+					return item[this.schema.value];
 				} else {
 					// Use 'id' instead of 'value' cause of backward compatibility
 					if (typeof item["id"] !== "undefined") {
 						return item.id;
 					} else {
-						throw "`id` is not defined. If you want to use another key name, add a `value` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
+						throw "`id` is not defined. If you want to use another key name, add a `value` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
 					}
 				}
 			} else {
@@ -130,13 +130,13 @@ export default {
 
 		getItemName(item) {
 			if (item instanceof Object) {
-				if (typeof this.fieldOptions["name"] !== "undefined") {
-					return item[this.fieldOptions.name];
+				if (typeof this.schema["name"] !== "undefined") {
+					return item[this.schema.name];
 				} else {
 					if (typeof item["name"] !== "undefined") {
 						return item.name;
 					} else {
-						throw "`name` is not defined. If you want to use another key name, add a `name` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
+						throw "`name` is not defined. If you want to use another key name, add a `name` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
 					}
 				}
 			} else {

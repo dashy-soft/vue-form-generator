@@ -822,6 +822,13 @@ module.exports = fails(function () {
 
 /***/ }),
 
+/***/ "1145":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "1276":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1930,13 +1937,6 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 
 /***/ }),
 
-/***/ "2427":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "242e":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2147,6 +2147,17 @@ function isNil(value) {
 }
 
 module.exports = isNil;
+
+
+/***/ }),
+
+/***/ "282c":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldInput_vue_vue_type_style_index_0_id_9efcae42_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("1145");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldInput_vue_vue_type_style_index_0_id_9efcae42_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldInput_vue_vue_type_style_index_0_id_9efcae42_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
 
 
 /***/ }),
@@ -4438,17 +4449,6 @@ module.exports = function () {
 
 /***/ }),
 
-/***/ "57f5":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldInput_vue_vue_type_style_index_0_id_49b2633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ef59");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldInput_vue_vue_type_style_index_0_id_49b2633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldInput_vue_vue_type_style_index_0_id_49b2633c_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
 /***/ "585a":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5215,13 +5215,6 @@ module.exports = function (originalArray, length) {
 
 /***/ }),
 
-/***/ "6627":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "6747":
 /***/ (function(module, exports) {
 
@@ -5344,6 +5337,13 @@ module.exports = !construct || fails(function () {
     || called;
 }) ? isConstructorLegacy : isConstructorModern;
 
+
+/***/ }),
+
+/***/ "695b":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -5747,6 +5747,13 @@ module.exports = constant;
 
 /***/ }),
 
+/***/ "7362":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "73ac":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6002,17 +6009,6 @@ function arrayMap(array, iteratee) {
 }
 
 module.exports = arrayMap;
-
-
-/***/ }),
-
-/***/ "799f":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldRadios_vue_vue_type_style_index_0_id_06d2e38f_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("2427");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldRadios_vue_vue_type_style_index_0_id_06d2e38f_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldRadios_vue_vue_type_style_index_0_id_06d2e38f_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
 
 
 /***/ }),
@@ -8180,17 +8176,6 @@ module.exports = cloneSymbol;
 
 /***/ }),
 
-/***/ "a37b":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldUpload_vue_vue_type_style_index_0_id_5c9773ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("6627");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldUpload_vue_vue_type_style_index_0_id_5c9773ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldUpload_vue_vue_type_style_index_0_id_5c9773ac_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
 /***/ "a434":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8398,6 +8383,17 @@ function getAllKeys(object) {
 }
 
 module.exports = getAllKeys;
+
+
+/***/ }),
+
+/***/ "a9ac":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldRadios_vue_vue_type_style_index_0_id_63822522_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("695b");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldRadios_vue_vue_type_style_index_0_id_63822522_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldRadios_vue_vue_type_style_index_0_id_63822522_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
 
 
 /***/ }),
@@ -11923,13 +11919,6 @@ module.exports = function (target, name, descriptor) {
 
 /***/ }),
 
-/***/ "ef59":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "efb6":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12187,6 +12176,17 @@ module.exports = cloneArrayBuffer;
 
 /***/ }),
 
+/***/ "f94b":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldUpload_vue_vue_type_style_index_0_id_e7f76a28_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("7362");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldUpload_vue_vue_type_style_index_0_id_e7f76a28_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_fieldUpload_vue_vue_type_style_index_0_id_e7f76a28_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "fa21":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12282,7 +12282,7 @@ var web_dom_collections_for_each = __webpack_require__("159b");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/formGenerator.vue?vue&type=template&id=1cd39f02&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/formGenerator.vue?vue&type=template&id=af352ff2&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.schema != null)?_c('div',{staticClass:"vue-form-generator"},[_c('form-group',{attrs:{"tag":_vm.tag,"fields":_vm.fields,"model":_vm.model,"options":_vm.options,"errors":_vm.errors,"event-bus":_vm.eventBus},scopedSlots:_vm._u([{key:"group-legend",fn:function(ref){
 var group = ref.group;
 var groupLegend = ref.groupLegend;
@@ -12305,7 +12305,7 @@ return [_vm._t("errors",[_c('div',{staticClass:"errors help-block"},_vm._l((chil
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/formGenerator.vue?vue&type=template&id=1cd39f02&
+// CONCATENATED MODULE: ./src/formGenerator.vue?vue&type=template&id=af352ff2&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -16741,7 +16741,7 @@ var formElement_component = normalizeComponent(
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/formGenerator.vue?vue&type=script&lang=js&
 var cov_ko4rbab69 = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/formGenerator.vue",
-      hash = "8bdb060433ef767e1291370bddf7f532c47b86e4",
+      hash = "e054703e53a20308c9ca96684beba2173a0f11da",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -16750,701 +16750,701 @@ var cov_ko4rbab69 = function () {
     statementMap: {
       "0": {
         start: {
-          line: 113,
+          line: 111,
           column: 4
         },
         end: {
-          line: 113,
+          line: 111,
           column: 14
         }
       },
       "1": {
         start: {
-          line: 120,
+          line: 118,
           column: 4
         },
         end: {
-          line: 120,
+          line: 118,
           column: 14
         }
       },
       "2": {
         start: {
-          line: 127,
+          line: 125,
           column: 4
         },
         end: {
-          line: 133,
+          line: 131,
           column: 6
         }
       },
       "3": {
         start: {
-          line: 146,
+          line: 144,
           column: 4
         },
         end: {
-          line: 146,
+          line: 144,
           column: 28
         }
       },
       "4": {
         start: {
-          line: 152,
+          line: 150,
           column: 19
         },
         end: {
-          line: 152,
+          line: 150,
           column: 28
         }
       },
       "5": {
         start: {
-          line: 153,
+          line: 151,
           column: 2
         },
         end: {
-          line: 157,
+          line: 155,
           column: 4
         }
       },
       "6": {
         start: {
-          line: 162,
+          line: 160,
           column: 3
         },
         end: {
-          line: 164,
+          line: 162,
           column: 4
         }
       },
       "7": {
         start: {
-          line: 163,
+          line: 161,
           column: 4
         },
         end: {
-          line: 163,
+          line: 161,
           column: 30
         }
       },
       "8": {
         start: {
-          line: 172,
+          line: 170,
           column: 4
         },
         end: {
-          line: 175,
+          line: 173,
           column: 5
         }
       },
       "9": {
         start: {
-          line: 174,
+          line: 172,
           column: 5
         },
         end: {
-          line: 174,
+          line: 172,
           column: 12
         }
       },
       "10": {
         start: {
-          line: 177,
+          line: 175,
           column: 4
         },
         end: {
-          line: 186,
+          line: 184,
           column: 5
         }
       },
       "11": {
         start: {
-          line: 178,
+          line: 176,
           column: 5
         },
         end: {
-          line: 185,
+          line: 183,
           column: 8
         }
       },
       "12": {
         start: {
-          line: 180,
+          line: 178,
           column: 6
         },
         end: {
-          line: 184,
+          line: 182,
           column: 7
         }
       },
       "13": {
         start: {
-          line: 181,
+          line: 179,
           column: 7
         },
         end: {
-          line: 181,
+          line: 179,
           column: 48
         }
       },
       "14": {
         start: {
-          line: 183,
+          line: 181,
           column: 7
         },
         end: {
-          line: 183,
+          line: 181,
           column: 36
         }
       },
       "15": {
         start: {
-          line: 189,
+          line: 187,
           column: 4
         },
         end: {
-          line: 189,
+          line: 187,
           column: 16
         }
       },
       "16": {
         start: {
-          line: 196,
+          line: 194,
           column: 3
         },
         end: {
-          line: 196,
+          line: 194,
           column: 101
         }
       },
       "17": {
         start: {
-          line: 196,
+          line: 194,
           column: 44
         },
         end: {
-          line: 196,
+          line: 194,
           column: 101
         }
       },
       "18": {
         start: {
-          line: 197,
+          line: 195,
           column: 3
         },
         end: {
-          line: 197,
+          line: 195,
           column: 42
         }
       },
       "19": {
         start: {
-          line: 197,
+          line: 195,
           column: 30
         },
         end: {
-          line: 197,
+          line: 195,
           column: 42
         }
       },
       "20": {
         start: {
-          line: 198,
+          line: 196,
           column: 3
         },
         end: {
-          line: 198,
+          line: 196,
           column: 24
         }
       },
       "21": {
         start: {
-          line: 202,
+          line: 200,
           column: 3
         },
         end: {
-          line: 209,
+          line: 207,
           column: 4
         }
       },
       "22": {
         start: {
-          line: 203,
+          line: 201,
           column: 4
         },
         end: {
-          line: 208,
+          line: 206,
           column: 7
         }
       },
       "23": {
         start: {
-          line: 204,
+          line: 202,
           column: 5
         },
         end: {
-          line: 207,
+          line: 205,
           column: 8
         }
       },
       "24": {
         start: {
-          line: 215,
+          line: 213,
           column: 3
         },
         end: {
-          line: 215,
+          line: 213,
           column: 58
         }
       },
       "25": {
         start: {
-          line: 215,
+          line: 213,
           column: 43
         },
         end: {
-          line: 215,
+          line: 213,
           column: 56
         }
       },
       "26": {
         start: {
-          line: 217,
+          line: 215,
           column: 3
         },
         end: {
-          line: 217,
+          line: 215,
           column: 50
         }
       },
       "27": {
         start: {
-          line: 219,
+          line: 217,
           column: 17
         },
         end: {
-          line: 219,
+          line: 217,
           column: 41
         }
       },
       "28": {
         start: {
-          line: 220,
+          line: 218,
           column: 3
         },
         end: {
-          line: 220,
+          line: 218,
           column: 55
         }
       },
       "29": {
         start: {
-          line: 224,
+          line: 222,
           column: 3
         },
         end: {
-          line: 224,
+          line: 222,
           column: 47
         }
       },
       "30": {
         start: {
-          line: 229,
+          line: 227,
           column: 3
         },
         end: {
-          line: 269,
+          line: 267,
           column: 6
         }
       },
       "31": {
         start: {
-          line: 230,
+          line: 228,
           column: 4
         },
         end: {
-          line: 230,
+          line: 228,
           column: 33
         }
       },
       "32": {
         start: {
-          line: 232,
+          line: 230,
           column: 26
         },
         end: {
-          line: 232,
+          line: 230,
           column: 27
         }
       },
       "33": {
         start: {
-          line: 234,
+          line: 232,
           column: 21
         },
         end: {
-          line: 234,
+          line: 232,
           column: 23
         }
       },
       "34": {
         start: {
-          line: 236,
+          line: 234,
           column: 4
         },
         end: {
-          line: 240,
+          line: 238,
           column: 7
         }
       },
       "35": {
         start: {
-          line: 238,
+          line: 236,
           column: 5
         },
         end: {
-          line: 238,
+          line: 236,
           column: 69
         }
       },
       "36": {
         start: {
-          line: 239,
+          line: 237,
           column: 5
         },
         end: {
-          line: 239,
+          line: 237,
           column: 24
         }
       },
       "37": {
         start: {
-          line: 242,
+          line: 240,
           column: 20
         },
         end: {
-          line: 263,
+          line: 261,
           column: 5
         }
       },
       "38": {
         start: {
-          line: 243,
+          line: 241,
           column: 5
         },
         end: {
-          line: 243,
+          line: 241,
           column: 23
         }
       },
       "39": {
         start: {
-          line: 245,
+          line: 243,
           column: 5
         },
         end: {
-          line: 245,
+          line: 243,
           column: 51
         }
       },
       "40": {
         start: {
-          line: 247,
+          line: 245,
           column: 5
         },
         end: {
-          line: 262,
+          line: 260,
           column: 6
         }
       },
       "41": {
         start: {
-          line: 248,
+          line: 246,
           column: 6
         },
         end: {
-          line: 248,
+          line: 246,
           column: 53
         }
       },
       "42": {
         start: {
-          line: 249,
+          line: 247,
           column: 6
         },
         end: {
-          line: 251,
+          line: 249,
           column: 7
         }
       },
       "43": {
         start: {
-          line: 250,
+          line: 248,
           column: 7
         },
         end: {
-          line: 250,
+          line: 248,
           column: 67
         }
       },
       "44": {
         start: {
-          line: 252,
+          line: 250,
           column: 6
         },
         end: {
-          line: 252,
+          line: 250,
           column: 31
         }
       },
       "45": {
         start: {
-          line: 253,
+          line: 251,
           column: 20
         },
         end: {
-          line: 253,
+          line: 251,
           column: 43
         }
       },
       "46": {
         start: {
-          line: 254,
+          line: 252,
           column: 6
         },
         end: {
-          line: 254,
+          line: 252,
           column: 57
         }
       },
       "47": {
         start: {
-          line: 255,
+          line: 253,
           column: 6
         },
         end: {
-          line: 255,
+          line: 253,
           column: 70
         }
       },
       "48": {
         start: {
-          line: 257,
+          line: 255,
           column: 6
         },
         end: {
-          line: 261,
+          line: 259,
           column: 7
         }
       },
       "49": {
         start: {
-          line: 258,
+          line: 256,
           column: 7
         },
         end: {
-          line: 258,
+          line: 256,
           column: 17
         }
       },
       "50": {
         start: {
-          line: 260,
+          line: 258,
           column: 7
         },
         end: {
-          line: 260,
+          line: 258,
           column: 26
         }
       },
       "51": {
         start: {
-          line: 264,
+          line: 262,
           column: 4
         },
         end: {
-          line: 266,
+          line: 264,
           column: 5
         }
       },
       "52": {
         start: {
-          line: 265,
+          line: 263,
           column: 5
         },
         end: {
-          line: 265,
+          line: 263,
           column: 66
         }
       },
       "53": {
         start: {
-          line: 267,
+          line: 265,
           column: 4
         },
         end: {
-          line: 267,
+          line: 265,
           column: 50
         }
       },
       "54": {
         start: {
-          line: 268,
+          line: 266,
           column: 4
         },
         end: {
-          line: 268,
+          line: 266,
           column: 49
         }
       },
       "55": {
         start: {
-          line: 274,
+          line: 272,
           column: 3
         },
         end: {
-          line: 274,
+          line: 272,
           column: 25
         }
       },
       "56": {
         start: {
-          line: 275,
+          line: 273,
           column: 3
         },
         end: {
-          line: 275,
+          line: 273,
           column: 78
         }
       },
       "57": {
         start: {
-          line: 280,
+          line: 278,
           column: 2
         },
         end: {
-          line: 282,
+          line: 280,
           column: 3
         }
       },
       "58": {
         start: {
-          line: 281,
+          line: 279,
           column: 3
         },
         end: {
-          line: 281,
+          line: 279,
           column: 63
         }
       },
       "59": {
         start: {
-          line: 283,
+          line: 281,
           column: 2
         },
         end: {
-          line: 283,
+          line: 281,
           column: 58
         }
       },
       "60": {
         start: {
-          line: 284,
+          line: 282,
           column: 2
         },
         end: {
-          line: 284,
+          line: 282,
           column: 64
         }
       },
       "61": {
         start: {
-          line: 285,
+          line: 283,
           column: 2
         },
         end: {
-          line: 287,
+          line: 285,
           column: 5
         }
       },
       "62": {
         start: {
-          line: 286,
+          line: 284,
           column: 3
         },
         end: {
-          line: 286,
+          line: 284,
           column: 59
         }
       },
       "63": {
         start: {
-          line: 288,
+          line: 286,
           column: 2
         },
         end: {
-          line: 290,
+          line: 288,
           column: 5
         }
       },
       "64": {
         start: {
-          line: 289,
+          line: 287,
           column: 3
         },
         end: {
-          line: 289,
+          line: 287,
           column: 59
         }
       },
       "65": {
         start: {
-          line: 293,
+          line: 291,
           column: 2
         },
         end: {
-          line: 293,
+          line: 291,
           column: 40
         }
       },
       "66": {
         start: {
-          line: 294,
+          line: 292,
           column: 2
         },
         end: {
-          line: 294,
+          line: 292,
           column: 38
         }
       },
       "67": {
         start: {
-          line: 295,
+          line: 293,
           column: 2
         },
         end: {
-          line: 295,
+          line: 293,
           column: 50
         }
       },
       "68": {
         start: {
-          line: 296,
+          line: 294,
           column: 2
         },
         end: {
-          line: 296,
+          line: 294,
           column: 42
         }
       },
       "69": {
         start: {
-          line: 297,
+          line: 295,
           column: 2
         },
         end: {
-          line: 297,
+          line: 295,
           column: 44
         }
       }
@@ -17454,1221 +17454,1221 @@ var cov_ko4rbab69 = function () {
         name: "(anonymous_0)",
         decl: {
           start: {
-            line: 112,
+            line: 110,
             column: 3
           },
           end: {
-            line: 112,
+            line: 110,
             column: 4
           }
         },
         loc: {
           start: {
-            line: 112,
+            line: 110,
             column: 13
           },
           end: {
-            line: 114,
+            line: 112,
             column: 4
           }
         },
-        line: 112
+        line: 110
       },
       "1": {
         name: "(anonymous_1)",
         decl: {
           start: {
-            line: 119,
+            line: 117,
             column: 3
           },
           end: {
-            line: 119,
+            line: 117,
             column: 4
           }
         },
         loc: {
           start: {
-            line: 119,
+            line: 117,
             column: 13
           },
           end: {
-            line: 121,
+            line: 119,
             column: 4
           }
         },
-        line: 119
+        line: 117
       },
       "2": {
         name: "(anonymous_2)",
         decl: {
           start: {
-            line: 126,
+            line: 124,
             column: 3
           },
           end: {
-            line: 126,
+            line: 124,
             column: 4
           }
         },
         loc: {
           start: {
-            line: 126,
+            line: 124,
             column: 13
           },
           end: {
-            line: 134,
+            line: 132,
             column: 4
           }
         },
-        line: 126
+        line: 124
       },
       "3": {
         name: "(anonymous_3)",
         decl: {
           start: {
-            line: 145,
+            line: 143,
             column: 3
           },
           end: {
-            line: 145,
+            line: 143,
             column: 4
           }
         },
         loc: {
           start: {
-            line: 145,
+            line: 143,
             column: 20
           },
           end: {
-            line: 147,
+            line: 145,
             column: 4
           }
         },
-        line: 145
+        line: 143
       },
       "4": {
         name: "(anonymous_4)",
         decl: {
           start: {
-            line: 151,
+            line: 149,
             column: 1
           },
           end: {
-            line: 151,
+            line: 149,
             column: 2
           }
         },
         loc: {
           start: {
-            line: 151,
+            line: 149,
             column: 8
           },
           end: {
-            line: 158,
+            line: 156,
             column: 2
           }
         },
-        line: 151
+        line: 149
       },
       "5": {
         name: "(anonymous_5)",
         decl: {
           start: {
-            line: 161,
+            line: 159,
             column: 2
           },
           end: {
-            line: 161,
+            line: 159,
             column: 3
           }
         },
         loc: {
           start: {
-            line: 161,
+            line: 159,
             column: 11
           },
           end: {
-            line: 165,
+            line: 163,
             column: 3
           }
         },
-        line: 161
+        line: 159
       },
       "6": {
         name: "(anonymous_6)",
         decl: {
           start: {
-            line: 171,
+            line: 169,
             column: 3
           },
           end: {
-            line: 171,
+            line: 169,
             column: 4
           }
         },
         loc: {
           start: {
-            line: 171,
+            line: 169,
             column: 31
           },
           end: {
-            line: 187,
+            line: 185,
             column: 4
           }
         },
-        line: 171
+        line: 169
       },
       "7": {
         name: "(anonymous_7)",
         decl: {
           start: {
-            line: 178,
+            line: 176,
             column: 20
           },
           end: {
-            line: 178,
+            line: 176,
             column: 21
           }
         },
         loc: {
           start: {
-            line: 178,
+            line: 176,
             column: 26
           },
           end: {
-            line: 185,
+            line: 183,
             column: 6
           }
         },
-        line: 178
+        line: 176
       },
       "8": {
         name: "(anonymous_8)",
         decl: {
           start: {
-            line: 181,
+            line: 179,
             column: 28
           },
           end: {
-            line: 181,
+            line: 179,
             column: 29
           }
         },
         loc: {
           start: {
-            line: 181,
+            line: 179,
             column: 34
           },
           end: {
-            line: 181,
+            line: 179,
             column: 36
           }
         },
-        line: 181
+        line: 179
       },
       "9": {
         name: "(anonymous_9)",
         decl: {
           start: {
-            line: 181,
+            line: 179,
             column: 38
           },
           end: {
-            line: 181,
+            line: 179,
             column: 39
           }
         },
         loc: {
           start: {
-            line: 181,
+            line: 179,
             column: 44
           },
           end: {
-            line: 181,
+            line: 179,
             column: 46
           }
         },
-        line: 181
+        line: 179
       },
       "10": {
         name: "(anonymous_10)",
         decl: {
           start: {
-            line: 188,
+            line: 186,
             column: 14
           },
           end: {
-            line: 188,
+            line: 186,
             column: 15
           }
         },
         loc: {
           start: {
-            line: 188,
+            line: 186,
             column: 20
           },
           end: {
-            line: 190,
+            line: 188,
             column: 4
           }
         },
-        line: 188
+        line: 186
       },
       "11": {
         name: "(anonymous_11)",
         decl: {
           start: {
-            line: 195,
+            line: 193,
             column: 2
           },
           end: {
-            line: 195,
+            line: 193,
             column: 3
           }
         },
         loc: {
           start: {
-            line: 195,
+            line: 193,
             column: 22
+          },
+          end: {
+            line: 197,
+            column: 3
+          }
+        },
+        line: 193
+      },
+      "12": {
+        name: "(anonymous_12)",
+        decl: {
+          start: {
+            line: 199,
+            column: 2
           },
           end: {
             line: 199,
             column: 3
           }
         },
-        line: 195
-      },
-      "12": {
-        name: "(anonymous_12)",
-        decl: {
-          start: {
-            line: 201,
-            column: 2
-          },
-          end: {
-            line: 201,
-            column: 3
-          }
-        },
         loc: {
           start: {
-            line: 201,
+            line: 199,
             column: 39
           },
           end: {
-            line: 210,
+            line: 208,
             column: 3
           }
         },
-        line: 201
+        line: 199
       },
       "13": {
         name: "(anonymous_13)",
         decl: {
           start: {
-            line: 203,
+            line: 201,
             column: 24
           },
           end: {
-            line: 203,
+            line: 201,
             column: 25
           }
         },
         loc: {
           start: {
-            line: 203,
+            line: 201,
             column: 35
           },
           end: {
-            line: 208,
+            line: 206,
             column: 5
           }
         },
-        line: 203
+        line: 201
       },
       "14": {
         name: "(anonymous_14)",
         decl: {
           start: {
-            line: 213,
+            line: 211,
             column: 2
           },
           end: {
-            line: 213,
+            line: 211,
             column: 3
           }
         },
         loc: {
           start: {
-            line: 213,
+            line: 211,
             column: 51
+          },
+          end: {
+            line: 219,
+            column: 3
+          }
+        },
+        line: 211
+      },
+      "15": {
+        name: "(anonymous_15)",
+        decl: {
+          start: {
+            line: 213,
+            column: 36
+          },
+          end: {
+            line: 213,
+            column: 37
+          }
+        },
+        loc: {
+          start: {
+            line: 213,
+            column: 43
+          },
+          end: {
+            line: 213,
+            column: 56
+          }
+        },
+        line: 213
+      },
+      "16": {
+        name: "(anonymous_16)",
+        decl: {
+          start: {
+            line: 221,
+            column: 2
           },
           end: {
             line: 221,
             column: 3
           }
         },
-        line: 213
-      },
-      "15": {
-        name: "(anonymous_15)",
-        decl: {
-          start: {
-            line: 215,
-            column: 36
-          },
-          end: {
-            line: 215,
-            column: 37
-          }
-        },
         loc: {
           start: {
-            line: 215,
-            column: 43
-          },
-          end: {
-            line: 215,
-            column: 56
-          }
-        },
-        line: 215
-      },
-      "16": {
-        name: "(anonymous_16)",
-        decl: {
-          start: {
-            line: 223,
-            column: 2
-          },
-          end: {
-            line: 223,
-            column: 3
-          }
-        },
-        loc: {
-          start: {
-            line: 223,
+            line: 221,
             column: 33
           },
           end: {
-            line: 225,
+            line: 223,
             column: 3
           }
         },
-        line: 223
+        line: 221
       },
       "17": {
         name: "(anonymous_17)",
         decl: {
           start: {
-            line: 228,
+            line: 226,
             column: 2
           },
           end: {
-            line: 228,
+            line: 226,
             column: 3
           }
         },
         loc: {
           start: {
-            line: 228,
+            line: 226,
             column: 13
           },
           end: {
-            line: 270,
+            line: 268,
             column: 3
           }
         },
-        line: 228
+        line: 226
       },
       "18": {
         name: "(anonymous_18)",
         decl: {
           start: {
-            line: 229,
+            line: 227,
             column: 22
           },
           end: {
-            line: 229,
+            line: 227,
             column: 23
           }
         },
         loc: {
           start: {
-            line: 229,
+            line: 227,
             column: 43
           },
           end: {
-            line: 269,
+            line: 267,
             column: 4
           }
         },
-        line: 229
+        line: 227
       },
       "19": {
         name: "(anonymous_19)",
         decl: {
           start: {
-            line: 236,
+            line: 234,
             column: 45
           },
           end: {
-            line: 236,
+            line: 234,
             column: 46
           }
         },
         loc: {
           start: {
-            line: 236,
+            line: 234,
             column: 51
           },
           end: {
-            line: 240,
+            line: 238,
             column: 5
           }
         },
-        line: 236
+        line: 234
       },
       "20": {
         name: "(anonymous_20)",
         decl: {
           start: {
-            line: 242,
+            line: 240,
             column: 20
           },
           end: {
-            line: 242,
+            line: 240,
             column: 21
           }
         },
         loc: {
           start: {
-            line: 242,
+            line: 240,
             column: 51
           },
           end: {
-            line: 263,
+            line: 261,
             column: 5
           }
         },
-        line: 242
+        line: 240
       },
       "21": {
         name: "(anonymous_21)",
         decl: {
           start: {
-            line: 273,
+            line: 271,
             column: 2
           },
           end: {
-            line: 273,
+            line: 271,
             column: 3
           }
         },
         loc: {
           start: {
-            line: 273,
+            line: 271,
             column: 26
           },
           end: {
-            line: 276,
+            line: 274,
             column: 3
           }
         },
-        line: 273
+        line: 271
       },
       "22": {
         name: "(anonymous_22)",
         decl: {
           start: {
-            line: 279,
+            line: 277,
             column: 1
           },
           end: {
-            line: 279,
+            line: 277,
             column: 2
           }
         },
         loc: {
           start: {
-            line: 279,
+            line: 277,
             column: 11
           },
           end: {
-            line: 291,
+            line: 289,
             column: 2
           }
         },
-        line: 279
+        line: 277
       },
       "23": {
         name: "(anonymous_23)",
         decl: {
           start: {
-            line: 285,
+            line: 283,
             column: 41
           },
           end: {
-            line: 285,
+            line: 283,
             column: 42
           }
         },
         loc: {
           start: {
-            line: 285,
+            line: 283,
             column: 47
           },
           end: {
-            line: 287,
+            line: 285,
             column: 3
           }
         },
-        line: 285
+        line: 283
       },
       "24": {
         name: "(anonymous_24)",
         decl: {
           start: {
-            line: 288,
+            line: 286,
             column: 43
           },
           end: {
-            line: 288,
+            line: 286,
             column: 44
           }
         },
         loc: {
           start: {
-            line: 288,
+            line: 286,
             column: 49
           },
           end: {
-            line: 290,
+            line: 288,
             column: 3
           }
         },
-        line: 288
+        line: 286
       },
       "25": {
         name: "(anonymous_25)",
         decl: {
           start: {
-            line: 292,
+            line: 290,
             column: 1
           },
           end: {
-            line: 292,
+            line: 290,
             column: 2
           }
         },
         loc: {
           start: {
-            line: 292,
+            line: 290,
             column: 17
           },
           end: {
-            line: 298,
+            line: 296,
             column: 2
           }
         },
-        line: 292
+        line: 290
       }
     },
     branchMap: {
       "0": {
         loc: {
           start: {
-            line: 162,
+            line: 160,
             column: 3
           },
           end: {
-            line: 164,
+            line: 162,
             column: 4
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 162,
+            line: 160,
             column: 3
           },
           end: {
-            line: 164,
+            line: 162,
             column: 4
           }
         }, {
           start: {
-            line: 162,
+            line: 160,
             column: 3
           },
           end: {
-            line: 164,
+            line: 162,
             column: 4
           }
         }],
-        line: 162
+        line: 160
       },
       "1": {
         loc: {
           start: {
-            line: 162,
+            line: 160,
             column: 7
           },
           end: {
-            line: 162,
+            line: 160,
             column: 40
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 162,
+            line: 160,
             column: 7
           },
           end: {
-            line: 162,
+            line: 160,
             column: 18
           }
         }, {
           start: {
-            line: 162,
+            line: 160,
             column: 22
           },
           end: {
-            line: 162,
+            line: 160,
             column: 40
           }
         }],
-        line: 162
+        line: 160
       },
       "2": {
         loc: {
           start: {
-            line: 172,
+            line: 170,
             column: 4
           },
           end: {
-            line: 175,
+            line: 173,
             column: 5
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 172,
+            line: 170,
             column: 4
           },
           end: {
-            line: 175,
+            line: 173,
             column: 5
           }
         }, {
           start: {
-            line: 172,
+            line: 170,
             column: 4
           },
           end: {
-            line: 175,
+            line: 173,
             column: 5
           }
         }],
-        line: 172
+        line: 170
       },
       "3": {
         loc: {
           start: {
-            line: 177,
+            line: 175,
             column: 4
           },
           end: {
-            line: 186,
+            line: 184,
             column: 5
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 177,
+            line: 175,
             column: 4
           },
           end: {
-            line: 186,
+            line: 184,
             column: 5
           }
         }, {
           start: {
-            line: 177,
+            line: 175,
             column: 4
           },
           end: {
-            line: 186,
+            line: 184,
             column: 5
           }
         }],
-        line: 177
+        line: 175
       },
       "4": {
         loc: {
           start: {
-            line: 180,
+            line: 178,
             column: 6
           },
           end: {
-            line: 184,
+            line: 182,
             column: 7
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 180,
+            line: 178,
             column: 6
           },
           end: {
-            line: 184,
+            line: 182,
             column: 7
           }
         }, {
           start: {
-            line: 180,
+            line: 178,
             column: 6
           },
           end: {
-            line: 184,
+            line: 182,
             column: 7
           }
         }],
-        line: 180
+        line: 178
       },
       "5": {
         loc: {
           start: {
-            line: 180,
+            line: 178,
             column: 10
           },
           end: {
-            line: 180,
+            line: 178,
             column: 77
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 180,
+            line: 178,
             column: 10
           },
           end: {
-            line: 180,
+            line: 178,
             column: 49
           }
         }, {
           start: {
-            line: 180,
+            line: 178,
             column: 53
           },
           end: {
-            line: 180,
+            line: 178,
             column: 77
           }
         }],
-        line: 180
+        line: 178
       },
       "6": {
         loc: {
           start: {
-            line: 196,
+            line: 194,
             column: 3
           },
           end: {
-            line: 196,
+            line: 194,
             column: 101
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 196,
+            line: 194,
             column: 3
           },
           end: {
-            line: 196,
+            line: 194,
             column: 101
           }
         }, {
           start: {
-            line: 196,
+            line: 194,
             column: 3
           },
           end: {
-            line: 196,
+            line: 194,
             column: 101
           }
         }],
-        line: 196
+        line: 194
       },
       "7": {
         loc: {
           start: {
-            line: 197,
+            line: 195,
             column: 3
           },
           end: {
-            line: 197,
+            line: 195,
             column: 42
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 197,
+            line: 195,
             column: 3
           },
           end: {
-            line: 197,
+            line: 195,
             column: 42
           }
         }, {
           start: {
-            line: 197,
+            line: 195,
             column: 3
           },
           end: {
-            line: 197,
+            line: 195,
             column: 42
           }
         }],
-        line: 197
+        line: 195
       },
       "8": {
         loc: {
           start: {
-            line: 202,
+            line: 200,
             column: 3
           },
           end: {
-            line: 209,
+            line: 207,
             column: 4
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 202,
+            line: 200,
             column: 3
           },
           end: {
-            line: 209,
+            line: 207,
             column: 4
           }
         }, {
           start: {
-            line: 202,
+            line: 200,
             column: 3
           },
           end: {
-            line: 209,
+            line: 207,
             column: 4
           }
         }],
-        line: 202
+        line: 200
       },
       "9": {
         loc: {
           start: {
-            line: 202,
+            line: 200,
             column: 7
           },
           end: {
-            line: 202,
+            line: 200,
             column: 59
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 202,
+            line: 200,
             column: 7
           },
           end: {
-            line: 202,
+            line: 200,
             column: 33
           }
         }, {
           start: {
-            line: 202,
+            line: 200,
             column: 37
           },
           end: {
-            line: 202,
+            line: 200,
             column: 59
           }
         }],
-        line: 202
+        line: 200
       },
       "10": {
         loc: {
           start: {
-            line: 247,
+            line: 245,
             column: 5
           },
           end: {
-            line: 262,
+            line: 260,
             column: 6
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 247,
+            line: 245,
             column: 5
           },
           end: {
-            line: 262,
+            line: 260,
             column: 6
           }
         }, {
           start: {
-            line: 247,
+            line: 245,
             column: 5
           },
           end: {
-            line: 262,
+            line: 260,
             column: 6
           }
         }],
-        line: 247
+        line: 245
       },
       "11": {
         loc: {
           start: {
-            line: 249,
+            line: 247,
             column: 6
           },
           end: {
-            line: 251,
+            line: 249,
             column: 7
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 249,
+            line: 247,
             column: 6
           },
           end: {
-            line: 251,
+            line: 249,
             column: 7
           }
         }, {
           start: {
-            line: 249,
+            line: 247,
             column: 6
           },
           end: {
-            line: 251,
+            line: 249,
             column: 7
           }
         }],
-        line: 249
+        line: 247
       },
       "12": {
         loc: {
           start: {
-            line: 249,
+            line: 247,
             column: 10
           },
           end: {
-            line: 249,
+            line: 247,
             column: 52
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 249,
+            line: 247,
             column: 10
           },
           end: {
-            line: 249,
+            line: 247,
             column: 43
           }
         }, {
           start: {
-            line: 249,
+            line: 247,
             column: 47
           },
           end: {
-            line: 249,
+            line: 247,
             column: 52
           }
         }],
-        line: 249
+        line: 247
       },
       "13": {
         loc: {
           start: {
-            line: 257,
+            line: 255,
             column: 6
           },
           end: {
-            line: 261,
+            line: 259,
             column: 7
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 257,
+            line: 255,
             column: 6
           },
           end: {
-            line: 261,
+            line: 259,
             column: 7
           }
         }, {
           start: {
-            line: 257,
+            line: 255,
             column: 6
           },
           end: {
-            line: 261,
+            line: 259,
             column: 7
           }
         }],
-        line: 257
+        line: 255
       },
       "14": {
         loc: {
           start: {
-            line: 264,
+            line: 262,
             column: 4
           },
           end: {
-            line: 266,
+            line: 264,
             column: 5
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 264,
+            line: 262,
             column: 4
           },
           end: {
-            line: 266,
+            line: 264,
             column: 5
           }
         }, {
           start: {
-            line: 264,
+            line: 262,
             column: 4
           },
           end: {
-            line: 266,
+            line: 264,
             column: 5
           }
         }],
-        line: 264
+        line: 262
       },
       "15": {
         loc: {
           start: {
-            line: 264,
+            line: 262,
             column: 8
           },
           end: {
-            line: 264,
+            line: 262,
             column: 50
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 264,
+            line: 262,
             column: 8
           },
           end: {
-            line: 264,
+            line: 262,
             column: 41
           }
         }, {
           start: {
-            line: 264,
+            line: 262,
             column: 45
           },
           end: {
-            line: 264,
+            line: 262,
             column: 50
           }
         }],
-        line: 264
+        line: 262
       },
       "16": {
         loc: {
           start: {
-            line: 280,
+            line: 278,
             column: 2
           },
           end: {
-            line: 282,
+            line: 280,
             column: 3
           }
         },
         type: "if",
         locations: [{
           start: {
-            line: 280,
+            line: 278,
             column: 2
           },
           end: {
-            line: 282,
+            line: 280,
             column: 3
           }
         }, {
           start: {
-            line: 280,
+            line: 278,
             column: 2
           },
           end: {
-            line: 282,
+            line: 280,
             column: 3
           }
         }],
-        line: 280
+        line: 278
       },
       "17": {
         loc: {
           start: {
-            line: 280,
+            line: 278,
             column: 6
           },
           end: {
-            line: 280,
+            line: 278,
             column: 48
           }
         },
         type: "binary-expr",
         locations: [{
           start: {
-            line: 280,
+            line: 278,
             column: 6
           },
           end: {
-            line: 280,
+            line: 278,
             column: 39
           }
         }, {
           start: {
-            line: 280,
+            line: 278,
             column: 43
           },
           end: {
-            line: 280,
+            line: 278,
             column: 48
           }
         }],
-        line: 280
+        line: 278
       }
     },
     s: {
@@ -18808,8 +18808,6 @@ var cov_ko4rbab69 = function () {
 
 
 
-//
-//
 //
 //
 //
@@ -24035,12 +24033,12 @@ Object.keys(validators).forEach(function (name) {
   }
 });
 /* harmony default export */ var utils_validators = (validators);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldCheckbox.vue?vue&type=template&id=4375ac16&
-var fieldCheckboxvue_type_template_id_4375ac16_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"},{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":"checkbox","autocomplete":_vm.fieldOptions.autocomplete,"disabled":_vm.disabled,"name":_vm.inputName,"required":_vm.required},domProps:{"checked":Array.isArray(_vm.value)?_vm._i(_vm.value,null)>-1:(_vm.value)},on:{"change":function($event){var $$a=_vm.value,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.value=$$a.concat([$$v]))}else{$$i>-1&&(_vm.value=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}}else{_vm.value=$$c}}}})}
-var fieldCheckboxvue_type_template_id_4375ac16_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldCheckbox.vue?vue&type=template&id=a64e9410&
+var fieldCheckboxvue_type_template_id_a64e9410_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"},{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":"checkbox","autocomplete":_vm.schema.autocomplete,"disabled":_vm.disabled,"name":_vm.inputName,"required":_vm.required},domProps:{"checked":Array.isArray(_vm.value)?_vm._i(_vm.value,null)>-1:(_vm.value)},on:{"change":function($event){var $$a=_vm.value,$$el=$event.target,$$c=$$el.checked?(true):(false);if(Array.isArray($$a)){var $$v=null,$$i=_vm._i($$a,$$v);if($$el.checked){$$i<0&&(_vm.value=$$a.concat([$$v]))}else{$$i>-1&&(_vm.value=$$a.slice(0,$$i).concat($$a.slice($$i+1)))}}else{_vm.value=$$c}}}})}
+var fieldCheckboxvue_type_template_id_a64e9410_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldCheckbox.vue?vue&type=template&id=4375ac16&
+// CONCATENATED MODULE: ./src/fields/core/fieldCheckbox.vue?vue&type=template&id=a64e9410&
 
 // EXTERNAL MODULE: ./node_modules/lodash/uniqueId.js
 var uniqueId = __webpack_require__("98dc");
@@ -28298,8 +28296,8 @@ var fieldCheckboxvue_type_style_index_0_lang_css_ = __webpack_require__("0370");
 
 var fieldCheckbox_component = normalizeComponent(
   core_fieldCheckboxvue_type_script_lang_js_,
-  fieldCheckboxvue_type_template_id_4375ac16_render,
-  fieldCheckboxvue_type_template_id_4375ac16_staticRenderFns,
+  fieldCheckboxvue_type_template_id_a64e9410_render,
+  fieldCheckboxvue_type_template_id_a64e9410_staticRenderFns,
   false,
   null,
   null,
@@ -28308,12 +28306,12 @@ var fieldCheckbox_component = normalizeComponent(
 )
 
 /* harmony default export */ var fieldCheckbox = (fieldCheckbox_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldChecklist.vue?vue&type=template&id=14f93438&
-var fieldChecklistvue_type_template_id_14f93438_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"wrapper"},[(_vm.useListBox)?_c('div',{staticClass:"listbox form-control",attrs:{"disabled":_vm.disabled}},_vm._l((_vm.items),function(item){return _c('div',{key:_vm.getItemValue(item),staticClass:"list-row",class:{'is-checked': _vm.isItemChecked(item)}},[_c('label',[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],attrs:{"id":_vm.fieldID,"type":"checkbox","disabled":_vm.disabled,"name":_vm.getInputName(item)},domProps:{"checked":_vm.isItemChecked(item)},on:{"change":function($event){_vm.onChanged($event, item)}}}),_vm._v(_vm._s(_vm.getItemName(item))+"\n\t\t\t")])])})):_vm._e(),_vm._v(" "),(!_vm.useListBox)?_c('div',{staticClass:"combobox form-control",attrs:{"disabled":_vm.disabled}},[_c('div',{staticClass:"mainRow",class:{ expanded: _vm.comboExpanded },on:{"click":_vm.onExpandCombo}},[_c('div',{staticClass:"info"},[_vm._v(" "+_vm._s(_vm.selectedCount)+" selected")]),_vm._v(" "),_c('div',{staticClass:"arrow"})]),_vm._v(" "),_c('div',{staticClass:"dropList"},_vm._l((_vm.items),function(item){return (_vm.comboExpanded)?_c('div',{key:_vm.getItemValue(item),staticClass:"list-row",class:{'is-checked': _vm.isItemChecked(item)}},[_c('label',[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],attrs:{"id":_vm.fieldID,"type":"checkbox","disabled":_vm.disabled,"name":_vm.getInputName(item)},domProps:{"checked":_vm.isItemChecked(item)},on:{"change":function($event){_vm.onChanged($event, item)}}}),_vm._v("\n\t\t\t\t\t"+_vm._s(_vm.getItemName(item))+"\n\t\t\t\t")])]):_vm._e()}))]):_vm._e()])}
-var fieldChecklistvue_type_template_id_14f93438_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldChecklist.vue?vue&type=template&id=fbd1c3ca&
+var fieldChecklistvue_type_template_id_fbd1c3ca_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"wrapper"},[(_vm.useListBox)?_c('div',{staticClass:"listbox form-control",attrs:{"disabled":_vm.disabled}},_vm._l((_vm.items),function(item){return _c('div',{key:_vm.getItemValue(item),staticClass:"list-row",class:{'is-checked': _vm.isItemChecked(item)}},[_c('label',[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],attrs:{"id":_vm.fieldID,"type":"checkbox","disabled":_vm.disabled,"name":_vm.getInputName(item)},domProps:{"checked":_vm.isItemChecked(item)},on:{"change":function($event){_vm.onChanged($event, item)}}}),_vm._v(_vm._s(_vm.getItemName(item))+"\n\t\t\t")])])})):_vm._e(),_vm._v(" "),(!_vm.useListBox)?_c('div',{staticClass:"combobox form-control",attrs:{"disabled":_vm.disabled}},[_c('div',{staticClass:"mainRow",class:{ expanded: _vm.comboExpanded },on:{"click":_vm.onExpandCombo}},[_c('div',{staticClass:"info"},[_vm._v(" "+_vm._s(_vm.selectedCount)+" selected")]),_vm._v(" "),_c('div',{staticClass:"arrow"})]),_vm._v(" "),_c('div',{staticClass:"dropList"},_vm._l((_vm.items),function(item){return (_vm.comboExpanded)?_c('div',{key:_vm.getItemValue(item),staticClass:"list-row",class:{'is-checked': _vm.isItemChecked(item)}},[_c('label',[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],attrs:{"id":_vm.fieldID,"type":"checkbox","disabled":_vm.disabled,"name":_vm.getInputName(item)},domProps:{"checked":_vm.isItemChecked(item)},on:{"change":function($event){_vm.onChanged($event, item)}}}),_vm._v("\n\t\t\t\t\t"+_vm._s(_vm.getItemName(item))+"\n\t\t\t\t")])]):_vm._e()}))]):_vm._e()])}
+var fieldChecklistvue_type_template_id_fbd1c3ca_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldChecklist.vue?vue&type=template&id=14f93438&
+// CONCATENATED MODULE: ./src/fields/core/fieldChecklist.vue?vue&type=template&id=fbd1c3ca&
 
 // EXTERNAL MODULE: ./node_modules/lodash/clone.js
 var clone = __webpack_require__("b8ce");
@@ -28322,7 +28320,7 @@ var clone_default = /*#__PURE__*/__webpack_require__.n(clone);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldChecklist.vue?vue&type=script&lang=js&
 var cov_mnpsrsw47 = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/core/fieldChecklist.vue",
-      hash = "3085cfa77fdb8cb7446c8d5aaf0d30f0c938184c",
+      hash = "e64da9cb0572c10c82eac551fd341935035b713a",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -28416,7 +28414,7 @@ var cov_mnpsrsw47 = function () {
         },
         end: {
           line: 82,
-          column: 36
+          column: 30
         }
       },
       "9": {
@@ -28476,7 +28474,7 @@ var cov_mnpsrsw47 = function () {
         },
         end: {
           line: 97,
-          column: 42
+          column: 36
         }
       },
       "15": {
@@ -28506,7 +28504,7 @@ var cov_mnpsrsw47 = function () {
         },
         end: {
           line: 102,
-          column: 243
+          column: 237
         }
       },
       "18": {
@@ -28546,7 +28544,7 @@ var cov_mnpsrsw47 = function () {
         },
         end: {
           line: 112,
-          column: 41
+          column: 35
         }
       },
       "22": {
@@ -28576,7 +28574,7 @@ var cov_mnpsrsw47 = function () {
         },
         end: {
           line: 117,
-          column: 241
+          column: 235
         }
       },
       "25": {
@@ -29548,7 +29546,7 @@ var cov_mnpsrsw47 = function () {
     useListBox: function useListBox() {
       cov_mnpsrsw47.f[3]++;
       cov_mnpsrsw47.s[8]++;
-      return this.fieldOptions.listBox;
+      return this.schema.listBox;
     }
   },
   methods: {
@@ -29575,10 +29573,10 @@ var cov_mnpsrsw47 = function () {
         cov_mnpsrsw47.b[4][0]++;
         cov_mnpsrsw47.s[13]++;
 
-        if (typeof this.fieldOptions["value"] !== "undefined") {
+        if (typeof this.schema["value"] !== "undefined") {
           cov_mnpsrsw47.b[5][0]++;
           cov_mnpsrsw47.s[14]++;
-          return item[this.fieldOptions.value];
+          return item[this.schema.value];
         } else {
           cov_mnpsrsw47.b[5][1]++;
           cov_mnpsrsw47.s[15]++;
@@ -29590,7 +29588,7 @@ var cov_mnpsrsw47 = function () {
           } else {
             cov_mnpsrsw47.b[6][1]++;
             cov_mnpsrsw47.s[17]++;
-            throw "`value` is not defined. If you want to use another key name, add a `value` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
+            throw "`value` is not defined. If you want to use another key name, add a `value` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
           }
         }
       } else {
@@ -29607,10 +29605,10 @@ var cov_mnpsrsw47 = function () {
         cov_mnpsrsw47.b[7][0]++;
         cov_mnpsrsw47.s[20]++;
 
-        if (typeof this.fieldOptions["name"] !== "undefined") {
+        if (typeof this.schema["name"] !== "undefined") {
           cov_mnpsrsw47.b[8][0]++;
           cov_mnpsrsw47.s[21]++;
-          return item[this.fieldOptions.name];
+          return item[this.schema.name];
         } else {
           cov_mnpsrsw47.b[8][1]++;
           cov_mnpsrsw47.s[22]++;
@@ -29622,7 +29620,7 @@ var cov_mnpsrsw47 = function () {
           } else {
             cov_mnpsrsw47.b[9][1]++;
             cov_mnpsrsw47.s[24]++;
-            throw "`name` is not defined. If you want to use another key name, add a `name` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
+            throw "`name` is not defined. If you want to use another key name, add a `name` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/checklist.html#checklist-field-with-object-values";
           }
         }
       } else {
@@ -29696,8 +29694,8 @@ var fieldChecklistvue_type_style_index_0_lang_css_ = __webpack_require__("932d")
 
 var fieldChecklist_component = normalizeComponent(
   core_fieldChecklistvue_type_script_lang_js_,
-  fieldChecklistvue_type_template_id_14f93438_render,
-  fieldChecklistvue_type_template_id_14f93438_staticRenderFns,
+  fieldChecklistvue_type_template_id_fbd1c3ca_render,
+  fieldChecklistvue_type_template_id_fbd1c3ca_staticRenderFns,
   false,
   null,
   null,
@@ -29706,17 +29704,17 @@ var fieldChecklist_component = normalizeComponent(
 )
 
 /* harmony default export */ var fieldChecklist = (fieldChecklist_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldInput.vue?vue&type=template&id=49b2633c&scoped=true&
-var fieldInputvue_type_template_id_49b2633c_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"wrapper"},[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":_vm.inputType,"disabled":_vm.disabled,"accept":_vm.fieldOptions.accept,"alt":_vm.fieldOptions.alt,"autocomplete":_vm.fieldOptions.autocomplete,"dirname":_vm.fieldOptions.dirname,"formaction":_vm.fieldOptions.formaction,"formenctype":_vm.fieldOptions.formenctype,"formmethod":_vm.fieldOptions.formmethod,"formnovalidate":_vm.fieldOptions.formnovalidate,"formtarget":_vm.fieldOptions.formtarget,"height":_vm.fieldOptions.height,"list":_vm.fieldOptions.list,"max":_vm.fieldOptions.max,"maxlength":_vm.fieldOptions.maxlength,"min":_vm.fieldOptions.min,"minlength":_vm.fieldOptions.minlength,"multiple":_vm.fieldOptions.multiple,"name":_vm.inputName,"pattern":_vm.fieldOptions.pattern,"placeholder":_vm.placeholder,"readonly":_vm.readonly,"required":_vm.schema.required,"size":_vm.fieldOptions.size,"src":_vm.fieldOptions.src,"step":_vm.fieldOptions.step,"width":_vm.fieldOptions.width,"files":_vm.fieldOptions.files},domProps:{"value":_vm.value,"checked":_vm.fieldOptions.checked},on:{"input":_vm.onInput,"blur":_vm.onBlur,"change":function($event){_vm.schema.onChange || null}}}),_vm._v(" "),(_vm.inputType === 'color' || _vm.inputType === 'range')?_c('span',{staticClass:"helper",domProps:{"textContent":_vm._s(_vm.value)}}):_vm._e()])}
-var fieldInputvue_type_template_id_49b2633c_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldInput.vue?vue&type=template&id=9efcae42&scoped=true&
+var fieldInputvue_type_template_id_9efcae42_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"wrapper"},[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":_vm.inputType,"disabled":_vm.disabled,"accept":_vm.schema.accept,"alt":_vm.schema.alt,"autocomplete":_vm.schema.autocomplete,"dirname":_vm.schema.dirname,"formaction":_vm.schema.formaction,"formenctype":_vm.schema.formenctype,"formmethod":_vm.schema.formmethod,"formnovalidate":_vm.schema.formnovalidate,"formtarget":_vm.schema.formtarget,"height":_vm.schema.height,"list":_vm.schema.list,"max":_vm.schema.max,"maxlength":_vm.schema.maxlength,"min":_vm.schema.min,"minlength":_vm.schema.minlength,"multiple":_vm.schema.multiple,"name":_vm.inputName,"pattern":_vm.schema.pattern,"placeholder":_vm.placeholder,"readonly":_vm.readonly,"required":_vm.schema.required,"size":_vm.schema.size,"src":_vm.schema.src,"step":_vm.schema.step,"width":_vm.schema.width,"files":_vm.schema.files},domProps:{"value":_vm.value,"checked":_vm.schema.checked},on:{"input":_vm.onInput,"blur":_vm.onBlur,"change":function($event){_vm.schema.onChange || null}}}),_vm._v(" "),(_vm.inputType === 'color' || _vm.inputType === 'range')?_c('span',{staticClass:"helper",domProps:{"textContent":_vm._s(_vm.value)}}):_vm._e()])}
+var fieldInputvue_type_template_id_9efcae42_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldInput.vue?vue&type=template&id=49b2633c&scoped=true&
+// CONCATENATED MODULE: ./src/fields/core/fieldInput.vue?vue&type=template&id=9efcae42&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldInput.vue?vue&type=script&lang=js&
 var cov_2k4lw3gom3 = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/core/fieldInput.vue",
-      hash = "2b7911d0d9a0a716a8ee29ef00d0f25d39edc496",
+      hash = "fd716910fd5933a55f48583bba965246bb564c7c",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -29750,7 +29748,7 @@ var cov_2k4lw3gom3 = function () {
         },
         end: {
           line: 64,
-          column: 53
+          column: 47
         }
       },
       "3": {
@@ -29760,7 +29758,7 @@ var cov_2k4lw3gom3 = function () {
         },
         end: {
           line: 66,
-          column: 86
+          column: 74
         }
       },
       "4": {
@@ -30976,14 +30974,14 @@ var DATETIME_FORMATS = (cov_2k4lw3gom3.s[0]++, {
       cov_2k4lw3gom3.f[0]++;
       cov_2k4lw3gom3.s[1]++;
 
-      if (typeof this.fieldOptions.inputType !== "undefined") {
+      if (typeof this.schema.inputType !== "undefined") {
         cov_2k4lw3gom3.b[0][0]++;
         cov_2k4lw3gom3.s[2]++;
-        return this.fieldOptions.inputType.toLowerCase();
+        return this.schema.inputType.toLowerCase();
       } else {
         cov_2k4lw3gom3.b[0][1]++;
         cov_2k4lw3gom3.s[3]++;
-        console.warn("Missing inputType", this.fieldOptions, this.fieldOptions.inputType);
+        console.warn("Missing inputType", this.schema, this.schema.inputType);
       }
     }
   },
@@ -31174,8 +31172,8 @@ var DATETIME_FORMATS = (cov_2k4lw3gom3.s[0]++, {
 });
 // CONCATENATED MODULE: ./src/fields/core/fieldInput.vue?vue&type=script&lang=js&
  /* harmony default export */ var core_fieldInputvue_type_script_lang_js_ = (fieldInputvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/fields/core/fieldInput.vue?vue&type=style&index=0&id=49b2633c&scoped=true&lang=css&
-var fieldInputvue_type_style_index_0_id_49b2633c_scoped_true_lang_css_ = __webpack_require__("57f5");
+// EXTERNAL MODULE: ./src/fields/core/fieldInput.vue?vue&type=style&index=0&id=9efcae42&scoped=true&lang=css&
+var fieldInputvue_type_style_index_0_id_9efcae42_scoped_true_lang_css_ = __webpack_require__("282c");
 
 // CONCATENATED MODULE: ./src/fields/core/fieldInput.vue
 
@@ -31188,11 +31186,11 @@ var fieldInputvue_type_style_index_0_id_49b2633c_scoped_true_lang_css_ = __webpa
 
 var fieldInput_component = normalizeComponent(
   core_fieldInputvue_type_script_lang_js_,
-  fieldInputvue_type_template_id_49b2633c_scoped_true_render,
-  fieldInputvue_type_template_id_49b2633c_scoped_true_staticRenderFns,
+  fieldInputvue_type_template_id_9efcae42_scoped_true_render,
+  fieldInputvue_type_template_id_9efcae42_scoped_true_staticRenderFns,
   false,
   null,
-  "49b2633c",
+  "9efcae42",
   null
   
 )
@@ -31270,17 +31268,17 @@ var fieldLabel_component = normalizeComponent(
 )
 
 /* harmony default export */ var fieldLabel = (fieldLabel_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldRadios.vue?vue&type=template&id=06d2e38f&scoped=true&
-var fieldRadiosvue_type_template_id_06d2e38f_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"radio-list",attrs:{"disabled":_vm.disabled}},_vm._l((_vm.items),function(item){return _c('label',{directives:[{name:"attributes",rawName:"v-attributes",value:('label'),expression:"'label'"}],key:_vm.getItemValue(item),class:{'is-checked': _vm.isItemChecked(item)}},[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":"radio","disabled":_vm.disabled,"name":_vm.id,"required":_vm.required},domProps:{"value":_vm.getItemValue(item),"checked":_vm.isItemChecked(item)},on:{"click":function($event){_vm.onSelection(item)}}}),_vm._v(_vm._s(_vm.getItemName(item))+"\n\t")])}))}
-var fieldRadiosvue_type_template_id_06d2e38f_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldRadios.vue?vue&type=template&id=63822522&scoped=true&
+var fieldRadiosvue_type_template_id_63822522_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"radio-list",attrs:{"disabled":_vm.disabled}},_vm._l((_vm.items),function(item){return _c('label',{directives:[{name:"attributes",rawName:"v-attributes",value:('label'),expression:"'label'"}],key:_vm.getItemValue(item),class:{'is-checked': _vm.isItemChecked(item)}},[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":"radio","disabled":_vm.disabled,"name":_vm.id,"required":_vm.required},domProps:{"value":_vm.getItemValue(item),"checked":_vm.isItemChecked(item)},on:{"click":function($event){_vm.onSelection(item)}}}),_vm._v(_vm._s(_vm.getItemName(item))+"\n\t")])}))}
+var fieldRadiosvue_type_template_id_63822522_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldRadios.vue?vue&type=template&id=06d2e38f&scoped=true&
+// CONCATENATED MODULE: ./src/fields/core/fieldRadios.vue?vue&type=template&id=63822522&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldRadios.vue?vue&type=script&lang=js&
 var cov_wswb49jaj = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/core/fieldRadios.vue",
-      hash = "4cb31f9da120b07c98877fd859d3d1f38220e6e6",
+      hash = "d879ab2896cb8c36c48f9e91ef4fa3a0dee0eb2b",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -31364,7 +31362,7 @@ var cov_wswb49jaj = function () {
         },
         end: {
           line: 49,
-          column: 42
+          column: 36
         }
       },
       "8": {
@@ -31394,7 +31392,7 @@ var cov_wswb49jaj = function () {
         },
         end: {
           line: 54,
-          column: 237
+          column: 231
         }
       },
       "11": {
@@ -31434,7 +31432,7 @@ var cov_wswb49jaj = function () {
         },
         end: {
           line: 64,
-          column: 41
+          column: 35
         }
       },
       "15": {
@@ -31464,7 +31462,7 @@ var cov_wswb49jaj = function () {
         },
         end: {
           line: 69,
-          column: 235
+          column: 229
         }
       },
       "18": {
@@ -32002,10 +32000,10 @@ var cov_wswb49jaj = function () {
         cov_wswb49jaj.b[1][0]++;
         cov_wswb49jaj.s[6]++;
 
-        if (typeof this.fieldOptions["value"] !== "undefined") {
+        if (typeof this.schema["value"] !== "undefined") {
           cov_wswb49jaj.b[2][0]++;
           cov_wswb49jaj.s[7]++;
-          return item[this.fieldOptions.value];
+          return item[this.schema.value];
         } else {
           cov_wswb49jaj.b[2][1]++;
           cov_wswb49jaj.s[8]++;
@@ -32017,7 +32015,7 @@ var cov_wswb49jaj = function () {
           } else {
             cov_wswb49jaj.b[3][1]++;
             cov_wswb49jaj.s[10]++;
-            throw "`value` is not defined. If you want to use another key name, add a `value` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/radios.html#radios-field-with-object-values";
+            throw "`value` is not defined. If you want to use another key name, add a `value` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/radios.html#radios-field-with-object-values";
           }
         }
       } else {
@@ -32034,10 +32032,10 @@ var cov_wswb49jaj = function () {
         cov_wswb49jaj.b[4][0]++;
         cov_wswb49jaj.s[13]++;
 
-        if (typeof this.fieldOptions["name"] !== "undefined") {
+        if (typeof this.schema["name"] !== "undefined") {
           cov_wswb49jaj.b[5][0]++;
           cov_wswb49jaj.s[14]++;
-          return item[this.fieldOptions.name];
+          return item[this.schema.name];
         } else {
           cov_wswb49jaj.b[5][1]++;
           cov_wswb49jaj.s[15]++;
@@ -32049,7 +32047,7 @@ var cov_wswb49jaj = function () {
           } else {
             cov_wswb49jaj.b[6][1]++;
             cov_wswb49jaj.s[17]++;
-            throw "`name` is not defined. If you want to use another key name, add a `name` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/radios.html#radios-field-with-object-values";
+            throw "`name` is not defined. If you want to use another key name, add a `name` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/radios.html#radios-field-with-object-values";
           }
         }
       } else {
@@ -32073,8 +32071,8 @@ var cov_wswb49jaj = function () {
 });
 // CONCATENATED MODULE: ./src/fields/core/fieldRadios.vue?vue&type=script&lang=js&
  /* harmony default export */ var core_fieldRadiosvue_type_script_lang_js_ = (fieldRadiosvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/fields/core/fieldRadios.vue?vue&type=style&index=0&id=06d2e38f&scoped=true&lang=css&
-var fieldRadiosvue_type_style_index_0_id_06d2e38f_scoped_true_lang_css_ = __webpack_require__("799f");
+// EXTERNAL MODULE: ./src/fields/core/fieldRadios.vue?vue&type=style&index=0&id=63822522&scoped=true&lang=css&
+var fieldRadiosvue_type_style_index_0_id_63822522_scoped_true_lang_css_ = __webpack_require__("a9ac");
 
 // CONCATENATED MODULE: ./src/fields/core/fieldRadios.vue
 
@@ -32087,22 +32085,22 @@ var fieldRadiosvue_type_style_index_0_id_06d2e38f_scoped_true_lang_css_ = __webp
 
 var fieldRadios_component = normalizeComponent(
   core_fieldRadiosvue_type_script_lang_js_,
-  fieldRadiosvue_type_template_id_06d2e38f_scoped_true_render,
-  fieldRadiosvue_type_template_id_06d2e38f_scoped_true_staticRenderFns,
+  fieldRadiosvue_type_template_id_63822522_scoped_true_render,
+  fieldRadiosvue_type_template_id_63822522_scoped_true_staticRenderFns,
   false,
   null,
-  "06d2e38f",
+  "63822522",
   null
   
 )
 
 /* harmony default export */ var fieldRadios = (fieldRadios_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldSelect.vue?vue&type=template&id=ae1597c2&
-var fieldSelectvue_type_template_id_ae1597c2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"},{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",class:_vm.fieldClasses,attrs:{"disabled":_vm.disabled,"name":_vm.inputName,"id":_vm.fieldID},on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.value=$event.target.multiple ? $$selectedVal : $$selectedVal[0]}}},[(!_vm.fieldOptions.hideNoneSelectedText)?_c('option',{attrs:{"disabled":_vm.schema.required},domProps:{"value":null}},[_vm._v(" "+_vm._s(_vm.fieldOptions.noneSelectedText || "<Nothing selected>")+"\n\t")]):_vm._e(),_vm._v(" "),_vm._l((_vm.items),function(item){return [(item.group)?_c('optgroup',{key:_vm.getItemValue(item),attrs:{"label":_vm.getGroupName(item)}},_vm._l((item.ops),function(i){return (item.ops)?_c('option',{key:_vm.getItemValue(i),domProps:{"value":_vm.getItemValue(i)}},[_vm._v(" "+_vm._s(_vm.getItemName(i)))]):_vm._e()})):_vm._e(),_vm._v(" "),(!item.group)?_c('option',{key:_vm.getItemValue(item),domProps:{"value":_vm.getItemValue(item)}},[_vm._v(" "+_vm._s(_vm.getItemName(item)))]):_vm._e()]})],2)}
-var fieldSelectvue_type_template_id_ae1597c2_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldSelect.vue?vue&type=template&id=83d80042&
+var fieldSelectvue_type_template_id_83d80042_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('select',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"},{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",class:_vm.fieldClasses,attrs:{"disabled":_vm.disabled,"name":_vm.inputName,"id":_vm.fieldID},on:{"change":function($event){var $$selectedVal = Array.prototype.filter.call($event.target.options,function(o){return o.selected}).map(function(o){var val = "_value" in o ? o._value : o.value;return val}); _vm.value=$event.target.multiple ? $$selectedVal : $$selectedVal[0]}}},[(!_vm.schema.hideNoneSelectedText)?_c('option',{attrs:{"disabled":_vm.schema.required},domProps:{"value":null}},[_vm._v(" "+_vm._s(_vm.schema.noneSelectedText || "<Nothing selected>")+"\n\t")]):_vm._e(),_vm._v(" "),_vm._l((_vm.items),function(item){return [(item.group)?_c('optgroup',{key:_vm.getItemValue(item),attrs:{"label":_vm.getGroupName(item)}},_vm._l((item.ops),function(i){return (item.ops)?_c('option',{key:_vm.getItemValue(i),domProps:{"value":_vm.getItemValue(i)}},[_vm._v(" "+_vm._s(_vm.getItemName(i)))]):_vm._e()})):_vm._e(),_vm._v(" "),(!item.group)?_c('option',{key:_vm.getItemValue(item),domProps:{"value":_vm.getItemValue(item)}},[_vm._v(" "+_vm._s(_vm.getItemName(item)))]):_vm._e()]})],2)}
+var fieldSelectvue_type_template_id_83d80042_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldSelect.vue?vue&type=template&id=ae1597c2&
+// CONCATENATED MODULE: ./src/fields/core/fieldSelect.vue?vue&type=template&id=83d80042&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.find.js
 var es_array_find = __webpack_require__("7db0");
@@ -32110,7 +32108,7 @@ var es_array_find = __webpack_require__("7db0");
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldSelect.vue?vue&type=script&lang=js&
 var cov_292e2pvznz = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/core/fieldSelect.vue",
-      hash = "3ae8e177a332a63df1174d2c9cee68ef1983b854",
+      hash = "8cb0986a377c2a48738417ea6b52cb67008a2204",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -32394,7 +32392,7 @@ var cov_292e2pvznz = function () {
         },
         end: {
           line: 117,
-          column: 42
+          column: 36
         }
       },
       "28": {
@@ -32424,7 +32422,7 @@ var cov_292e2pvznz = function () {
         },
         end: {
           line: 123,
-          column: 233
+          column: 227
         }
       },
       "31": {
@@ -32464,7 +32462,7 @@ var cov_292e2pvznz = function () {
         },
         end: {
           line: 134,
-          column: 41
+          column: 35
         }
       },
       "35": {
@@ -32494,7 +32492,7 @@ var cov_292e2pvznz = function () {
         },
         end: {
           line: 139,
-          column: 234
+          column: 228
         }
       },
       "38": {
@@ -33371,10 +33369,10 @@ var cov_292e2pvznz = function () {
         cov_292e2pvznz.b[7][0]++;
         cov_292e2pvznz.s[26]++;
 
-        if (typeof this.fieldOptions["value"] !== "undefined") {
+        if (typeof this.schema["value"] !== "undefined") {
           cov_292e2pvznz.b[8][0]++;
           cov_292e2pvznz.s[27]++;
-          return item[this.fieldOptions.value];
+          return item[this.schema.value];
         } else {
           cov_292e2pvznz.b[8][1]++;
           cov_292e2pvznz.s[28]++;
@@ -33387,7 +33385,7 @@ var cov_292e2pvznz = function () {
           } else {
             cov_292e2pvznz.b[9][1]++;
             cov_292e2pvznz.s[30]++;
-            throw "`id` is not defined. If you want to use another key name, add a `value` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
+            throw "`id` is not defined. If you want to use another key name, add a `value` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
           }
         }
       } else {
@@ -33404,10 +33402,10 @@ var cov_292e2pvznz = function () {
         cov_292e2pvznz.b[10][0]++;
         cov_292e2pvznz.s[33]++;
 
-        if (typeof this.fieldOptions["name"] !== "undefined") {
+        if (typeof this.schema["name"] !== "undefined") {
           cov_292e2pvznz.b[11][0]++;
           cov_292e2pvznz.s[34]++;
-          return item[this.fieldOptions.name];
+          return item[this.schema.name];
         } else {
           cov_292e2pvznz.b[11][1]++;
           cov_292e2pvznz.s[35]++;
@@ -33419,7 +33417,7 @@ var cov_292e2pvznz = function () {
           } else {
             cov_292e2pvznz.b[12][1]++;
             cov_292e2pvznz.s[37]++;
-            throw "`name` is not defined. If you want to use another key name, add a `name` property under `fieldOptions` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
+            throw "`name` is not defined. If you want to use another key name, add a `name` property under `schema` in the schema. https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
           }
         }
       } else {
@@ -33442,8 +33440,8 @@ var cov_292e2pvznz = function () {
 
 var fieldSelect_component = normalizeComponent(
   core_fieldSelectvue_type_script_lang_js_,
-  fieldSelectvue_type_template_id_ae1597c2_render,
-  fieldSelectvue_type_template_id_ae1597c2_staticRenderFns,
+  fieldSelectvue_type_template_id_83d80042_render,
+  fieldSelectvue_type_template_id_83d80042_staticRenderFns,
   false,
   null,
   null,
@@ -33452,12 +33450,12 @@ var fieldSelect_component = normalizeComponent(
 )
 
 /* harmony default export */ var fieldSelect = (fieldSelect_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldSubmit.vue?vue&type=template&id=0dc827fc&
-var fieldSubmitvue_type_template_id_0dc827fc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":"submit","name":_vm.inputName,"disabled":_vm.disabled},domProps:{"value":_vm.fieldOptions.buttonText},on:{"click":_vm.onClick}})}
-var fieldSubmitvue_type_template_id_0dc827fc_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldSubmit.vue?vue&type=template&id=7fbb1be2&
+var fieldSubmitvue_type_template_id_7fbb1be2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"type":"submit","name":_vm.inputName,"disabled":_vm.disabled},domProps:{"value":_vm.schema.buttonText},on:{"click":_vm.onClick}})}
+var fieldSubmitvue_type_template_id_7fbb1be2_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldSubmit.vue?vue&type=template&id=0dc827fc&
+// CONCATENATED MODULE: ./src/fields/core/fieldSubmit.vue?vue&type=template&id=7fbb1be2&
 
 // EXTERNAL MODULE: ./node_modules/lodash/isEmpty.js
 var isEmpty = __webpack_require__("13ea");
@@ -33466,7 +33464,7 @@ var isEmpty_default = /*#__PURE__*/__webpack_require__.n(isEmpty);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldSubmit.vue?vue&type=script&lang=js&
 var cov_12cq4qxxf9 = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/core/fieldSubmit.vue",
-      hash = "3fb9617c64a0d73e511f2ec2ae631459adedb7fa",
+      hash = "e15d11b14820803d2a36c3a2c2a82e3324122cdf",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -33530,7 +33528,7 @@ var cov_12cq4qxxf9 = function () {
         },
         end: {
           line: 30,
-          column: 87
+          column: 81
         }
       },
       "6": {
@@ -33550,7 +33548,7 @@ var cov_12cq4qxxf9 = function () {
         },
         end: {
           line: 32,
-          column: 66
+          column: 60
         }
       },
       "8": {
@@ -33570,7 +33568,7 @@ var cov_12cq4qxxf9 = function () {
         },
         end: {
           line: 38,
-          column: 64
+          column: 58
         }
       }
     },
@@ -33699,7 +33697,7 @@ var cov_12cq4qxxf9 = function () {
           },
           end: {
             line: 29,
-            column: 90
+            column: 84
           }
         },
         type: "binary-expr",
@@ -33719,7 +33717,7 @@ var cov_12cq4qxxf9 = function () {
           },
           end: {
             line: 29,
-            column: 90
+            column: 84
           }
         }],
         line: 29
@@ -33849,7 +33847,7 @@ var cov_12cq4qxxf9 = function () {
       cov_12cq4qxxf9.f[0]++;
       cov_12cq4qxxf9.s[0]++;
 
-      if (this.fieldOptions.validateBeforeSubmit === true) {
+      if (this.schema.validateBeforeSubmit === true) {
         cov_12cq4qxxf9.b[0][0]++;
         cov_12cq4qxxf9.s[1]++;
         // prevent a <form /> from having it's submit event triggered
@@ -33862,20 +33860,20 @@ var cov_12cq4qxxf9 = function () {
           cov_12cq4qxxf9.f[1]++;
           cov_12cq4qxxf9.s[4]++;
 
-          if ((cov_12cq4qxxf9.b[2][0]++, !isEmpty_default()(formErrors)) && (cov_12cq4qxxf9.b[2][1]++, typeof _this.fieldOptions.onValidationError === "function")) {
+          if ((cov_12cq4qxxf9.b[2][0]++, !isEmpty_default()(formErrors)) && (cov_12cq4qxxf9.b[2][1]++, typeof _this.schema.onValidationError === "function")) {
             cov_12cq4qxxf9.b[1][0]++;
             cov_12cq4qxxf9.s[5]++;
 
-            _this.fieldOptions.onValidationError(_this.model, _this.schema, formErrors, $event);
+            _this.schema.onValidationError(_this.model, _this.schema, formErrors, $event);
           } else {
             cov_12cq4qxxf9.b[1][1]++;
             cov_12cq4qxxf9.s[6]++;
 
-            if (typeof _this.fieldOptions.onSubmit === "function") {
+            if (typeof _this.schema.onSubmit === "function") {
               cov_12cq4qxxf9.b[3][0]++;
               cov_12cq4qxxf9.s[7]++;
 
-              _this.fieldOptions.onSubmit(_this.model, _this.schema, $event);
+              _this.schema.onSubmit(_this.model, _this.schema, $event);
             } else {
               cov_12cq4qxxf9.b[3][1]++;
             }
@@ -33885,12 +33883,12 @@ var cov_12cq4qxxf9 = function () {
         cov_12cq4qxxf9.b[0][1]++;
         cov_12cq4qxxf9.s[8]++;
 
-        if (typeof this.fieldOptions.onSubmit === "function") {
+        if (typeof this.schema.onSubmit === "function") {
           cov_12cq4qxxf9.b[4][0]++;
           cov_12cq4qxxf9.s[9]++;
           // if we aren't validating, just pass the onSubmit handler the $event
           // so it can be handled there
-          this.fieldOptions.onSubmit(this.model, this.schema, $event);
+          this.schema.onSubmit(this.model, this.schema, $event);
         } else {
           cov_12cq4qxxf9.b[4][1]++;
         }
@@ -33914,8 +33912,8 @@ var fieldSubmitvue_type_style_index_0_lang_css_ = __webpack_require__("9eef");
 
 var fieldSubmit_component = normalizeComponent(
   core_fieldSubmitvue_type_script_lang_js_,
-  fieldSubmitvue_type_template_id_0dc827fc_render,
-  fieldSubmitvue_type_template_id_0dc827fc_staticRenderFns,
+  fieldSubmitvue_type_template_id_7fbb1be2_render,
+  fieldSubmitvue_type_template_id_7fbb1be2_staticRenderFns,
   false,
   null,
   null,
@@ -33924,12 +33922,12 @@ var fieldSubmit_component = normalizeComponent(
 )
 
 /* harmony default export */ var fieldSubmit = (fieldSubmit_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldTextArea.vue?vue&type=template&id=4dc92ac2&
-var fieldTextAreavue_type_template_id_4dc92ac2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"},{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"disabled":_vm.disabled,"maxlength":_vm.fieldOptions.max,"minlength":_vm.fieldOptions.min,"placeholder":_vm.placeholder,"required":_vm.required,"readonly":_vm.readonly,"rows":_vm.fieldOptions.rows || 2,"name":_vm.inputName},domProps:{"value":(_vm.value)},on:{"input":function($event){if($event.target.composing){ return; }_vm.value=$event.target.value}}})}
-var fieldTextAreavue_type_template_id_4dc92ac2_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldTextArea.vue?vue&type=template&id=3556c959&
+var fieldTextAreavue_type_template_id_3556c959_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('textarea',{directives:[{name:"model",rawName:"v-model",value:(_vm.value),expression:"value"},{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",class:_vm.fieldClasses,attrs:{"id":_vm.fieldID,"disabled":_vm.disabled,"maxlength":_vm.schema.max,"minlength":_vm.schema.min,"placeholder":_vm.placeholder,"required":_vm.required,"readonly":_vm.readonly,"rows":_vm.schema.rows || 2,"name":_vm.inputName},domProps:{"value":(_vm.value)},on:{"input":function($event){if($event.target.composing){ return; }_vm.value=$event.target.value}}})}
+var fieldTextAreavue_type_template_id_3556c959_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldTextArea.vue?vue&type=template&id=4dc92ac2&
+// CONCATENATED MODULE: ./src/fields/core/fieldTextArea.vue?vue&type=template&id=3556c959&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldTextArea.vue?vue&type=script&lang=js&
 var cov_k9uop4viw = function () {
@@ -33991,8 +33989,8 @@ var cov_k9uop4viw = function () {
 
 var fieldTextArea_component = normalizeComponent(
   core_fieldTextAreavue_type_script_lang_js_,
-  fieldTextAreavue_type_template_id_4dc92ac2_render,
-  fieldTextAreavue_type_template_id_4dc92ac2_staticRenderFns,
+  fieldTextAreavue_type_template_id_3556c959_render,
+  fieldTextAreavue_type_template_id_3556c959_staticRenderFns,
   false,
   null,
   null,
@@ -34001,17 +33999,17 @@ var fieldTextArea_component = normalizeComponent(
 )
 
 /* harmony default export */ var fieldTextArea = (fieldTextArea_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldUpload.vue?vue&type=template&id=5c9773ac&scoped=true&
-var fieldUploadvue_type_template_id_5c9773ac_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"wrapper"},[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",attrs:{"id":_vm.fieldID,"type":"file","name":_vm.inputName,"accept":_vm.fieldOptions.accept,"multiple":_vm.fieldOptions.multiple,"placeholder":_vm.placeholder,"readonly":_vm.readonly,"required":_vm.schema.required,"disabled":_vm.disabled},on:{"change":_vm.onChange}})])}
-var fieldUploadvue_type_template_id_5c9773ac_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"2b6ad000-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldUpload.vue?vue&type=template&id=e7f76a28&scoped=true&
+var fieldUploadvue_type_template_id_e7f76a28_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"attributes",rawName:"v-attributes",value:('wrapper'),expression:"'wrapper'"}],staticClass:"wrapper"},[_c('input',{directives:[{name:"attributes",rawName:"v-attributes",value:('input'),expression:"'input'"}],staticClass:"form-control",attrs:{"id":_vm.fieldID,"type":"file","name":_vm.inputName,"accept":_vm.schema.accept,"multiple":_vm.schema.multiple,"placeholder":_vm.placeholder,"readonly":_vm.readonly,"required":_vm.schema.required,"disabled":_vm.disabled},on:{"change":_vm.onChange}})])}
+var fieldUploadvue_type_template_id_e7f76a28_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/fields/core/fieldUpload.vue?vue&type=template&id=5c9773ac&scoped=true&
+// CONCATENATED MODULE: ./src/fields/core/fieldUpload.vue?vue&type=template&id=e7f76a28&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/fields/core/fieldUpload.vue?vue&type=script&lang=js&
 var cov_9mmuc2u7y = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/core/fieldUpload.vue",
-      hash = "eba6163e1e1b1c790ccf160a549449a1fcd274ec",
+      hash = "a234f69e0f66a27dc98b75e6b9ddeca94ac37782",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -34035,7 +34033,7 @@ var cov_9mmuc2u7y = function () {
         },
         end: {
           line: 29,
-          column: 82
+          column: 76
         }
       }
     },
@@ -34149,11 +34147,11 @@ var cov_9mmuc2u7y = function () {
       cov_9mmuc2u7y.f[0]++;
       cov_9mmuc2u7y.s[0]++;
 
-      if (typeof this.fieldOptions.onChanged === "function") {
+      if (typeof this.schema.onChanged === "function") {
         cov_9mmuc2u7y.b[0][0]++;
         cov_9mmuc2u7y.s[1]++;
         // Schema has defined onChange method.
-        this.fieldOptions.onChanged.call(this, this.model, this.schema, $event, this);
+        this.schema.onChanged.call(this, this.model, this.schema, $event, this);
       } else {
         cov_9mmuc2u7y.b[0][1]++;
       }
@@ -34162,8 +34160,8 @@ var cov_9mmuc2u7y = function () {
 });
 // CONCATENATED MODULE: ./src/fields/core/fieldUpload.vue?vue&type=script&lang=js&
  /* harmony default export */ var core_fieldUploadvue_type_script_lang_js_ = (fieldUploadvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./src/fields/core/fieldUpload.vue?vue&type=style&index=0&id=5c9773ac&scoped=true&lang=css&
-var fieldUploadvue_type_style_index_0_id_5c9773ac_scoped_true_lang_css_ = __webpack_require__("a37b");
+// EXTERNAL MODULE: ./src/fields/core/fieldUpload.vue?vue&type=style&index=0&id=e7f76a28&scoped=true&lang=css&
+var fieldUploadvue_type_style_index_0_id_e7f76a28_scoped_true_lang_css_ = __webpack_require__("f94b");
 
 // CONCATENATED MODULE: ./src/fields/core/fieldUpload.vue
 
@@ -34176,11 +34174,11 @@ var fieldUploadvue_type_style_index_0_id_5c9773ac_scoped_true_lang_css_ = __webp
 
 var fieldUpload_component = normalizeComponent(
   core_fieldUploadvue_type_script_lang_js_,
-  fieldUploadvue_type_template_id_5c9773ac_scoped_true_render,
-  fieldUploadvue_type_template_id_5c9773ac_scoped_true_staticRenderFns,
+  fieldUploadvue_type_template_id_e7f76a28_scoped_true_render,
+  fieldUploadvue_type_template_id_e7f76a28_scoped_true_staticRenderFns,
   false,
   null,
-  "5c9773ac",
+  "e7f76a28",
   null
   
 )

@@ -10,33 +10,33 @@
 			:class="fieldClasses"
 			@change="schema.onChange || null"
 			:disabled="disabled"
-			:accept="fieldOptions.accept"
-			:alt="fieldOptions.alt"
-			:autocomplete="fieldOptions.autocomplete"
-			:checked="fieldOptions.checked"
-			:dirname="fieldOptions.dirname"
-			:formaction="fieldOptions.formaction"
-			:formenctype="fieldOptions.formenctype"
-			:formmethod="fieldOptions.formmethod"
-			:formnovalidate="fieldOptions.formnovalidate"
-			:formtarget="fieldOptions.formtarget"
-			:height="fieldOptions.height"
-			:list="fieldOptions.list"
-			:max="fieldOptions.max"
-			:maxlength="fieldOptions.maxlength"
-			:min="fieldOptions.min"
-			:minlength="fieldOptions.minlength"
-			:multiple="fieldOptions.multiple"
+			:accept="schema.accept"
+			:alt="schema.alt"
+			:autocomplete="schema.autocomplete"
+			:checked="schema.checked"
+			:dirname="schema.dirname"
+			:formaction="schema.formaction"
+			:formenctype="schema.formenctype"
+			:formmethod="schema.formmethod"
+			:formnovalidate="schema.formnovalidate"
+			:formtarget="schema.formtarget"
+			:height="schema.height"
+			:list="schema.list"
+			:max="schema.max"
+			:maxlength="schema.maxlength"
+			:min="schema.min"
+			:minlength="schema.minlength"
+			:multiple="schema.multiple"
 			:name="inputName"
-			:pattern="fieldOptions.pattern"
+			:pattern="schema.pattern"
 			:placeholder="placeholder"
 			:readonly="readonly"
 			:required="schema.required"
-			:size="fieldOptions.size"
-			:src="fieldOptions.src"
-			:step="fieldOptions.step"
-			:width="fieldOptions.width"
-			:files="fieldOptions.files"
+			:size="schema.size"
+			:src="schema.src"
+			:step="schema.step"
+			:width="schema.width"
+			:files="schema.files"
 			v-attributes="'input'">
 		<span class="helper"
 			v-if="inputType === 'color' || inputType === 'range'"
@@ -60,10 +60,10 @@ export default {
 	mixins: [abstractField],
 	computed: {
 		inputType() {
-			if (typeof this.fieldOptions.inputType !== "undefined") {
-				return this.fieldOptions.inputType.toLowerCase();
+			if (typeof this.schema.inputType !== "undefined") {
+				return this.schema.inputType.toLowerCase();
 			} else {
-				console.warn("Missing inputType", this.fieldOptions, this.fieldOptions.inputType);
+				console.warn("Missing inputType", this.schema, this.schema.inputType);
 			}
 		}
 	},

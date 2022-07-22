@@ -31,7 +31,6 @@
 					</span>
 				</slot>
 			</template>
-
 			<template slot="element" 
 				slot-scope="slotProps">
 				<form-element
@@ -65,7 +64,6 @@
 							</span>
 						</slot>
 					</template>
-
 					<template slot="hint" 
 						slot-scope="{ field, getValueFromOption }">
 						<slot

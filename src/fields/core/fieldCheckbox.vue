@@ -2,7 +2,7 @@
 	<input :id="fieldID"
 		type="checkbox"
 		v-model="value"
-		:autocomplete="fieldOptions.autocomplete"
+		:autocomplete="schema.autocomplete"
 		:disabled="disabled"
 		:name="inputName"
 		:class="fieldClasses"
