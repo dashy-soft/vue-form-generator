@@ -1,16 +1,19 @@
 <template>
 	<div class="form-element" 
-		:class="[fieldRowClasses]">
+		:class="[fieldRowClasses]"
+		:style="field.wrapperStyle">
 		<label
 			v-if="fieldTypeHasLabel"
 			:for="fieldID"
 			:class="field.labelClasses">
 			<slot name="label" 
 				:field="field" 
-				:getValueFromOption="getValueFromOption" ></slot>
+				:getValueFromOption="getValueFromOption"
+			/>
 			<slot name="help" 
 				:field="field" 
-				:getValueFromOption="getValueFromOption" ></slot>
+				:getValueFromOption="getValueFromOption"
+			/>
 		</label>
 
 		<div class="field-wrap">
@@ -21,9 +24,11 @@
 				:schema="field"
 				:form-options="options"
 				:event-bus="eventBus"
-				:field-id="fieldID"
+				:fieldID="fieldID"
+				:style="field.fieldStyle"
 				@field-touched="onFieldTouched"
-				@errors-updated="onChildValidated" ></component>
+				@errors-updated="onChildValidated"
+			/>
 			<div
 				v-if="buttonsAreVisible"
 				class="buttons">
@@ -32,14 +37,16 @@
 					@click="buttonClickHandler(btn, field, $event)"
 					:class="btn.classes"
 					:key="index"
-					v-text="btn.label"></button>
+					v-text="btn.label"
+				/>
 			</div>
 		</div>
 
 		<template v-if="fieldHasHint">
 			<slot name="hint" 
 				:field="field" 
-				:getValueFromOption="getValueFromOption" ></slot>
+				:getValueFromOption="getValueFromOption"
+			/>
 		</template>
 
 		<template v-if="fieldHasErrors">
@@ -47,7 +54,8 @@
 				name="errors"
 				:childErrors="childErrors"
 				:field="field"
-				:getValueFromOption="getValueFromOption"></slot>
+				:getValueFromOption="getValueFromOption"
+			/>
 		</template>
 	</div>
 </template>
@@ -84,9 +92,7 @@ export default {
 		},
 		eventBus: {
 			type: Object,
-			default() {
-				return {};
-			}
+			required: true,
 		}
 	},
 	data() {
