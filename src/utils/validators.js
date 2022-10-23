@@ -69,12 +69,12 @@ const validators = {
 
 		let err = [];
 		if (isNumber(value)) {
-			if (!isNil(field.fieldOptions) && !isNil(field.fieldOptions.min) && value < field.fieldOptions.min) {
-				err.push(msg(messages.numberTooSmall, field.fieldOptions.min));
+			if (!isNil(field) && !isNil(field.min) && value < field.min) {
+				err.push(msg(messages.numberTooSmall, field.min));
 			}
 
-			if (!isNil(field.fieldOptions) && !isNil(field.fieldOptions.max) && value > field.fieldOptions.max) {
-				err.push(msg(messages.numberTooBig, field.fieldOptions.max));
+			if (!isNil(field) && !isNil(field.max) && value > field.max) {
+				err.push(msg(messages.numberTooBig, field.max));
 			}
 		} else {
 			err.push(msg(messages.invalidNumber));
@@ -105,17 +105,18 @@ const validators = {
 	},
 
 	string(value, field, model, messages = resources) {
+		console.log('validate string', field);
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
 		let err = [];
 		if (isString(value)) {
-			if (!isNil(field.fieldOptions.min) && value.length < field.fieldOptions.min) {
-				err.push(msg(messages.textTooSmall, value.length, field.fieldOptions.min));
+			if (!isNil(field.min) && value.length < field.min) {
+				err.push(msg(messages.textTooSmall, value.length, field.min));
 			}
 
-			if (!isNil(field.fieldOptions.max) && value.length > field.fieldOptions.max) {
-				err.push(msg(messages.textTooBig, value.length, field.fieldOptions.max));
+			if (!isNil(field.max) && value.length > field.max) {
+				err.push(msg(messages.textTooBig, value.length, field.max));
 			}
 		} else {
 			err.push(msg(messages.thisNotText));
@@ -136,12 +137,12 @@ const validators = {
 		}
 
 		if (!isNil(value)) {
-			if (!isNil(field.fieldOptions.min) && value.length < field.fieldOptions.min) {
-				return [msg(messages.selectMinItems, field.fieldOptions.min)];
+			if (!isNil(field.min) && value.length < field.min) {
+				return [msg(messages.selectMinItems, field.min)];
 			}
 
-			if (!isNil(field.fieldOptions.max) && value.length > field.fieldOptions.max) {
-				return [msg(messages.selectMaxItems, field.fieldOptions.max)];
+			if (!isNil(field.max) && value.length > field.max) {
+				return [msg(messages.selectMaxItems, field.max)];
 			}
 		}
 	},
@@ -157,15 +158,15 @@ const validators = {
 
 		let err = [];
 
-		if (!isNil(field.fieldOptions.min)) {
-			let min = new Date(field.fieldOptions.min);
+		if (!isNil(field.min)) {
+			let min = new Date(field.min);
 			if (m.valueOf() < min.valueOf()) {
 				err.push(msg(messages.dateIsEarly, fecha.format(m), fecha.format(min)));
 			}
 		}
 
-		if (!isNil(field.fieldOptions.max)) {
-			let max = new Date(field.fieldOptions.max);
+		if (!isNil(field.max)) {
+			let max = new Date(field.max);
 			if (m.valueOf() > max.valueOf()) {
 				err.push(msg(messages.dateIsLate, fecha.format(m), fecha.format(max)));
 			}
