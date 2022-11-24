@@ -14,7 +14,7 @@ const convertValidator = (validator) => {
 };
 
 function attributesDirective(el, binding, vnode) {
-	let attrs = objGet(vnode.context, "schema.attributes", {});
+	let attrs = vnode.context.schema && vnode.context.schema.attributes ? vnode.context.schema.attributes : {};
 	let container = binding.value || "input";
 	if (isString(container)) {
 		attrs = objGet(attrs, container) || attrs;

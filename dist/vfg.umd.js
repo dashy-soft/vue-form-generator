@@ -24043,7 +24043,7 @@ var es_string_split = __webpack_require__("1276");
 // CONCATENATED MODULE: ./src/fields/abstractField.js
 var cov_1elzmjyf17 = function () {
   var path = "/home/gwen/sources/vue-form-generator/src/fields/abstractField.js",
-      hash = "3c9e178f9bc3d4c1606c2f1fa1be7bbbb2e4cd2e",
+      hash = "cbc5b04a64434afcb208e936e1ac7fc4474334e1",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
@@ -24127,7 +24127,7 @@ var cov_1elzmjyf17 = function () {
         },
         end: {
           line: 17,
-          column: 59
+          column: 107
         }
       },
       "8": {
@@ -26297,6 +26297,72 @@ var cov_1elzmjyf17 = function () {
       "2": {
         loc: {
           start: {
+            line: 17,
+            column: 13
+          },
+          end: {
+            line: 17,
+            column: 107
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 17,
+            column: 71
+          },
+          end: {
+            line: 17,
+            column: 102
+          }
+        }, {
+          start: {
+            line: 17,
+            column: 105
+          },
+          end: {
+            line: 17,
+            column: 107
+          }
+        }],
+        line: 17
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 17,
+            column: 13
+          },
+          end: {
+            line: 17,
+            column: 68
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 17,
+            column: 13
+          },
+          end: {
+            line: 17,
+            column: 33
+          }
+        }, {
+          start: {
+            line: 17,
+            column: 37
+          },
+          end: {
+            line: 17,
+            column: 68
+          }
+        }],
+        line: 17
+      },
+      "4": {
+        loc: {
+          start: {
             line: 18,
             column: 17
           },
@@ -26327,7 +26393,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 18
       },
-      "3": {
+      "5": {
         loc: {
           start: {
             line: 19,
@@ -26360,7 +26426,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 19
       },
-      "4": {
+      "6": {
         loc: {
           start: {
             line: 20,
@@ -26393,7 +26459,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 20
       },
-      "5": {
+      "7": {
         loc: {
           start: {
             line: 70,
@@ -26426,7 +26492,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 70
       },
-      "6": {
+      "8": {
         loc: {
           start: {
             line: 85,
@@ -26459,7 +26525,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 85
       },
-      "7": {
+      "9": {
         loc: {
           start: {
             line: 127,
@@ -26483,7 +26549,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 127
       },
-      "8": {
+      "10": {
         loc: {
           start: {
             line: 129,
@@ -26516,7 +26582,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 129
       },
-      "9": {
+      "11": {
         loc: {
           start: {
             line: 133,
@@ -26549,7 +26615,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 133
       },
-      "10": {
+      "12": {
         loc: {
           start: {
             line: 137,
@@ -26582,7 +26648,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 137
       },
-      "11": {
+      "13": {
         loc: {
           start: {
             line: 152,
@@ -26615,7 +26681,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 152
       },
-      "12": {
+      "14": {
         loc: {
           start: {
             line: 153,
@@ -26666,7 +26732,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 153
       },
-      "13": {
+      "15": {
         loc: {
           start: {
             line: 159,
@@ -26699,7 +26765,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 159
       },
-      "14": {
+      "16": {
         loc: {
           start: {
             line: 168,
@@ -26732,7 +26798,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 168
       },
-      "15": {
+      "17": {
         loc: {
           start: {
             line: 172,
@@ -26765,7 +26831,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 172
       },
-      "16": {
+      "18": {
         loc: {
           start: {
             line: 172,
@@ -26798,7 +26864,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 172
       },
-      "17": {
+      "19": {
         loc: {
           start: {
             line: 174,
@@ -26831,7 +26897,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 174
       },
-      "18": {
+      "20": {
         loc: {
           start: {
             line: 178,
@@ -26864,7 +26930,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 178
       },
-      "19": {
+      "21": {
         loc: {
           start: {
             line: 188,
@@ -26897,7 +26963,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 188
       },
-      "20": {
+      "22": {
         loc: {
           start: {
             line: 188,
@@ -26930,7 +26996,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 188
       },
-      "21": {
+      "23": {
         loc: {
           start: {
             line: 190,
@@ -26963,7 +27029,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 190
       },
-      "22": {
+      "24": {
         loc: {
           start: {
             line: 194,
@@ -26996,7 +27062,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 194
       },
-      "23": {
+      "25": {
         loc: {
           start: {
             line: 206,
@@ -27029,7 +27095,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 206
       },
-      "24": {
+      "26": {
         loc: {
           start: {
             line: 218,
@@ -27062,7 +27128,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 218
       },
-      "25": {
+      "27": {
         loc: {
           start: {
             line: 229,
@@ -27095,7 +27161,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 229
       },
-      "26": {
+      "28": {
         loc: {
           start: {
             line: 232,
@@ -27128,7 +27194,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 232
       },
-      "27": {
+      "29": {
         loc: {
           start: {
             line: 237,
@@ -27161,7 +27227,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 237
       },
-      "28": {
+      "30": {
         loc: {
           start: {
             line: 240,
@@ -27194,7 +27260,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 240
       },
-      "29": {
+      "31": {
         loc: {
           start: {
             line: 243,
@@ -27227,7 +27293,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 243
       },
-      "30": {
+      "32": {
         loc: {
           start: {
             line: 244,
@@ -27260,7 +27326,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 244
       },
-      "31": {
+      "33": {
         loc: {
           start: {
             line: 270,
@@ -27293,7 +27359,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 270
       },
-      "32": {
+      "34": {
         loc: {
           start: {
             line: 271,
@@ -27326,7 +27392,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 271
       },
-      "33": {
+      "35": {
         loc: {
           start: {
             line: 298,
@@ -27359,7 +27425,7 @@ var cov_1elzmjyf17 = function () {
         }],
         line: 298
       },
-      "34": {
+      "36": {
         loc: {
           start: {
             line: 349,
@@ -27572,14 +27638,14 @@ var cov_1elzmjyf17 = function () {
       "4": [0, 0],
       "5": [0, 0],
       "6": [0, 0],
-      "7": [0],
+      "7": [0, 0],
       "8": [0, 0],
-      "9": [0, 0],
+      "9": [0],
       "10": [0, 0],
       "11": [0, 0],
-      "12": [0, 0, 0, 0],
+      "12": [0, 0],
       "13": [0, 0],
-      "14": [0, 0],
+      "14": [0, 0, 0, 0],
       "15": [0, 0],
       "16": [0, 0],
       "17": [0, 0],
@@ -27599,7 +27665,9 @@ var cov_1elzmjyf17 = function () {
       "31": [0, 0],
       "32": [0, 0],
       "33": [0, 0],
-      "34": [0, 0]
+      "34": [0, 0],
+      "35": [0, 0],
+      "36": [0, 0]
     },
     _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184"
   },
@@ -27667,16 +27735,16 @@ var abstractField_convertValidator = function convertValidator(validator) {
 
 function attributesDirective(el, binding, vnode) {
   cov_1elzmjyf17.f[1]++;
-  var attrs = (cov_1elzmjyf17.s[7]++, get_default()(vnode.context, "schema.attributes", {}));
-  var container = (cov_1elzmjyf17.s[8]++, (cov_1elzmjyf17.b[2][0]++, binding.value) || (cov_1elzmjyf17.b[2][1]++, "input"));
+  var attrs = (cov_1elzmjyf17.s[7]++, (cov_1elzmjyf17.b[3][0]++, vnode.context.schema) && (cov_1elzmjyf17.b[3][1]++, vnode.context.schema.attributes) ? (cov_1elzmjyf17.b[2][0]++, vnode.context.schema.attributes) : (cov_1elzmjyf17.b[2][1]++, {}));
+  var container = (cov_1elzmjyf17.s[8]++, (cov_1elzmjyf17.b[4][0]++, binding.value) || (cov_1elzmjyf17.b[4][1]++, "input"));
   cov_1elzmjyf17.s[9]++;
 
   if (isString_default()(container)) {
-    cov_1elzmjyf17.b[3][0]++;
+    cov_1elzmjyf17.b[5][0]++;
     cov_1elzmjyf17.s[10]++;
-    attrs = (cov_1elzmjyf17.b[4][0]++, get_default()(attrs, container)) || (cov_1elzmjyf17.b[4][1]++, attrs);
+    attrs = (cov_1elzmjyf17.b[6][0]++, get_default()(attrs, container)) || (cov_1elzmjyf17.b[6][1]++, attrs);
   } else {
-    cov_1elzmjyf17.b[3][1]++;
+    cov_1elzmjyf17.b[5][1]++;
   }
 
   cov_1elzmjyf17.s[11]++;
@@ -27734,11 +27802,11 @@ function attributesDirective(el, binding, vnode) {
         cov_1elzmjyf17.s[15]++;
 
         if (isFunction_default()(get_default()(this.schema, "get"))) {
-          cov_1elzmjyf17.b[5][0]++;
+          cov_1elzmjyf17.b[7][0]++;
           cov_1elzmjyf17.s[16]++;
           val = this.schema.get(this.model);
         } else {
-          cov_1elzmjyf17.b[5][1]++;
+          cov_1elzmjyf17.b[7][1]++;
           cov_1elzmjyf17.s[17]++;
           val = get_default()(this.model, this.schema.model);
         }
@@ -27756,11 +27824,11 @@ function attributesDirective(el, binding, vnode) {
         cov_1elzmjyf17.s[22]++;
 
         if (isFunction_default()(newValue)) {
-          cov_1elzmjyf17.b[6][0]++;
+          cov_1elzmjyf17.b[8][0]++;
           cov_1elzmjyf17.s[23]++;
           newValue(newValue, oldValue);
         } else {
-          cov_1elzmjyf17.b[6][1]++;
+          cov_1elzmjyf17.b[8][1]++;
           cov_1elzmjyf17.s[24]++;
           this.updateModelValue(newValue, oldValue);
         }
@@ -27818,31 +27886,31 @@ function attributesDirective(el, binding, vnode) {
   },
   methods: {
     getFieldID: function getFieldID(schema) {
-      var unique = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : (cov_1elzmjyf17.b[7][0]++, false);
+      var unique = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : (cov_1elzmjyf17.b[9][0]++, false);
       cov_1elzmjyf17.f[15]++;
       var idPrefix = (cov_1elzmjyf17.s[34]++, get_default()(this.formOptions, "fieldIdPrefix", ""));
       cov_1elzmjyf17.s[35]++;
-      return slugifyFormID(schema, idPrefix) + (unique ? (cov_1elzmjyf17.b[8][0]++, "-" + uniqueId_default()()) : (cov_1elzmjyf17.b[8][1]++, ""));
+      return slugifyFormID(schema, idPrefix) + (unique ? (cov_1elzmjyf17.b[10][0]++, "-" + uniqueId_default()()) : (cov_1elzmjyf17.b[10][1]++, ""));
     },
     getValueFromOption: function getValueFromOption(field, option, defaultValue) {
       cov_1elzmjyf17.f[16]++;
       cov_1elzmjyf17.s[36]++;
 
       if (isFunction_default()(this.$parent.getValueFromOption)) {
-        cov_1elzmjyf17.b[9][0]++;
+        cov_1elzmjyf17.b[11][0]++;
         cov_1elzmjyf17.s[37]++;
         return this.$parent.getValueFromOption(field, option, defaultValue);
       } else {
-        cov_1elzmjyf17.b[9][1]++;
+        cov_1elzmjyf17.b[11][1]++;
         cov_1elzmjyf17.s[38]++;
 
         // Environnement de test ?
         if (isNil_default()(field[option])) {
-          cov_1elzmjyf17.b[10][0]++;
+          cov_1elzmjyf17.b[12][0]++;
           cov_1elzmjyf17.s[39]++;
           return defaultValue;
         } else {
-          cov_1elzmjyf17.b[10][1]++;
+          cov_1elzmjyf17.b[12][1]++;
         }
 
         cov_1elzmjyf17.s[40]++;
@@ -27861,21 +27929,21 @@ function attributesDirective(el, binding, vnode) {
       var results = (cov_1elzmjyf17.s[44]++, []);
       cov_1elzmjyf17.s[45]++;
 
-      if ((cov_1elzmjyf17.b[12][0]++, this.schema.validator) && (cov_1elzmjyf17.b[12][1]++, this.readonly !== true) && (cov_1elzmjyf17.b[12][2]++, this.schema.readonly !== true) && (cov_1elzmjyf17.b[12][3]++, // only for the test
+      if ((cov_1elzmjyf17.b[14][0]++, this.schema.validator) && (cov_1elzmjyf17.b[14][1]++, this.readonly !== true) && (cov_1elzmjyf17.b[14][2]++, this.schema.readonly !== true) && (cov_1elzmjyf17.b[14][3]++, // only for the test
       this.disabled !== true)) {
-        cov_1elzmjyf17.b[11][0]++;
+        cov_1elzmjyf17.b[13][0]++;
 
         var _validators = (cov_1elzmjyf17.s[46]++, []);
 
         cov_1elzmjyf17.s[47]++;
 
         if (!isArray_default()(this.schema.validator)) {
-          cov_1elzmjyf17.b[13][0]++;
+          cov_1elzmjyf17.b[15][0]++;
           cov_1elzmjyf17.s[48]++;
 
           _validators.push(abstractField_convertValidator(this.schema.validator).bind(this));
         } else {
-          cov_1elzmjyf17.b[13][1]++;
+          cov_1elzmjyf17.b[15][1]++;
           cov_1elzmjyf17.s[49]++;
           this.schema.validator.forEach(function (validator) {
             cov_1elzmjyf17.f[18]++;
@@ -27892,45 +27960,45 @@ function attributesDirective(el, binding, vnode) {
           cov_1elzmjyf17.s[52]++;
 
           if (validateAsync) {
-            cov_1elzmjyf17.b[14][0]++;
+            cov_1elzmjyf17.b[16][0]++;
             cov_1elzmjyf17.s[53]++;
             results.push(validator(_this.value, _this.schema, _this.model));
           } else {
-            cov_1elzmjyf17.b[14][1]++;
+            cov_1elzmjyf17.b[16][1]++;
             var result = (cov_1elzmjyf17.s[54]++, validator(_this.value, _this.schema, _this.model));
             cov_1elzmjyf17.s[55]++;
 
-            if ((cov_1elzmjyf17.b[16][0]++, result) && (cov_1elzmjyf17.b[16][1]++, isFunction_default()(result.then))) {
-              cov_1elzmjyf17.b[15][0]++;
+            if ((cov_1elzmjyf17.b[18][0]++, result) && (cov_1elzmjyf17.b[18][1]++, isFunction_default()(result.then))) {
+              cov_1elzmjyf17.b[17][0]++;
               cov_1elzmjyf17.s[56]++;
               result.then(function (err) {
                 cov_1elzmjyf17.f[20]++;
                 cov_1elzmjyf17.s[57]++;
 
                 if (err) {
-                  cov_1elzmjyf17.b[17][0]++;
+                  cov_1elzmjyf17.b[19][0]++;
                   cov_1elzmjyf17.s[58]++;
                   _this.errors = _this.errors.concat(err);
                 } else {
-                  cov_1elzmjyf17.b[17][1]++;
+                  cov_1elzmjyf17.b[19][1]++;
                 }
               });
             } else {
-              cov_1elzmjyf17.b[15][1]++;
+              cov_1elzmjyf17.b[17][1]++;
               cov_1elzmjyf17.s[59]++;
 
               if (result) {
-                cov_1elzmjyf17.b[18][0]++;
+                cov_1elzmjyf17.b[20][0]++;
                 cov_1elzmjyf17.s[60]++;
                 results = results.concat(result);
               } else {
-                cov_1elzmjyf17.b[18][1]++;
+                cov_1elzmjyf17.b[20][1]++;
               }
             }
           }
         });
       } else {
-        cov_1elzmjyf17.b[11][1]++;
+        cov_1elzmjyf17.b[13][1]++;
       }
 
       cov_1elzmjyf17.s[61]++;
@@ -27943,32 +28011,32 @@ function attributesDirective(el, binding, vnode) {
           cov_1elzmjyf17.f[22]++;
           cov_1elzmjyf17.s[64]++;
 
-          if ((cov_1elzmjyf17.b[20][0]++, isArray_default()(err)) && (cov_1elzmjyf17.b[20][1]++, err.length > 0)) {
-            cov_1elzmjyf17.b[19][0]++;
+          if ((cov_1elzmjyf17.b[22][0]++, isArray_default()(err)) && (cov_1elzmjyf17.b[22][1]++, err.length > 0)) {
+            cov_1elzmjyf17.b[21][0]++;
             cov_1elzmjyf17.s[65]++;
             fieldErrors = fieldErrors.concat(err);
           } else {
-            cov_1elzmjyf17.b[19][1]++;
+            cov_1elzmjyf17.b[21][1]++;
             cov_1elzmjyf17.s[66]++;
 
             if (isString_default()(err)) {
-              cov_1elzmjyf17.b[21][0]++;
+              cov_1elzmjyf17.b[23][0]++;
               cov_1elzmjyf17.s[67]++;
               fieldErrors.push(err);
             } else {
-              cov_1elzmjyf17.b[21][1]++;
+              cov_1elzmjyf17.b[23][1]++;
             }
           }
         });
         cov_1elzmjyf17.s[68]++;
 
         if (isFunction_default()(_this.schema.onValidated)) {
-          cov_1elzmjyf17.b[22][0]++;
+          cov_1elzmjyf17.b[24][0]++;
           cov_1elzmjyf17.s[69]++;
 
           _this.schema.onValidated.call(_this, _this.model, fieldErrors, _this.schema);
         } else {
-          cov_1elzmjyf17.b[22][1]++;
+          cov_1elzmjyf17.b[24][1]++;
         }
 
         var isValid = (cov_1elzmjyf17.s[70]++, fieldErrors.length === 0);
@@ -27985,11 +28053,11 @@ function attributesDirective(el, binding, vnode) {
       cov_1elzmjyf17.s[74]++;
 
       if (!validateAsync) {
-        cov_1elzmjyf17.b[23][0]++;
+        cov_1elzmjyf17.b[25][0]++;
         cov_1elzmjyf17.s[75]++;
         return handleErrors(results);
       } else {
-        cov_1elzmjyf17.b[23][1]++;
+        cov_1elzmjyf17.b[25][1]++;
       }
 
       cov_1elzmjyf17.s[76]++;
@@ -28004,11 +28072,11 @@ function attributesDirective(el, binding, vnode) {
       cov_1elzmjyf17.s[78]++;
 
       if (!isFunction_default()(this.debouncedValidateFunc)) {
-        cov_1elzmjyf17.b[24][0]++;
+        cov_1elzmjyf17.b[26][0]++;
         cov_1elzmjyf17.s[79]++;
         this.debouncedValidateFunc = debounce_default()(this.validate.bind(this), get_default()(this.formOptions, "validateDebounceTime", 500));
       } else {
-        cov_1elzmjyf17.b[24][1]++;
+        cov_1elzmjyf17.b[26][1]++;
       }
 
       cov_1elzmjyf17.s[80]++;
@@ -28020,62 +28088,62 @@ function attributesDirective(el, binding, vnode) {
       cov_1elzmjyf17.s[82]++;
 
       if (isFunction_default()(this.schema.set)) {
-        cov_1elzmjyf17.b[25][0]++;
+        cov_1elzmjyf17.b[27][0]++;
         cov_1elzmjyf17.s[83]++;
         this.schema.set(this.model, newValue);
         cov_1elzmjyf17.s[84]++;
         changed = true;
       } else {
-        cov_1elzmjyf17.b[25][1]++;
+        cov_1elzmjyf17.b[27][1]++;
         cov_1elzmjyf17.s[85]++;
 
         if (this.schema.model) {
-          cov_1elzmjyf17.b[26][0]++;
+          cov_1elzmjyf17.b[28][0]++;
           cov_1elzmjyf17.s[86]++;
           this.setModelValueByPath(this.schema.model, newValue);
           cov_1elzmjyf17.s[87]++;
           changed = true;
         } else {
-          cov_1elzmjyf17.b[26][1]++;
+          cov_1elzmjyf17.b[28][1]++;
         }
       }
 
       cov_1elzmjyf17.s[88]++;
 
       if (changed) {
-        cov_1elzmjyf17.b[27][0]++;
+        cov_1elzmjyf17.b[29][0]++;
         cov_1elzmjyf17.s[89]++;
         this.eventBus.$emit("model-updated", newValue, this.schema.model);
         cov_1elzmjyf17.s[90]++;
 
         if (isFunction_default()(this.schema.onChanged)) {
-          cov_1elzmjyf17.b[28][0]++;
+          cov_1elzmjyf17.b[30][0]++;
           cov_1elzmjyf17.s[91]++;
           this.schema.onChanged.call(this, this.model, newValue, oldValue, this.schema);
         } else {
-          cov_1elzmjyf17.b[28][1]++;
+          cov_1elzmjyf17.b[30][1]++;
         }
 
         cov_1elzmjyf17.s[92]++;
 
         if (get_default()(this.formOptions, "validateAfterChanged", false)) {
-          cov_1elzmjyf17.b[29][0]++;
+          cov_1elzmjyf17.b[31][0]++;
           cov_1elzmjyf17.s[93]++;
 
           if (get_default()(this.formOptions, "validateDebounceTime", 500) > 0) {
-            cov_1elzmjyf17.b[30][0]++;
+            cov_1elzmjyf17.b[32][0]++;
             cov_1elzmjyf17.s[94]++;
             this.debouncedValidate();
           } else {
-            cov_1elzmjyf17.b[30][1]++;
+            cov_1elzmjyf17.b[32][1]++;
             cov_1elzmjyf17.s[95]++;
             this.validate();
           }
         } else {
-          cov_1elzmjyf17.b[29][1]++;
+          cov_1elzmjyf17.b[31][1]++;
         }
       } else {
-        cov_1elzmjyf17.b[27][1]++;
+        cov_1elzmjyf17.b[29][1]++;
       }
     },
     clearValidationErrors: function clearValidationErrors() {
@@ -28101,16 +28169,16 @@ function attributesDirective(el, binding, vnode) {
         cov_1elzmjyf17.s[105]++;
 
         if (i < n - 1) {
-          cov_1elzmjyf17.b[31][0]++;
+          cov_1elzmjyf17.b[33][0]++;
           cov_1elzmjyf17.s[106]++;
 
           if (o[k] !== undefined) {
-            cov_1elzmjyf17.b[32][0]++;
+            cov_1elzmjyf17.b[34][0]++;
             cov_1elzmjyf17.s[107]++;
             // Found parent property. Step in
             o = o[k];
           } else {
-            cov_1elzmjyf17.b[32][1]++;
+            cov_1elzmjyf17.b[34][1]++;
             cov_1elzmjyf17.s[108]++;
             // Create missing property (new level)
             this.$root.$set(o, k, {});
@@ -28118,7 +28186,7 @@ function attributesDirective(el, binding, vnode) {
             o = o[k];
           }
         } else {
-          cov_1elzmjyf17.b[31][1]++;
+          cov_1elzmjyf17.b[33][1]++;
           cov_1elzmjyf17.s[110]++;
           // Set final property value
           this.$root.$set(o, k, value);
@@ -28145,13 +28213,13 @@ function attributesDirective(el, binding, vnode) {
       cov_1elzmjyf17.s[115]++;
 
       if (!this.touched) {
-        cov_1elzmjyf17.b[33][0]++;
+        cov_1elzmjyf17.b[35][0]++;
         cov_1elzmjyf17.s[116]++;
         this.touched = true;
         cov_1elzmjyf17.s[117]++;
         this.$emit("field-touched");
       } else {
-        cov_1elzmjyf17.b[33][1]++;
+        cov_1elzmjyf17.b[35][1]++;
       }
     }
   },
@@ -28189,14 +28257,14 @@ function attributesDirective(el, binding, vnode) {
     cov_1elzmjyf17.s[125]++;
 
     if (this.schema) {
-      cov_1elzmjyf17.b[34][0]++;
+      cov_1elzmjyf17.b[36][0]++;
       var currentKeys = (cov_1elzmjyf17.s[126]++, Object.keys(this.schema));
       var result = (cov_1elzmjyf17.s[127]++, diff(allowedKeys, currentKeys));
       /*if (result.length > 0) {
       	console.log("diff", result, this.schema.type, this.schema.model);
       }*/
     } else {
-      cov_1elzmjyf17.b[34][1]++;
+      cov_1elzmjyf17.b[36][1]++;
     }
   },
   beforeDestroy: function beforeDestroy() {
