@@ -1,17 +1,20 @@
 <template>
+	<div>
 	<textarea class="form-control"
 		v-model="value"
 		:id="fieldID"
 		:class="fieldClasses"
 		:disabled="disabled"
-		:maxlength="schema.max"
-		:minlength="schema.min"
+		:maxlength="fieldOptions.max"
+		:minlength="fieldOptions.min"
 		:placeholder="placeholder"
 		:required="required"
 		:readonly="readonly"
-		:rows="schema.rows || 2"
+		:rows="fieldOptions.rows || 2"
 		:name="inputName"
 		v-attributes="'input'"></textarea>
+
+	</div>
 </template>
 
 <script>

@@ -5,6 +5,7 @@
 		<label
 			v-if="fieldTypeHasLabel"
 			:for="fieldID"
+			:style="field.labelStyle"
 			:class="field.labelClasses">
 			<slot name="label" 
 				:field="field" 
@@ -16,7 +17,7 @@
 			/>
 		</label>
 
-		<div class="field-wrap">
+		<div class="field-wrap" :style="field.fieldStyle">
 			<component
 				ref="child"
 				:is="fieldType"
@@ -25,7 +26,6 @@
 				:form-options="options"
 				:event-bus="eventBus"
 				:fieldID="fieldID"
-				:style="field.fieldStyle"
 				@field-touched="onFieldTouched"
 				@errors-updated="onChildValidated"
 			/>

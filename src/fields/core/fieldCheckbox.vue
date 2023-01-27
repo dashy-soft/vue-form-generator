@@ -1,10 +1,10 @@
 <template>
-	<input :id="fieldID"
+	<input :id="randomId"
 		type="checkbox"
 		v-model="value"
 		:autocomplete="schema.autocomplete"
 		:disabled="disabled"
-		:name="inputName"
+		:name="inputName + '-' + randomId"
 		:class="fieldClasses"
 		:required="required"
 		v-attributes="'input'" >
@@ -15,7 +15,12 @@ import abstractField from "../abstractField";
 
 export default {
 	name: "field-checkbox",
-	mixins: [abstractField]
+	mixins: [abstractField],
+	computed: {
+		randomId() {
+			return this.fieldId + '-' + Math.trunc(Math.random()*100000);
+		}
+	}
 };
 </script>
 
