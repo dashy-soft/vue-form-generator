@@ -1,15 +1,19 @@
 <template>
 	<div class="vue-form-generator" 
 		v-if='schema != null'>
-		<form-group
+		<vfg-form-group
 			:tag="tag"
 			:fields="fields"
 			:model="model"
 			:options="options"
 			:errors="errors"
 			:event-bus="eventBus">
-			<template slot="group-legend" 
-				slot-scope="{ group, groupLegend }" >
+			<template #field-invisible="{ field }">
+				<slot name="field-invisible"
+					:field="field"
+				/>
+			</template>
+			<template #group-legend="{ group, groupLegend }">
 				<slot name="group-legend" 
 					:group="group" 
 					:group-legend="groupLegend" >
@@ -18,8 +22,7 @@
 					</legend>
 				</slot>
 			</template>
-			<template slot="group-help" 
-				slot-scope="{ group }">
+			<template #group-help="{ group }">
 				<slot
 					name="group-help"
 					:group="group">
@@ -31,17 +34,14 @@
 					</span>
 				</slot>
 			</template>
-			<template slot="element" 
-				slot-scope="slotProps">
-				<form-element
+			<template #element="slotProps">
+				<vfg-form-element
 					:field="slotProps.field"
 					:model="slotProps.model"
 					:options="slotProps.options"
 					:errors="slotProps.errors"
 					:event-bus="eventBus">
-
-					<template slot="label" 
-						slot-scope="{ field, getValueFromOption }">
+					<template #label="{ field, getValueFromOption }">
 						<slot
 							name="label"
 							:field="field"
@@ -49,9 +49,15 @@
 							<span v-html="field.label" ></span>
 						</slot>
 					</template>
+					<template #wrapper-hook="{ field, getValueFromOption }">
+						<slot
+							name="wrapper-hook"
+							:field="field"
+							:getValueFromOption="getValueFromOption">
+						</slot>
+					</template>
 
-					<template slot="help" 
-						slot-scope="{ field, getValueFromOption }">
+					<template #help="{ field, getValueFromOption }">
 						<slot
 							name="help"
 							:field="field"
@@ -64,8 +70,14 @@
 							</span>
 						</slot>
 					</template>
-					<template slot="hint" 
-						slot-scope="{ field, getValueFromOption }">
+					<template #field-not-found="{ field, getValueFromOption }">
+						<slot
+							name="field-not-found"
+							:field="field"
+							:getValueFromOption="getValueFromOption"
+						/>
+					</template>
+					<template #hint="{ field, getValueFromOption }">
 						<slot
 							name="hint"
 							:field="field"
@@ -75,8 +87,7 @@
 						</slot>
 					</template>
 
-					<template slot="errors" 
-						slot-scope="{ childErrors, field, getValueFromOption }">
+					<template #errors="{ childErrors, field, getValueFromOption }">
 						<slot
 							name="errors"
 							:errors="childErrors"
@@ -90,20 +101,20 @@
 							</div>
 						</slot>
 					</template>
-				</form-element>
+				</vfg-form-element>
 			</template>
-		</form-group>
+		</vfg-form-group>
 	</div>
 </template>
 
 <script>
-import Vue from "vue";
 import formGroup from "./formGroup.vue";
 import formElement from "./formElement.vue";
+import EventBus from './EventBus';
 
 export default {
 	name: "form-generator",
-	components: { formGroup, formElement },
+	components: { 'vfg-form-group': formGroup, 'vfg-form-element': formElement },
 	props: {
 		schema: {
 			type: Object,
@@ -147,9 +158,8 @@ export default {
 	},
 
 	data() {
-		const eventBus = new Vue();
 		return {
-			eventBus,
+			eventBus: new EventBus(),
 			totalNumberOfFields: 0,
 			errors: [] // Validation errors
 		};
@@ -231,7 +241,7 @@ export default {
 
 				let formErrors = [];
 
-				this.eventBus.$on("field-deregistering", () => {
+				this.eventBus.$on("field-deregistering", (...args) => {
 					// console.warn("Fields were deleted during validation process");
 					this.eventBus.$emit("fields-validation-terminated", formErrors);
 					reject(formErrors);
@@ -269,7 +279,11 @@ export default {
 
 		// Clear validation errors
 		clearValidationErrors() {
-			this.errors.splice(0);
+			if (this.errors === undefined) {
+				console.warn('no this.errors in AbstractField');
+			} else {
+				this.errors.splice(0);
+			}
 			this.eventBus.$emit("clear-validation-errors", this.clearValidationErrors);
 		}
 	},
@@ -283,7 +297,7 @@ export default {
 		this.eventBus.$on("field-registering", () => {
 			this.totalNumberOfFields = this.totalNumberOfFields + 1;
 		});
-		this.eventBus.$on("field-deregistering", () => {
+		this.eventBus.$on("field-deregistering", (f) => {
 			this.totalNumberOfFields = this.totalNumberOfFields - 1;
 		});
 	},

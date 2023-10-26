@@ -18,7 +18,7 @@ export default {
 	mixins: [abstractField],
 	computed: {
 		randomId() {
-			return this.fieldId + '-' + Math.trunc(Math.random()*100000);
+			return this.fieldID + '-' + Math.trunc(Math.random()*100000);
 		}
 	}
 };

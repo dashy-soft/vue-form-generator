@@ -2,13 +2,19 @@
 	<div class="form-element" 
 		:class="[fieldRowClasses]"
 		:style="field.wrapperStyle">
+		<slot name="wrapper-hook"
+			:field="field"
+			:getValueFromOption="getValueFromOption"
+		/>
 		<label
 			v-if="fieldTypeHasLabel"
 			:for="fieldID"
 			:style="field.labelStyle"
 			:class="field.labelClasses">
 			<slot name="label" 
-				:field="field" 
+				:field="field"
+				:fieldID="fieldID"
+				:fieldComponent="fieldComponent"
 				:getValueFromOption="getValueFromOption"
 			/>
 			<slot name="help" 
@@ -16,10 +22,10 @@
 				:getValueFromOption="getValueFromOption"
 			/>
 		</label>
-
 		<div class="field-wrap" :style="field.fieldStyle">
 			<component
 				ref="child"
+				v-if="fieldFound"
 				:is="fieldType"
 				:model="model"
 				:schema="field"
@@ -29,6 +35,14 @@
 				@field-touched="onFieldTouched"
 				@errors-updated="onChildValidated"
 			/>
+			<div v-else class="field-not-found">
+				<slot name="field-not-found"
+					:field="field"
+					:getValueFromOption="getValueFromOption"
+				>
+					Field not found
+				</slot>
+			</div>
 			<div
 				v-if="buttonsAreVisible"
 				class="buttons">
@@ -63,6 +77,7 @@
 import { isNil } from "lodash";
 import { slugifyFormID } from "./utils/schema";
 import formMixin from "./formMixin.js";
+import { resolveComponent } from 'vue';
 
 export default {
 	name: "form-element",
@@ -102,6 +117,9 @@ export default {
 		};
 	},
 	computed: {
+		fieldComponent() {
+			return this;
+		},
 		fieldID() {
 			const idPrefix = this.options.fieldIdPrefix || "";
 			return slugifyFormID(this.field, idPrefix);
@@ -109,6 +127,12 @@ export default {
 		// Get type of field 'field-xxx'. It'll be the name of HTML element
 		fieldType() {
 			return "field-" + this.field.type;
+		},
+		fieldFound() {
+			if(this.field && this.field.type) {
+				const capitalized = this.field.type.charAt(0).toUpperCase() + this.field.type.slice(1)
+				return !!resolveComponent('Field' + capitalized);
+			}
 		},
 		// Should field type have a label?
 		fieldTypeHasLabel() {

@@ -13,40 +13,39 @@
 		<template v-for="(field, index) in fields">
 			<template v-if="fieldVisible(field)">
 				<template v-if="field.type === 'group'">
-					<form-group :fields="field.fields"
+					<vfg-form-group :fields="field.fields"
 						:group="field"
 						:tag="getGroupTag(field)"
 						:model="model"
 						:options="options"
 						:errors="errors"
 						:event-bus="eventBus"
-						:key="index">
-						<template
-							slot="group-legend"
-							slot-scope="slotProps">
+						:key="index"
+						:parent-groups="[...parentGroups, this]">
+						<template #group-legend="slotProps">
 							<slot
 								name="group-legend"
 								:group="slotProps.group"
-								:group-legend="slotProps.groupLegend"></slot>
+								:group-legend="slotProps.groupLegend"
+							/>
 						</template>
-						<template
-							slot="group-help"
-							slot-scope="slotProps">
+						<template #group-help="slotProps">
 							<slot
 								name="group-help"
-								:group="slotProps.group"></slot>
+								:group="slotProps.group"
+							/>
 						</template>
 
-						<template slot="element"
-							slot-scope="slotProps">
+						<template #element="slotProps">
 							<slot name="element"
 								:field="slotProps.field"
 								:model="slotProps.model"
 								:options="slotProps.options"
 								:errors="slotProps.errors"
-								:eventBus="slotProps.eventBus"></slot>
+								:eventBus="slotProps.eventBus"
+							/>
 						</template>
-					</form-group>
+					</vfg-form-group>
 				</template>
 				<template v-else>
 					<slot name="element"
@@ -54,8 +53,18 @@
 						:model="model"
 						:options="options"
 						:errors="errors"
-						:eventBus="eventBus"></slot>
+						:eventBus="eventBus"
+					/>
 				</template>
+			</template>
+			<template v-else>
+				<slot name="field-invisible"
+					:field="field"
+					:model="model"
+					:options="options"
+					:errors="errors"
+					:eventBus="eventBus"
+				/>
 			</template>
 		</template>
 	</fieldset>
@@ -64,7 +73,7 @@
 import formMixin from "./formMixin.js";
 
 export default {
-	name: "form-group",
+	name: "vfg-form-group",
 	mixins: [formMixin],
 	props: {
 		fields: {
@@ -110,7 +119,11 @@ export default {
 			default() {
 				return {};
 			}
-		}
+		},
+		parentGroups: {
+			type: Array,
+			default: () => [],
+		},
 	},
 	data() {
 		return {
@@ -159,10 +172,15 @@ export default {
 	created() {
 		this.eventBus.$on("field-validated", () => {
 			this.$nextTick(() => {
-				let containFieldWithError =
-					this.$refs.group.querySelector(
-						".form-element." + this.options.validationErrorClass || "error"
-					) !== null;
+				let containFieldWithError;
+				if(this.$refs.group) {
+					containFieldWithError =
+						this.$refs.group.querySelector(
+							".form-element." + this.options.validationErrorClass || "error"
+						) !== null;
+				} else {
+					containFieldWithError = false;
+				}
 				this.validationClass = {
 					[this.options.validationErrorClass || "error"]: containFieldWithError,
 					[this.options.validationSuccessClass || "valid"]: !containFieldWithError

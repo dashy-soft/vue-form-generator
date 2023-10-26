@@ -1,6 +1,7 @@
 import { get as objGet, forEach, isFunction, isString, isArray, debounce, isNil, uniqueId } from "lodash";
 import validators from "../utils/validators";
 import { slugifyFormID } from "../utils/schema";
+//import { reactive } from 'vue';
 
 const convertValidator = (validator) => {
 	if (isString(validator)) {
@@ -14,7 +15,8 @@ const convertValidator = (validator) => {
 };
 
 function attributesDirective(el, binding, vnode) {
-	let attrs = vnode.context.schema && vnode.context.schema.attributes ? vnode.context.schema.attributes : {};
+	let attrs = vnode.context && vnode.context.schema && vnode.context.schema.attributes ? vnode.context.schema.attributes : {};
+
 	let container = binding.value || "input";
 	if (isString(container)) {
 		attrs = objGet(attrs, container) || attrs;
@@ -251,6 +253,10 @@ export default {
 		},
 
 		clearValidationErrors() {
+			if (this.errors === undefined || this.errors.splice === undefined) {
+				console.warn('no this.errors in AbstractField');
+				return;
+			}
 			this.errors.splice(0);
 		},
 
@@ -273,12 +279,16 @@ export default {
 						o = o[k];
 					} else {
 						// Create missing property (new level)
-						this.$root.$set(o, k, {});
+						//TODO disabled for vue 3 migration
+						//this.$root.$set(o, k, {});
+						o[k] = {};
 						o = o[k];
 					}
 				else {
 					// Set final property value
-					this.$root.$set(o, k, value);
+					o[k] = value;
+					//TODO disabled for vue 3 migration
+					//this.$root.$set(o, k, value);
 					return;
 				}
 
@@ -354,7 +364,7 @@ export default {
 			}*/
 		}
 	},
-	beforeDestroy() {
+	beforeUnmount() {
 		this.eventBus.$off("clear-validation-errors", this.clearValidationErrors);
 		this.eventBus.$off("validate-fields", this.validate);
 		this.eventBus.$emit("field-deregistering", this);
