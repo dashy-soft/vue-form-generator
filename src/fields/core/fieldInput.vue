@@ -46,7 +46,8 @@
 
 <script>
 import abstractField from "../abstractField";
-import { debounce, isNumber } from "lodash";
+import debounce from "../../utils/debounce";
+import isNumber from "../../utils/isNumber";
 import fecha from "fecha";
 
 const DATETIME_FORMATS = {

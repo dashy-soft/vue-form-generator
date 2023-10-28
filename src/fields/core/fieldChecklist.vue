@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { clone } from "lodash";
+import clone from "../../utils/clone";
 import abstractField from "../abstractField";
 import { slugify } from "../../utils/schema";
 

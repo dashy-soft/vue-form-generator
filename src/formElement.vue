@@ -74,7 +74,7 @@
 	</div>
 </template>
 <script>
-import { isNil } from "lodash";
+import isNil from "./utils";
 import { slugifyFormID } from "./utils/schema";
 import formMixin from "./formMixin.js";
 import { resolveComponent } from 'vue';

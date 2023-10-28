@@ -1,4 +1,13 @@
-import { defaults, isNil, isNumber, isInteger, isString, isArray, isFunction } from "lodash";
+import defaults from './defaults';
+import isNil from './isNil';
+
+function isInteger(value) {
+  if (typeof value === 'number' && isFinite(value)) {
+    return Math.floor(value) === value;
+  }
+  return false;
+}
+
 import fecha from "fecha";
 
 let resources = {
@@ -68,7 +77,7 @@ const validators = {
 		}
 
 		let err = [];
-		if (isNumber(value)) {
+		if (typeof value === 'number') {
 			if (!isNil(field) && !isNil(field.min) && value < field.min) {
 				err.push(msg(messages.numberTooSmall, field.min));
 			}
@@ -99,7 +108,7 @@ const validators = {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
-		if (!isNumber(value) || isNaN(value)) {
+		if (!typeof value === 'number' || isNaN(value)) {
 			return [msg(messages.invalidNumber)];
 		}
 	},
@@ -110,7 +119,7 @@ const validators = {
 		if (res != null) return res;
 
 		let err = [];
-		if (isString(value)) {
+		if (typeof value === 'string') {
 			if (!isNil(field.min) && value.length < field.min) {
 				err.push(msg(messages.textTooSmall, value.length, field.min));
 			}
@@ -127,7 +136,7 @@ const validators = {
 
 	array(value, field, model, messages = resources) {
 		if (field.required) {
-			if (!isArray(value)) {
+			if (!Array.isArray(value)) {
 				return [msg(messages.thisNotArray)];
 			}
 
@@ -267,7 +276,7 @@ const validators = {
 
 Object.keys(validators).forEach((name) => {
 	const fn = validators[name];
-	if (isFunction(fn)) {
+	if (typeof fn === 'function') {
 		fn.locale = (customMessages) => (value, field, model) =>
 			fn(value, field, model, defaults(customMessages, resources));
 	}

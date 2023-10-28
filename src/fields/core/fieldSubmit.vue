@@ -11,7 +11,7 @@
 
 <script>
 import abstractField from "../abstractField";
-import { isEmpty } from "lodash";
+import isEmpty from "../../utils/isEmpty";
 
 export default {
 	name: "field-submit",

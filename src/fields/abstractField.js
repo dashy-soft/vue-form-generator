@@ -1,10 +1,22 @@
-import { get as objGet, forEach, isFunction, isString, isArray, debounce, isNil, uniqueId } from "lodash";
+import forEach from "../utils/forEach";
+import get as objGet from '../utils/get';
+import isNil from '../utils/isNil';
+import debounce from '../utils/debounce';
+
 import validators from "../utils/validators";
 import { slugifyFormID } from "../utils/schema";
 //import { reactive } from 'vue';
+let uniqueIdCounter = 0;
+
+function uniqueId(prefix) {
+  uniqueIdCounter += 1;
+  return (prefix || '') + uniqueIdCounter;
+}
+
+const isFunction = (value) => typeof value === 'function';
 
 const convertValidator = (validator) => {
-	if (isString(validator)) {
+	if (typeof validator === 'string') {
 		if (validators[validator] != null) return validators[validator];
 		else {
 			console.warn(`'${validator}' is not a validator function!`);
@@ -18,7 +30,7 @@ function attributesDirective(el, binding, vnode) {
 	let attrs = vnode.context && vnode.context.schema && vnode.context.schema.attributes ? vnode.context.schema.attributes : {};
 
 	let container = binding.value || "input";
-	if (isString(container)) {
+	if (typeof container === 'string') {
 		attrs = objGet(attrs, container) || attrs;
 	}
 	forEach(attrs, (val, key) => {
@@ -158,7 +170,7 @@ export default {
 				this.disabled !== true
 			) {
 				let validators = [];
-				if (!isArray(this.schema.validator)) {
+				if (!Array.isArray(this.schema.validator)) {
 					validators.push(convertValidator(this.schema.validator).bind(this));
 				} else {
 					this.schema.validator.forEach((validator) => {
@@ -187,9 +199,9 @@ export default {
 			let handleErrors = (errors) => {
 				let fieldErrors = [];
 				errors.forEach((err) => {
-					if (isArray(err) && err.length > 0) {
+					if (Array.isArray(err) && err.length > 0) {
 						fieldErrors = fieldErrors.concat(err);
-					} else if (isString(err)) {
+					} else if (typeof err === 'string') {
 						fieldErrors.push(err);
 					}
 				});

@@ -19,7 +19,7 @@
 <script>
 /* global $ */
 import abstractField from "../abstractField";
-import { defaults } from "lodash";
+import defaults from "../../utils/defaults";
 import dateFieldHelper from "../../utils/dateFieldHelper";
 
 export default {

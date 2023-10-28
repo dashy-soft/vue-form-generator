@@ -1,4 +1,8 @@
-import { get, set, each, cloneDeep } from "lodash";
+import get from './get';
+import set from './set';
+import each from './each';
+
+const deepClone = (v) => JSON.parse(JSON.stringify(v));
 
 // Create a new model by schema default values
 const createDefaultObject = (schema, obj = {}) => {
@@ -7,7 +11,7 @@ const createDefaultObject = (schema, obj = {}) => {
 			if (typeof field.default === "function") {
 				set(obj, field.model, field.default(field, schema, obj));
 			} else if (field.default instanceof Object || Array.isArray(field.default)) {
-				set(obj, field.model, cloneDeep(field.default));
+				set(obj, field.model, deepClone(field.default));
 			} else set(obj, field.model, field.default);
 		}
 	});
