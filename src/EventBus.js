@@ -1,25 +1,25 @@
-import Emitter from 'tiny-emitter';
+import { Emitter } from 'tiny-emitter';
 
 class CustomEmitter {
-  constructor() {
-    this.emitter = new Emitter();
-  }
+	constructor() {
+		this.emitter = new Emitter();
+	}
 
-  $on(...args) {
-    this.emitter.on(...args);
-  }
+	$on(...args) {
+		this.emitter.on(...args);
+	}
 
-  $once(...args) {
-    this.emitter.once(...args);
-  }
+	$once(...args) {
+		this.emitter.once(...args);
+	}
 
-  $off(...args) {
-    this.emitter.off(...args);
-  }
+	$off(...args) {
+		this.emitter.off(...args);
+	}
 
-  $emit(...args) {
-    this.emitter.emit(...args);
-  }
+	$emit(...args) {
+		this.emitter.emit(...args);
+	}
 }
 
 export default CustomEmitter;
