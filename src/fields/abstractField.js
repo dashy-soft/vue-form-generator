@@ -1,5 +1,5 @@
 import forEach from "../utils/forEach";
-import get as objGet from '../utils/get';
+import objGet from '../utils/get';
 import isNil from '../utils/isNil';
 import debounce from '../utils/debounce';
 
