@@ -1,8 +1,8 @@
-import { EventEmitter } from 'tiny-emitter'
+import Emitter from 'pico-emitter';
 
 class CustomEmitter {
 	constructor() {
-		this.emitter = new EventEmitter();
+		this.emitter = new Emitter();
 	}
 
 	$on(...args) {
