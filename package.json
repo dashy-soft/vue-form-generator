@@ -64,7 +64,7 @@
     "eonasdan-bootstrap-datetimepicker": "4.17.47",
     "eslint-plugin-vue": "^9.1.0",
     "fakerator": "0.3.0",
-    "fecha": "2.3.3",
+    "fecha": "^4.2.3",
     "ion-rangeslider": "2.2.0",
     "istanbul-instrumenter-loader": "3.0.1",
     "jquery": "3.3.1",
@@ -88,6 +88,7 @@
     "access": "public"
   },
   "dependencies": {
+    "pico-emitter": "^1.2.1",
     "tiny-emitter": "^2.1.0"
   }
 }
