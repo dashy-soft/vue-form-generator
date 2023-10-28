@@ -1,4 +1,4 @@
-export default (func, wait) {
+export default (func, wait) => {
 	let timeout;
 	return function (...args) {
 		clearTimeout(timeout);

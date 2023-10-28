@@ -1,3 +1,3 @@
-export default (value) {
+export default (value) => {
 	return value === null || value === undefined;
 }

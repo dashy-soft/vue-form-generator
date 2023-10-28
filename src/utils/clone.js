@@ -1,4 +1,4 @@
-export default (value) {
+export default (value) => {
 	if (value === null || typeof value !== 'object') {
 		return value;
 	}
