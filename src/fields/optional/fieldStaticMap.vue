@@ -25,7 +25,7 @@ export default {
 				lat = this.value[opts.lat];
 				lng = this.value[opts.lng];
 
-				let url = `http://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${
+				let url = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${
 					opts.zoom
 				}&size=${opts.sizeX}x${opts.sizeY}`;
 

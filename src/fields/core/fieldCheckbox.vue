@@ -18,7 +18,10 @@ export default {
 	mixins: [abstractField],
 	computed: {
 		randomId() {
-			return this.fieldID + '-' + Math.trunc(Math.random()*100000);
+			const crypto = window.crypto || window.msCrypto;
+			const array = new Uint32Array(1);
+
+			return this.fieldID + '-' + crypto.getRandomValues(array)[0];
 		}
 	}
 };

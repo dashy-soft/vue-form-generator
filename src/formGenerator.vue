@@ -18,7 +18,7 @@
 					:group="group" 
 					:group-legend="groupLegend" >
 					<legend v-if="groupLegend">
-						<span v-html="groupLegend" ></span>
+						<span>{{groupLegend}}</span>
 					</legend>
 				</slot>
 			</template>
@@ -29,8 +29,7 @@
 					<span v-if='group.help' 
 						class="help">
 						<i class="icon" ></i>
-						<div class="helpText" 
-							v-html="group.help" ></div>
+						<div class="helpText">{{group.help}}</div>
 					</span>
 				</slot>
 			</template>
@@ -46,7 +45,7 @@
 							name="label"
 							:field="field"
 							:getValueFromOption="getValueFromOption">
-							<span v-html="field.label" ></span>
+							<span>{{field.label}}</span>
 						</slot>
 					</template>
 					<template #wrapper-hook="{ field, getValueFromOption }">
@@ -65,8 +64,7 @@
 							<span v-if="field.help" 
 								class="help">
 								<i class="icon" ></i>
-								<div class="helpText" 
-									v-html="field.help" ></div>
+								<div class="helpText">{{field.help}}</div>
 							</span>
 						</slot>
 					</template>
@@ -82,8 +80,7 @@
 							name="hint"
 							:field="field"
 							:getValueFromOption="getValueFromOption">
-							<div class="hint" 
-								v-html="getValueFromOption(field, 'hint', undefined)"></div>
+							<div class="hint">{{getValueFromOption(field, 'hint', undefined)}}</div>
 						</slot>
 					</template>
 
@@ -97,7 +94,9 @@
 								<span
 									v-for="(error, index) in childErrors"
 									:key="index"
-									v-html="error"></span>
+									>
+									{{error}}
+								</span>
 							</div>
 						</slot>
 					</template>
@@ -348,14 +347,12 @@ export default {
 	color: #fff;
 	display: block;
 	left: 0px;
-	//margin-bottom: 15px;
 	opacity: 0;
 	padding: 20px;
 	pointer-events: none;
 	position: absolute;
 	text-align: justify;
 	width: 300px;
-	//transform: translateY(10%);
 	transition: all 0.25s ease-out;
 	box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 	border-radius: 6px;
