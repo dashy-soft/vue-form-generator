@@ -8,8 +8,6 @@ function isInteger(value) {
   return false;
 }
 
-import fecha from "fecha";
-
 let resources = {
 	fieldIsRequired: "This field is required!",
 	invalidFormat: "Invalid format!",
@@ -170,14 +168,14 @@ const validators = {
 		if (!isNil(field.min)) {
 			let min = new Date(field.min);
 			if (m.valueOf() < min.valueOf()) {
-				err.push(msg(messages.dateIsEarly, fecha.format(m), fecha.format(min)));
+				err.push(msg(messages.dateIsEarly, m, min));
 			}
 		}
 
 		if (!isNil(field.max)) {
 			let max = new Date(field.max);
 			if (m.valueOf() > max.valueOf()) {
-				err.push(msg(messages.dateIsLate, fecha.format(m), fecha.format(max)));
+				err.push(msg(messages.dateIsLate, m, max));
 			}
 		}
 
