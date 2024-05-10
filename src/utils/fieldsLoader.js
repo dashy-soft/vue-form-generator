@@ -11,7 +11,6 @@ import fieldUpload from "../fields/core/fieldUpload.vue";
 // optional
 import fieldCleave from "../fields/optional/fieldCleave.vue";
 import fieldDateTimePicker from "../fields/optional/fieldDateTimePicker.vue";
-import fieldGoogleAddress from "../fields/optional/fieldGoogleAddress.vue";
 import fieldImage from "../fields/optional/fieldImage.vue";
 import fieldMasked from "../fields/optional/fieldMasked.vue";
 import fieldNoUiSlider from "../fields/optional/fieldNoUiSlider.vue";
@@ -35,7 +34,6 @@ export {
 	fieldUpload,
 	fieldCleave,
 	fieldDateTimePicker,
-	fieldGoogleAddress,
 	fieldImage,
 	fieldMasked,
 	fieldNoUiSlider,
