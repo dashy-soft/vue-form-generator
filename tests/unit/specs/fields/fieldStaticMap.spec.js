@@ -64,7 +64,7 @@ describe("fieldStaticMap.vue", () => {
 			expect(wrapper.exists()).to.be.true;
 			expect(input.is("img")).to.be.true;
 			expect(input.element.src).to.be.equal(
-				"http://maps.googleapis.com/maps/api/staticmap?center=13.4567,20.3321&zoom=6&size=640x640&scale=1&format=png&maptype=satellite&language=FR-fr&markers=size:mid%7Ccolor:0xff0000"
+				"https://maps.googleapis.com/maps/api/staticmap?center=13.4567,20.3321&zoom=6&size=640x640&scale=1&format=png&maptype=satellite&language=FR-fr&markers=size:mid%7Ccolor:0xff0000"
 			);
 		});
 	});
