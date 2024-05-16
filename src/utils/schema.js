@@ -76,7 +76,7 @@ const slugifyFormID = (schema, prefix = "") => {
 				// Multiple dashes to one
 				.replace(/-{2,}/g, "-")
 				// Remove leading & trailing dashes
-				.replace(/^[-]++|[-]++$/g, "")
+				.replace(/^[-]+|[-]+$/g, "")
 				// Remove anything that isn't a (English/ASCII) letter, number or dash.
 				.replace(/([^a-zA-Z0-9-]+)/g, "")
 		);
@@ -97,7 +97,7 @@ const slugify = (name = "") => {
 			// Multiple dashes to one
 			.replace(/-{2,}/g, "-")
 			// Remove leading & trailing dashes
-			.replace(/^[-]++|[-]++$/g, "")
+			.replace(/^[-]+|[-]+$/g, "")
 			// Remove anything that isn't a (English/ASCII) letter, number or dash.
 			.replace(/([^a-zA-Z0-9-_/./:]+)/g, "")
 	);

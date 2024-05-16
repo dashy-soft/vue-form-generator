@@ -79,6 +79,7 @@ import { slugifyFormID } from "./utils/schema";
 import formMixin from "./formMixin.js";
 import { resolveComponent } from 'vue';
 
+
 function cssStringToObject(cssString) {
   const regex = /([\w-]+)\s*:\s*([^;]+);?/g;
   let match;
@@ -109,7 +110,7 @@ function filterCssRules(cssString) {
 	return Object.keys(fullCssObject)
 	  .filter(key => allowed.includes(key))
 	  .reduce((obj, key) => {
-	    obj[key] = raw[key];
+	    obj[key] = fullCssObject[key];
 	    return obj;
 	  }, {});
 }
