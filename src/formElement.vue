@@ -1,7 +1,7 @@
 <template>
 	<div class="form-element" 
 		:class="[fieldRowClasses]"
-		:style="field.wrapperStyle">
+		:style="wrapperStyle">
 		<slot name="wrapper-hook"
 			:field="field"
 			:getValueFromOption="getValueFromOption"
@@ -9,7 +9,7 @@
 		<label
 			v-if="fieldTypeHasLabel"
 			:for="fieldID"
-			:style="field.labelStyle"
+			:style="labelStyle"
 			:class="field.labelClasses">
 			<slot name="label" 
 				:field="field"
@@ -22,7 +22,7 @@
 				:getValueFromOption="getValueFromOption"
 			/>
 		</label>
-		<div class="field-wrap" :style="field.fieldStyle">
+		<div class="field-wrap" :style="fieldStyle">
 			<component
 				ref="child"
 				v-if="fieldFound"
@@ -79,6 +79,41 @@ import { slugifyFormID } from "./utils/schema";
 import formMixin from "./formMixin.js";
 import { resolveComponent } from 'vue';
 
+function cssStringToObject(cssString) {
+  const regex = /([\w-]+)\s*:\s*([^;]+);?/g;
+  let match;
+  const cssObject = {};
+
+  while ((match = regex.exec(cssString)) !== null) {
+    const propertyName = match[1];
+    const propertyValue = match[2].trim();
+    cssObject[propertyName] = propertyValue;
+  }
+
+  return cssObject;
+}
+
+function filterCssRules(cssString) {
+	const fullCssObject = cssStringToObject(cssString);
+	const allowed = [
+		'color',
+		'background', 'background-color',
+		'padding', 'padding-top', 'padding-left', 'padding-right', 'padding-bottom',
+		'margin', 'margin-top', 'margin-left', 'margin-right', 'margin-bottom',
+		'font-weight', 'font-size',
+		'opacity',
+		'width', 'height',
+		'border', 'border-top', 'border-left', 'border-right', 'border-bottom'
+	];
+
+	return Object.keys(fullCssObject)
+	  .filter(key => allowed.includes(key))
+	  .reduce((obj, key) => {
+	    obj[key] = raw[key];
+	    return obj;
+	  }, {});
+}
+
 export default {
 	name: "form-element",
 	mixins: [formMixin],
@@ -117,6 +152,15 @@ export default {
 		};
 	},
 	computed: {
+		fieldStyle() {
+			return filterCssRules(this.field.fieldStyle);
+		},
+		labelStyle() {
+			return filterCssRules(this.field.labelStyle);
+		},
+		wrapperStyle() {
+			return filterCssRules(this.field.wrapperStyle);
+		},
 		fieldComponent() {
 			return this;
 		},
