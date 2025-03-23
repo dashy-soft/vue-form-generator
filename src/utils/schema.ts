@@ -2,11 +2,11 @@ import get from './get';
 import set from './set';
 import each from './each';
 
-const deepClone = (v) => JSON.parse(JSON.stringify(v));
+const deepClone = (v: Record<string, any>) => JSON.parse(JSON.stringify(v));
 
 // Create a new model by schema default values
-const createDefaultObject = (schema, obj = {}) => {
-	each(schema.fields, (field) => {
+const createDefaultObject = (schema: Record<string, any>, obj: Record<string, any> = {}) => {
+	each(schema.fields, (field: Record<string, any>) => {
 		if (get(obj, field.model) === undefined && field.default !== undefined) {
 			if (typeof field.default === "function") {
 				set(obj, field.model, field.default(field, schema, obj));
@@ -19,9 +19,9 @@ const createDefaultObject = (schema, obj = {}) => {
 };
 
 // Get a new model which contains only properties of multi-edit fields
-const getMultipleFields = (schema) => {
-	let res = [];
-	each(schema.fields, (field) => {
+const getMultipleFields = (schema: Record<string, any>) => {
+	let res: Record<string, any>[] = [];
+	each(schema.fields, (field: Record<string, any>) => {
 		if (field.multi === true) res.push(field);
 	});
 
@@ -29,17 +29,17 @@ const getMultipleFields = (schema) => {
 };
 
 // Merge many models to one 'work model' by schema
-const mergeMultiObjectFields = (schema, objs) => {
+const mergeMultiObjectFields = (schema: Record<string, any>, objs: Record<string, any>) => {
 	let model = {};
 
 	let fields = getMultipleFields(schema);
 
-	each(fields, (field) => {
-		let mergedValue;
+	each(fields, (field: Record<string, any>) => {
+		let mergedValue: any;
 		let notSet = true;
 		let path = field.model;
 
-		each(objs, (obj) => {
+		each(objs, (obj: Record<string, any>) => {
 			let v = get(obj, path);
 			if (notSet) {
 				mergedValue = v;
@@ -55,7 +55,7 @@ const mergeMultiObjectFields = (schema, objs) => {
 	return model;
 };
 
-const slugifyFormID = (schema, prefix = "") => {
+const slugifyFormID = (schema: Record<string, any>, prefix = "") => {
 	// Try to get a reasonable default id from the schema,
 	// then slugify it.
 	if (!schema.id == null) {

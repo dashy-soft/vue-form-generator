@@ -7,10 +7,10 @@
 		:placeholder="placeholder"
 		:readonly="readonly"
 		:name="inputName"
-		:id="fieldID">
+		:id="fieldUID">
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -25,7 +25,8 @@ export default {
 
 	mounted() {
 		this.$nextTick(function() {
-			if (window.Cleave) {
+			const Cleave = (window as any)?.Cleave;
+			if (Cleave) {
 				const opts = {
 					// Credit Card
 					creditCard: false,
@@ -51,7 +52,7 @@ export default {
 					maxLength: 0,
 					...this.fieldOptions,
 				}
-				this.cleave = new window.Cleave(this.$el, opts);
+				this.cleave = new Cleave(this.$el, opts);
 
 				if (this.cleave.properties && this.cleave.properties.hasOwnProperty("result")) {
 					this.$watch("cleave.properties.result", () => {

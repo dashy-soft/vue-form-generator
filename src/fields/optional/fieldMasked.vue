@@ -7,10 +7,10 @@
 		:placeholder="placeholder"
 		:readonly="readonly"
 		:name="inputName"
-		:id="fieldID">
+		:id="fieldUID">
 </template>
 
-<script>
+<script lang="ts">
 /* global $ */
 import abstractField from "../abstractField";
 
@@ -20,7 +20,8 @@ export default {
 
 	mounted() {
 		this.$nextTick(function() {
-			if (window.$ && window.$.fn.mask) {
+			const $ = (window as any)?.$;
+			if ((window as any)?.$?.fn?.mask) {
 				$(this.$el)
 					.unmask()
 					.mask(this.fieldOptions.mask, this.fieldOptions.maskOptions);
@@ -33,7 +34,9 @@ export default {
 	},
 
 	beforeDestroy() {
-		if (window.$ && window.$.fn.mask) $(this.$el).unmask();
+		const $ = (window as any)?.$;
+
+		if ((window as any)?.$?.fn?.mask) $(this.$el).unmask();
 	}
 };
 </script>

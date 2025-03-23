@@ -15,6 +15,7 @@
     "changelog:full": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "version": "bumped release"
   },
+  "types": "types.d.ts",
   "keywords": [
     "vue",
     "vuejs",
@@ -32,7 +33,8 @@
     "dist/vfg.css",
     "dist/vfg.umd.js",
     "dist/vfg.umd.min.js",
-    "src"
+    "src",
+    "types.d.ts"
   ],
   "author": "Icebob",
   "maintainers": [
@@ -50,7 +52,7 @@
   "devDependencies": {
     "core-js": "^3.22.8",
     "fecha": "^4.2.3",
-    "vue": "^3.2.36",
+    "vue": "^3.5.13",
     "vue-multiselect": "2.1.3"
   },
   "browserslist": [
@@ -63,6 +65,7 @@
   },
   "dependencies": {
     "pico-emitter": "^1.2.1",
-    "tiny-emitter": "^2.1.0"
+    "tiny-emitter": "^2.1.0",
+    "vite": "^6.2.2"
   }
 }

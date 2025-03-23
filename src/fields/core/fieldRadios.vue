@@ -6,7 +6,7 @@
 			:key="getItemValue(item)"
 			:class="{'is-checked': isItemChecked(item)}"
 			v-attributes="'label'">
-			<input :id="fieldID"
+			<input :id="fieldUID"
 				type="radio"
 				:disabled="disabled"
 				:name="id"
@@ -21,7 +21,7 @@
 
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -37,13 +37,13 @@ export default {
 				return values;
 			}
 		},
-		id() {
+		id(): string {
 			return this.schema.model;
 		}
 	},
 
 	methods: {
-		getItemValue(item) {
+		getItemValue(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.schema["value"] !== "undefined") {
 					return item[this.schema.value];
@@ -58,7 +58,7 @@ export default {
 				return item;
 			}
 		},
-		getItemName(item) {
+		getItemName(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.schema["name"] !== "undefined") {
 					return item[this.schema.name];
@@ -73,10 +73,10 @@ export default {
 				return item;
 			}
 		},
-		onSelection(item) {
+		onSelection(item: any) {
 			this.value = this.getItemValue(item);
 		},
-		isItemChecked(item) {
+		isItemChecked(item: any) {
 			let currentValue = this.getItemValue(item);
 			return currentValue === this.value;
 		},

@@ -3,7 +3,7 @@
 		v-model="value"
 		:disabled="disabled"
 		:name="inputName"
-		:id="fieldID"
+		:id="fieldUID"
 		:class="fieldClasses"
 		v-attributes="'input'">
 		<option v-if="!schema.hideNoneSelectedText"
@@ -28,7 +28,7 @@
 	</select>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -52,18 +52,18 @@ export default {
 			return value;
 		},
 
-		groupValues(values) {
-			let array = [];
-			let arrayElement = {};
+		groupValues(values: any) {
+			let array: any[] = [];
+			let arrayElement: Record<string, any> | null | undefined = {};
 
-			values.forEach((item) => {
+			values.forEach((item: any) => {
 				arrayElement = null;
 
 				if (item.group && item instanceof Object) {
 					// There is in a group.
 
 					// Find element with this group.
-					arrayElement = array.find(i => i.group === item.group);
+					arrayElement = array.find((i: any) => i.group === item.group);
 
 					if (arrayElement) {
 						// There is such a group.
@@ -103,7 +103,7 @@ export default {
 			return array;
 		},
 
-		getGroupName(item) {
+		getGroupName(item: any) {
 			if (item && item.group) {
 				return item.group;
 			}
@@ -111,7 +111,7 @@ export default {
 			throw "Group name is missing! https://icebob.gitbooks.io/vueformgenerator/content/fields/select.html#select-field-with-object-items";
 		},
 
-		getItemValue(item) {
+		getItemValue(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.schema["value"] !== "undefined") {
 					return item[this.schema.value];
@@ -128,7 +128,7 @@ export default {
 			}
 		},
 
-		getItemName(item) {
+		getItemName(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.schema["name"] !== "undefined") {
 					return item[this.schema.name];

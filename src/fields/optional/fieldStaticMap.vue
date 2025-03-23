@@ -2,7 +2,7 @@
 	<img :src="mapLink">
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -12,7 +12,8 @@ export default {
 	computed: {
 		mapLink() {
 			if (this.value) {
-				let lat, lng;
+				let lat: string;
+				let lng: string;
 				const opts = {
 					lat: "lat",
 					lng: "lng",

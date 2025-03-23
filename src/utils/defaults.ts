@@ -1,4 +1,4 @@
-export default (target, ...sources) => {
+export default (target: Record<string, any>, ...sources:any[]) => {
 	for (const source of sources) {
 		if (source != null) {
 			for (const key in source) {

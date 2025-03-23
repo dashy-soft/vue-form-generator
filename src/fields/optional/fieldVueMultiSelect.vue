@@ -1,6 +1,6 @@
 <template>
 	<multiselect
-		:id="fieldOptions.id"
+		:id="fieldUID"
 		:options="options"
 		:value="value"
 		:multiple="fieldOptions.multiple"
@@ -45,7 +45,7 @@
 		</span>
 	</multiselect>
 </template>
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -73,16 +73,16 @@ export default {
 		}
 	},
 	methods: {
-		updateSelected(value /* , id*/) {
+		updateSelected(value: any /* , id*/) {
 			this.value = value;
 		},
-		addTag(newTag, id) {
+		addTag(newTag: any, id: any) {
 			let onNewTag = this.fieldOptions.onNewTag;
 			if (typeof onNewTag == "function") {
 				onNewTag(newTag, id, this.options, this.value);
 			}
 		},
-		onSearchChange(searchQuery, id) {
+		onSearchChange(searchQuery: any, id: any) {
 			let onSearch = this.fieldOptions.onSearch;
 			if (typeof onSearch == "function") {
 				onSearch(searchQuery, id, this.options);

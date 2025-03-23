@@ -2,7 +2,7 @@
 	<div class="wrapper"
 		v-attributes="'wrapper'">
 		<input class="form-control"
-			:id="fieldID"
+			:id="fieldUID"
 			:type="inputType"
 			:value="value"
 			@input="onInput"
@@ -44,7 +44,7 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 import debounce from "../../utils/debounce";
 import isNumber from "../../utils/isNumber";
@@ -69,7 +69,7 @@ export default {
 		}
 	},
 	methods: {
-		formatValueToModel(value) {
+		formatValueToModel(value: any) {
 			if (value != null) {
 				switch (this.inputType) {
 					case "date":
@@ -78,7 +78,7 @@ export default {
 					case "number":
 					case "range":
 						// debounce
-						return (newValue, oldValue) => {
+						return (newValue: any, oldValue: any) => {
 							this.debouncedFormatFunc(value, oldValue);
 						};
 				}
@@ -86,10 +86,10 @@ export default {
 
 			return value;
 		},
-		formatDatetimeToModel(newValue, oldValue) {
+		formatDatetimeToModel(newValue: any, oldValue: any) {
 			let defaultFormat = DATETIME_FORMATS[this.inputType];
 			let m = fecha.parse(newValue, defaultFormat);
-			if (m !== false) {
+			if (m) {
 				if (this.schema.format) {
 					newValue = fecha.format(m, this.schema.format);
 				} else {
@@ -98,19 +98,19 @@ export default {
 			}
 			this.updateModelValue(newValue, oldValue);
 		},
-		formatNumberToModel(newValue, oldValue) {
+		formatNumberToModel(newValue: any, oldValue: any) {
 			if (!isNumber(newValue)) {
 				newValue = NaN;
 			}
 			this.updateModelValue(newValue, oldValue);
 		},
-		onInput($event) {
-			let value = $event.target.value;
+		onInput($event: InputEvent) {
+			let value: any = ($event.target as HTMLInputElement)?.value;
 			switch (this.inputType) {
 				case "number":
 				case "range":
-					if (isNumber(parseFloat($event.target.value))) {
-						value = parseFloat($event.target.value);
+					if (isNumber(parseFloat(($event.target as HTMLInputElement).value))) {
+						value = parseFloat(($event.target as HTMLInputElement).value);
 					}
 					break;
 			}
@@ -128,7 +128,7 @@ export default {
 			case "number":
 			case "range":
 				this.debouncedFormatFunc = debounce(
-					(newValue, oldValue) => {
+					(newValue: any, oldValue: any) => {
 						this.formatNumberToModel(newValue, oldValue);
 					},
 					parseInt(this.schema.debounceFormatTimeout || 1000),

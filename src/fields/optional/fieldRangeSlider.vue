@@ -11,7 +11,7 @@
 		:name="inputName">
 </template>
 
-<script>
+<script lang="ts">
 /* global $ */
 import abstractField from "../abstractField";
 
@@ -27,7 +27,7 @@ export default {
 
 	watch: {
 		model: function() {
-			if (window.$ && window.$.fn.ionRangeSlider) {
+			if ((window as any).$ && (window as any).$.fn.ionRangeSlider) {
 				let valueFrom, valueTo;
 				if (Array.isArray(this.value)) {
 					[valueFrom, valueTo] = this.value;
@@ -45,8 +45,9 @@ export default {
 
 	mounted() {
 		this.$nextTick(function() {
-			if (window.$ && window.$.fn.ionRangeSlider) {
-				let valueFrom, valueTo;
+			if ((window as any).$ && (window as any).$.fn.ionRangeSlider) {
+				const $ = (window as any).$;
+				let valueFrom: any, valueTo: any;
 				if (Array.isArray(this.value)) {
 					[valueFrom, valueTo] = this.value;
 				} else valueFrom = this.value;
@@ -58,7 +59,7 @@ export default {
 					hide_min_max: true,
 					from: valueFrom,
 					to: valueTo,
-					onChange(slider) {
+					onChange(slider: any) {
 						if (self.slider.options.type === "double") {
 							self.value = [slider.from, slider.to];
 						} else {

@@ -1,11 +1,11 @@
 <template>
-	<span :id="fieldID"
+	<span :id="fieldUID"
 		:class="fieldClasses"
 		v-attributes="'label'"
 		v-text="value"></span>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {

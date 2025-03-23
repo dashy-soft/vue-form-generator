@@ -5,12 +5,13 @@ import * as fieldsLoader from "./utils/fieldsLoader.js";
 import abstractField from "./fields/abstractField.js";
 import FormElement from "./formElement.vue";
 import FormGroup from "./formGroup.vue";
+import { App } from "vue";
 
-const install = (app, options = {}) => {
+const install = (app: App, options: Record<string, any> = {}) => {
 	if (options.fields) {
-		options.fields.forEach((field) => {
+		options.fields.forEach((field: Record<string, any>) => {
 			if (typeof field.name !== "undefined") {
-				Vue.component(field.name, field);
+				app.component(field.name, field);
 			}
 		});
 	}

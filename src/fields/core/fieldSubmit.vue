@@ -1,5 +1,5 @@
 <template>
-	<input :id="fieldID"
+	<input :id="fieldUID"
 		type="submit"
 		:value="schema.buttonText"
 		@click="onClick"
@@ -9,7 +9,7 @@
 		v-attributes="'input'">
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 import isEmpty from "../../utils/isEmpty";
 
@@ -18,14 +18,14 @@ export default {
 	mixins: [abstractField],
 
 	methods: {
-		onClick($event) {
+		onClick($event: Event) {
 			if (this.schema.validateBeforeSubmit === true) {
 				// prevent a <form /> from having it's submit event triggered
 				// when we have to validate data first
 				$event.preventDefault();
 
 				this.eventBus.$emit("fields-validation-trigger");
-				this.eventBus.$on("fields-validation-terminated", (formErrors) => {
+				this.eventBus.$on("fields-validation-terminated", (formErrors: string[]) => {
 					if (!isEmpty(formErrors) && typeof this.schema.onValidationError === "function") {
 						this.schema.onValidationError(this.model, this.schema, formErrors, $event);
 					} else if (typeof this.schema.onSubmit === "function") {

@@ -1,7 +1,7 @@
 import defaults from './defaults';
 import isNil from './isNil';
 
-function isInteger(value) {
+function isInteger(value: any) {
   if (typeof value === 'number' && isFinite(value)) {
     return Math.floor(value) === value;
   }
@@ -40,7 +40,7 @@ let resources = {
 	invalidTextContainSpec: "Invalid text! Cannot contains special characters"
 };
 
-function checkEmpty(value, required, messages = resources) {
+function checkEmpty(value: any, required: boolean, messages: Record<string, string> = resources) {
 	if (isNil(value) || value === "") {
 		if (required) {
 			return [msg(messages.fieldIsRequired)];
@@ -51,7 +51,7 @@ function checkEmpty(value, required, messages = resources) {
 	return null;
 }
 
-function msg(text) {
+function msg(text: string, ...args: any[]): string {
 	if (text != null && arguments.length > 1) {
 		for (let i = 1; i < arguments.length; i++) {
 			text = text.replace("{" + (i - 1) + "}", arguments[i]);
@@ -61,20 +61,26 @@ function msg(text) {
 	return text;
 }
 
-const validators = {
+type Validators = Record<
+	string, (value: any, field: Record<string, any>, model: Record<string, any>, messages: Record<string, string>) => string[] | void
+> | {
+	resources: any;
+};
+
+const validators: Validators = {
 	resources,
 
-	required(value, field, model, messages = resources) {
+	required(value: any, field, _model, messages = resources) {
 		return checkEmpty(value, field.required, messages);
 	},
 
-	number(value, field, model, messages = resources) {
+	number(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) {
 			return res;
 		}
 
-		let err = [];
+		let err: Array<string> = [];
 		if (typeof value === 'number') {
 			if (!isNil(field) && !isNil(field.min) && value < field.min) {
 				err.push(msg(messages.numberTooSmall, field.min));
@@ -93,7 +99,7 @@ const validators = {
 	integer(value, field, model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
-		let errs = validators.number(value, field, model, messages);
+		let errs = validators['number'](value, field, model, messages);
 
 		if (!isInteger(value)) {
 			errs.push(msg(messages.invalidInteger));
@@ -102,7 +108,7 @@ const validators = {
 		return errs;
 	},
 
-	double(value, field, model, messages = resources) {
+	double(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -111,12 +117,12 @@ const validators = {
 		}
 	},
 
-	string(value, field, model, messages = resources) {
+	string(value, field, _model, messages = resources) {
 		console.log('validate string', field);
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
-		let err = [];
+		let err: Array<string> = [];
 		if (typeof value === 'string') {
 			if (!isNil(field.min) && value.length < field.min) {
 				err.push(msg(messages.textTooSmall, value.length, field.min));
@@ -132,7 +138,7 @@ const validators = {
 		return err;
 	},
 
-	array(value, field, model, messages = resources) {
+	array(value, field, _model, messages = resources) {
 		if (field.required) {
 			if (!Array.isArray(value)) {
 				return [msg(messages.thisNotArray)];
@@ -154,7 +160,7 @@ const validators = {
 		}
 	},
 
-	date(value, field, model, messages = resources) {
+	date(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -163,7 +169,7 @@ const validators = {
 			return [msg(messages.invalidDate)];
 		}
 
-		let err = [];
+		let err: Array<string> = [];
 
 		if (!isNil(field.min)) {
 			let min = new Date(field.min);
@@ -182,7 +188,7 @@ const validators = {
 		return err;
 	},
 
-	regexp(value, field, model, messages = resources) {
+	regexp(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -194,7 +200,7 @@ const validators = {
 		}
 	},
 
-	email(value, field, model, messages = resources) {
+	email(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -204,7 +210,7 @@ const validators = {
 		}
 	},
 
-	url(value, field, model, messages = resources) {
+	url(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -214,7 +220,7 @@ const validators = {
 		}
 	},
 
-	creditCard(value, field, model, messages = resources) {
+	creditCard(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -227,9 +233,9 @@ const validators = {
 			return [msg(messages.invalidCard)];
 		}
 		let sum = 0;
-		let digit;
-		let tmpNum;
-		let shouldDouble;
+		let digit: string;
+		let tmpNum: number;
+		let shouldDouble: boolean = false;
 		for (let i = sanitized.length - 1; i >= 0; i--) {
 			digit = sanitized.substring(i, i + 1);
 			tmpNum = parseInt(digit, 10);
@@ -251,7 +257,7 @@ const validators = {
 		}
 	},
 
-	alpha(value, field, model, messages = resources) {
+	alpha(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -261,7 +267,7 @@ const validators = {
 		}
 	},
 
-	alphaNumeric(value, field, model, messages = resources) {
+	alphaNumeric(value, field, _model, messages = resources) {
 		let res = checkEmpty(value, field.required, messages);
 		if (res != null) return res;
 
@@ -275,7 +281,7 @@ const validators = {
 Object.keys(validators).forEach((name) => {
 	const fn = validators[name];
 	if (typeof fn === 'function') {
-		fn.locale = (customMessages) => (value, field, model) =>
+		fn.locale = (customMessages: Record<string, string>) => (value: any, field: Record<string, any>, model: Record<string, any>) =>
 			fn(value, field, model, defaults(customMessages, resources));
 	}
 });

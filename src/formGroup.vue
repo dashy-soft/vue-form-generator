@@ -69,124 +69,129 @@
 		</template>
 	</fieldset>
 </template>
-<script>
-import formMixin from "./formMixin.js";
-
-export default {
-	name: "vfg-form-group",
-	mixins: [formMixin],
-	props: {
-		fields: {
-			type: Array,
-			default() {
-				return [];
-			}
-		},
-		group: {
-			type: Object,
-			default() {
-				return {};
-			}
-		},
-		tag: {
-			type: String,
-			default: "fieldset",
-			validator(value) {
-				return value.length > 0;
-			}
-		},
-
-		model: {
-			type: Object,
-			default() {
-				return {};
-			}
-		},
-		options: {
-			type: Object,
-			default() {
-				return {};
-			}
-		},
-		errors: {
-			type: Array,
-			default() {
-				return [];
-			}
-		},
-		eventBus: {
-			type: Object,
-			default() {
-				return {};
-			}
-		},
-		parentGroups: {
-			type: Array,
-			default: () => [],
-		},
-	},
-	data() {
-		return {
-			validationClass: {}
-		};
-	},
-	computed: {
-		groupLegend() {
-			if (this.group && this.group.legend) {
-				return this.group.legend;
-			}
-		},
-		groupRowClasses() {
-			// TODO find a way to detect errors in child to add some classes (error/valid/etc)
-			let baseClasses = {
-				"field-group": true
-			};
-			if (!this.group == null) {
-				baseClasses = this.getStyleClasses(this.group, baseClasses);
-			}
-			return baseClasses;
+<script setup lang="ts">
+import { computed, defineProps, nextTick, onMounted, useTemplateRef } from 'vue';
+const props = defineProps({
+	fields: {
+		type: Array,
+		default() {
+			return [];
 		}
 	},
-	methods: {
-		// Get visible prop of field
-		fieldVisible(field) {
-			if (typeof field.visible === "function") {
-				return field.visible.call(this, this.model, field, this);
-			}
+	group: {
+		type: Object,
+		default() {
+			return {};
+		}
+	},
+	tag: {
+		type: String,
+		default: "fieldset",
+		validator(value: any) {
+			return value.length > 0;
+		}
+	},
 
-			if (field.visible == null) {
-				return true;
-			}
+	model: {
+		type: Object,
+		default() {
+			return {};
+		}
+	},
+	options: {
+		type: Object,
+		default() {
+			return {};
+		}
+	},
+	errors: {
+		type: Array,
+		default() {
+			return [];
+		}
+	},
+	eventBus: {
+		type: Object,
+		default() {
+			return {};
+		}
+	},
+	parentGroups: {
+		type: Array,
+		default: () => [],
+	},
+});
+let validationClass = {};
+const groupRef = useTemplateRef('group');
 
-			return field.visible;
-		},
-
-		getGroupTag(field) {
-			if (!field.tag == null) {
-				return field.tag;
+onMounted(() => {
+	props.eventBus.$on("field-validated", () => {
+		nextTick(() => {
+			let containFieldWithError: any;
+			if(groupRef.value) {
+				containFieldWithError =
+				groupRef.value.querySelector(
+						".form-element." + props.options.validationErrorClass || "error"
+					) !== null;
 			} else {
-				return this.tag;
+				containFieldWithError = false;
 			}
-		}
-	},
-	created() {
-		this.eventBus.$on("field-validated", () => {
-			this.$nextTick(() => {
-				let containFieldWithError;
-				if(this.$refs.group) {
-					containFieldWithError =
-						this.$refs.group.querySelector(
-							".form-element." + this.options.validationErrorClass || "error"
-						) !== null;
-				} else {
-					containFieldWithError = false;
-				}
-				this.validationClass = {
-					[this.options.validationErrorClass || "error"]: containFieldWithError,
-					[this.options.validationSuccessClass || "valid"]: !containFieldWithError
-				};
-			});
+			validationClass = {
+				[props.options.validationErrorClass || "error"]: containFieldWithError,
+				[props.options.validationSuccessClass || "valid"]: !containFieldWithError
+			};
 		});
+	});
+});
+
+const getStyleClasses = (field: Record<string, any>, baseClasses: Record<string, any>) => {
+	let styleClasses = field.styleClasses;
+
+	if (Array.isArray(styleClasses)) {
+		styleClasses.forEach((c: string) => {
+			baseClasses[c] = true;
+		});
+	} else if (typeof styleClasses === 'string' && styleClasses !== '') {
+		baseClasses[styleClasses] = true;
+	}
+	return baseClasses;
+};
+
+// Get visible prop of field
+const fieldVisible = (field: any) => {
+	if (typeof field.visible === "function") {
+		return field.visible.call(this, props.model, field, this);
+	}
+
+	if (field.visible == null) {
+		return true;
+	}
+
+	return field.visible;
+};
+
+const getGroupTag = (field: any) => {
+	if (!field.tag == null) {
+		return field.tag;
+	} else {
+		return props.tag;
 	}
 };
+const groupLegend = computed(() => {
+	if (props.group && props.group.legend) {
+		return props.group.legend;
+	}
+});
+
+const groupRowClasses = computed(() => {
+	// TODO find a way to detect errors in child to add some classes (error/valid/etc)
+	let baseClasses: Record<string, boolean> = {
+		"field-group": true
+	};
+	if (!props.group == null) {
+		baseClasses = getStyleClasses(props.group, baseClasses);
+	}
+	return baseClasses;
+});
+
 </script>

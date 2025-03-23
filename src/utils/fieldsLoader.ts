@@ -9,6 +9,7 @@ import fieldSubmit from "../fields/core/fieldSubmit.vue";
 import fieldTextArea from "../fields/core/fieldTextArea.vue";
 import fieldUpload from "../fields/core/fieldUpload.vue";
 // optional
+/*
 import fieldCleave from "../fields/optional/fieldCleave.vue";
 import fieldDateTimePicker from "../fields/optional/fieldDateTimePicker.vue";
 import fieldImage from "../fields/optional/fieldImage.vue";
@@ -21,7 +22,7 @@ import fieldSpectrum from "../fields/optional/fieldSpectrum.vue";
 import fieldStaticMap from "../fields/optional/fieldStaticMap.vue";
 import fieldSwitch from "../fields/optional/fieldSwitch.vue";
 import fieldVueMultiSelect from "../fields/optional/fieldVueMultiSelect.vue";
-
+*/
 export {
 	fieldCheckbox,
 	fieldChecklist,
@@ -32,6 +33,7 @@ export {
 	fieldSubmit,
 	fieldTextArea,
 	fieldUpload,
+/*
 	fieldCleave,
 	fieldDateTimePicker,
 	fieldImage,
@@ -44,4 +46,5 @@ export {
 	fieldStaticMap,
 	fieldSwitch,
 	fieldVueMultiSelect
+*/
 };

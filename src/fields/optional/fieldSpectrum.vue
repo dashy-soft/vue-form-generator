@@ -5,10 +5,10 @@
 		:placeholder="placeholder"
 		:readonly="readonly"
 		:name="inputName"
-		:id="fieldID" >
+		:id="fieldUID" >
 </template>
 
-<script>
+<script lang="ts">
 /* global $ */
 import abstractField from "../abstractField";
 
@@ -24,7 +24,7 @@ export default {
 
 	watch: {
 		model() {
-			if (window.$ && window.$.fn.spectrum) {
+			if ((window as any)?.$?.fn?.spectrum) {
 				this.picker.spectrum("set", this.value);
 			}
 		},
@@ -37,14 +37,16 @@ export default {
 
 	mounted() {
 		this.$nextTick(function() {
-			if (window.$ && window.$.fn.spectrum) {
+			const $ = (window as any)?.$;
+			const spectrum = (window as any)?.$?.fn?.spectrum;
+			if (spectrum) {
 				const opts = {
 					showInput: true,
 					showAlpha: true,
 					disabled: this.schema.disabled,
 					allowEmpty: !this.schema.required,
 					preferredFormat: "hex",
-					change: (color) => {
+					change: (color: string) => {
 						this.value = color ? color.toString() : null;
 					},
 					...this.fieldOptions,

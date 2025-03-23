@@ -1,4 +1,4 @@
-export default (value) => {
+const clone = (value: any) => {
 	if (value === null || typeof value !== 'object') {
 		return value;
 	}
@@ -19,3 +19,5 @@ export default (value) => {
 		return clonedObject;
 	}
 };
+
+export default clone

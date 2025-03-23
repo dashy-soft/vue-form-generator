@@ -1,3 +1,3 @@
-export default (value) => {
+export default (value: any) => {
 	return typeof value === 'number' && !isNaN(value);
 }

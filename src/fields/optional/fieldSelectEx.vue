@@ -16,7 +16,7 @@
 	</select>
 </template>
 
-<script>
+<script lang="ts">
 /* global $ */
 import abstractField from "../abstractField";
 
@@ -34,7 +34,7 @@ export default {
 	},
 
 	methods: {
-		getItemValue(item) {
+		getItemValue(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.fieldOptions["value"] !== "undefined") {
 					return item[this.fieldOptions.value];
@@ -51,7 +51,7 @@ export default {
 			}
 		},
 
-		getItemName(item) {
+		getItemName(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.fieldOptions["name"] !== "undefined") {
 					return item[this.fieldOptions.name];
@@ -70,12 +70,14 @@ export default {
 
 	watch: {
 		model: function() {
+			const $ = (window as any).$;
 			if (typeof $.fn !== "undefined" && $.fn.selectpicker) $(this.$el).selectpicker("refresh");
 		}
 	},
 
 	mounted() {
 		this.$nextTick(() => {
+			const $ = (window as any).$;
 			if (typeof $.fn !== "undefined" && $.fn.selectpicker) {
 				$(this.$el)
 					.selectpicker("destroy")
@@ -89,6 +91,7 @@ export default {
 	},
 
 	beforeDestroy() {
+		const $ = (window as any).$;
 		if ($.fn.selectpicker) $(this.$el).selectpicker("destroy");
 	}
 };

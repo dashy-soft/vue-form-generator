@@ -1,4 +1,4 @@
-export default (collection, iteratee) => {
+export default (collection: any, iteratee: any) => {
 	if (Array.isArray(collection)) {
 		for (let i = 0; i < collection.length; i++) {
 			iteratee(collection[i], i, collection);

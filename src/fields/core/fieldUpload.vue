@@ -2,7 +2,7 @@
 	<div class="wrapper"
 		v-attributes="'wrapper'">
 		<input class="form-control"
-			:id="fieldID"
+			:id="fieldUID"
 			type="file"
 			:name="inputName"
 			@change="onChange"
@@ -16,14 +16,14 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
 	name: "field-upload",
 	mixins: [abstractField],
 	methods: {
-		onChange($event) {
+		onChange($event: any) {
 			if (typeof this.schema.onChanged === "function") {
 				// Schema has defined onChange method.
 				this.schema.onChanged.call(this, this.model, this.schema, $event, this);

@@ -8,14 +8,14 @@ import { slugifyFormID } from "../utils/schema";
 //import { reactive } from 'vue';
 let uniqueIdCounter = 0;
 
-function uniqueId(prefix) {
+function uniqueId(prefix?: string) {
   uniqueIdCounter += 1;
   return (prefix || '') + uniqueIdCounter;
 }
 
-const isFunction = (value) => typeof value === 'function';
+const isFunction = (value: any) => typeof value === 'function';
 
-const convertValidator = (validator) => {
+const convertValidator = (validator: Function) => {
 	if (typeof validator === 'string') {
 		if (validators[validator] != null) return validators[validator];
 		else {
@@ -26,14 +26,14 @@ const convertValidator = (validator) => {
 	return validator;
 };
 
-function attributesDirective(el, binding, vnode) {
+function attributesDirective(el: any, binding: any, vnode: any) {
 	let attrs = vnode.context && vnode.context.schema && vnode.context.schema.attributes ? vnode.context.schema.attributes : {};
 
 	let container = binding.value || "input";
 	if (typeof container === 'string') {
 		attrs = objGet(attrs, container) || attrs;
 	}
-	forEach(attrs, (val, key) => {
+	forEach(attrs, (val: any, key: any) => {
 		el.setAttribute(key, val);
 	});
 }
@@ -52,9 +52,6 @@ export default {
 		eventBus: {
 			type: Object
 		},
-		fieldID: {
-			type: String
-		}
 	},
 
 	data() {
@@ -163,7 +160,7 @@ export default {
 			this.clearValidationErrors();
 			let validateAsync = objGet(this.formOptions, "validateAsync", false);
 
-			let results = [];
+			let results: any[] = [];
 
 			if (
 				this.schema.validator &&
@@ -171,11 +168,11 @@ export default {
 				this.schema.readonly !== true && // only for the test
 				this.disabled !== true
 			) {
-				let validators = [];
+				let validators: Array<Function> = [];
 				if (!Array.isArray(this.schema.validator)) {
 					validators.push(convertValidator(this.schema.validator).bind(this));
 				} else {
-					this.schema.validator.forEach((validator) => {
+					this.schema.validator.forEach((validator: Function) => {
 						validators.push(convertValidator(validator).bind(this));
 					});
 				}
@@ -186,7 +183,7 @@ export default {
 					} else {
 						let result = validator(this.value, this.schema, this.model);
 						if (result && isFunction(result.then)) {
-							result.then((err) => {
+							result.then((err: any) => {
 								if (err) {
 									this.errors = this.errors.concat(err);
 								}
@@ -198,8 +195,8 @@ export default {
 				});
 			}
 
-			let handleErrors = (errors) => {
-				let fieldErrors = [];
+			let handleErrors = (errors: any[]) => {
+				let fieldErrors: any[] = [];
 				errors.forEach((err) => {
 					if (Array.isArray(err) && err.length > 0) {
 						fieldErrors = fieldErrors.concat(err);
@@ -274,7 +271,7 @@ export default {
 			this.errors.splice(0);
 		},
 
-		setModelValueByPath(path, value) {
+		setModelValueByPath(path: string, value: any) {
 			// convert array indexes to properties
 			let s = path.replace(/\[(\w+)\]/g, ".$1");
 
@@ -310,11 +307,11 @@ export default {
 			}
 		},
 
-		formatValueToField(value) {
+		formatValueToField(value: any) {
 			return value;
 		},
 
-		formatValueToModel(value) {
+		formatValueToModel(value: any) {
 			return value;
 		},
 
@@ -331,6 +328,7 @@ export default {
 		this.eventBus.$emit("field-registering");
 	},
 	mounted() {
+		/*
 		const diff = function(a, b) {
 			return b.filter(function(i) {
 				return a.indexOf(i) < 0;
@@ -370,13 +368,14 @@ export default {
 			"onChanged",
 			"onValidated"
 		];
-		if (this.schema) {
-			let currentKeys = Object.keys(this.schema);
-			let result = diff(allowedKeys, currentKeys);
+		*/
+		//if (this.schema) {
+			//let currentKeys = Object.keys(this.schema);
+			//let result = diff(allowedKeys, currentKeys);
 			/*if (result.length > 0) {
 				console.log("diff", result, this.schema.type, this.schema.model);
 			}*/
-		}
+		//}
 	},
 	beforeUnmount() {
 		this.eventBus.$off("clear-validation-errors", this.clearValidationErrors);

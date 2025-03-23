@@ -1,4 +1,4 @@
-export default (object, path, value) => {
+export default (object: any, path: string, value: any) => {
 	const keys = Array.isArray(path) ? path : path.split('.');
 	let current = object;
 	for (let i = 0; i < keys.length; i++) {

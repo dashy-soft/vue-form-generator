@@ -1,7 +1,7 @@
 <template>
-	<div class="vue-form-generator" 
+	<div class="vue-form-generator"
 		v-if='schema != null'>
-		<vfg-form-group
+		<formGroup
 			:tag="tag"
 			:fields="fields"
 			:model="model"
@@ -14,8 +14,8 @@
 				/>
 			</template>
 			<template #group-legend="{ group, groupLegend }">
-				<slot name="group-legend" 
-					:group="group" 
+				<slot name="group-legend"
+					:group="group"
 					:group-legend="groupLegend" >
 					<legend v-if="groupLegend">
 						<span>{{groupLegend}}</span>
@@ -26,7 +26,7 @@
 				<slot
 					name="group-help"
 					:group="group">
-					<span v-if='group.help' 
+					<span v-if='group.help'
 						class="help">
 						<i class="icon" ></i>
 						<div class="helpText">{{group.help}}</div>
@@ -34,7 +34,7 @@
 				</slot>
 			</template>
 			<template #element="slotProps">
-				<vfg-form-element
+				<formElement
 					:field="slotProps.field"
 					:model="slotProps.model"
 					:options="slotProps.options"
@@ -61,7 +61,7 @@
 							name="help"
 							:field="field"
 							:getValueFromOption="getValueFromOption">
-							<span v-if="field.help" 
+							<span v-if="field.help"
 								class="help">
 								<i class="icon" ></i>
 								<div class="helpText">{{field.help}}</div>
@@ -100,214 +100,200 @@
 							</div>
 						</slot>
 					</template>
-				</vfg-form-element>
+				</formElement>
 			</template>
-		</vfg-form-group>
+		</formGroup>
 	</div>
 </template>
-
-<script>
+<script setup lang="ts">
 import formGroup from "./formGroup.vue";
 import formElement from "./formElement.vue";
+
+import { computed, nextTick, onBeforeUnmount, onMounted, watch } from 'vue';
 import EventBus from './EventBus';
 
-export default {
-	name: "form-generator",
-	components: { 'vfg-form-group': formGroup, 'vfg-form-element': formElement },
-	props: {
-		schema: {
-			type: Object,
-			default() {
-				return {};
-			}
-		},
-
-		model: {
-			type: Object,
-			default() {
-				return {};
-			}
-		},
-
-		options: {
-			type: Object,
-			default() {
-				return {
-					validateAfterLoad: false,
-					validateAfterChanged: false,
-					validateAsync: false,
-					validationErrorClass: "error",
-					validationSuccessClass: ""
-				};
-			}
-		},
-
-		isNewModel: {
-			type: Boolean,
-			default: false
-		},
-
-		tag: {
-			type: String,
-			default: "fieldset",
-			validator(value) {
-				return value.length > 0;
-			}
+const props = defineProps({
+	schema: {
+		type: Object,
+		default() {
+			return {};
 		}
 	},
-
-	data() {
-		return {
-			eventBus: new EventBus(),
-			totalNumberOfFields: 0,
-			errors: [] // Validation errors
-		};
-	},
-
-	computed: {
-		fields() {
-			if (this.schema && this.schema.fields) {
-				return this.schema.fields;
-			}
+	model: {
+		type: Object,
+		default() {
+			return {};
 		}
 	},
-
-	watch: {
-		// new model loaded
-		model: {
-			handler(newModel, oldModel) {
-				if (oldModel === newModel) {
-					// model property changed, skip
-					return;
-				}
-
-				if (newModel != null) {
-					this.$nextTick(() => {
-						// Model changed!
-						if (this.options.validateAfterLoad === true && this.isNewModel !== true) {
-							this.validate().then(() => {}, () => {});
-						} else {
-							this.clearValidationErrors();
-						}
-					});
-				}
-			},
-			immediate: () => {
-				return true;
-			}
+	options: {
+		type: Object,
+		default() {
+			return {
+				validateAfterLoad: false,
+				validateAfterChanged: false,
+				validateAsync: false,
+				validationErrorClass: "error",
+				validationSuccessClass: ""
+			};
 		}
 	},
+	isNewModel: {
+		type: Boolean,
+		default: false
+	},
+	tag: {
+		type: String,
+		default: "fieldset",
+		validator(value: any) {
+			return value.length > 0;
+		}
+	}
+});
+let totalNumberOfFields = 0;
+let errors: Array<string> = []; // Validation errors
+const eventBus: EventBus = new EventBus();
 
-	methods: {
-		fieldVisible(field) {
-			if (typeof field.visible === 'function') return field.visible.call(this, this.model, field, this);
-			if (field.visible == null) return true;
-			return field.visible;
-		},
+onBeforeUnmount(() => {
+	//console.log('onBeforeUnmount eventBus', eventBus);
+	//eventBus.$off("field-validated");
+	//eventBus.$off("model-updated");
+	//eventBus.$off("fields-validation-trigger");
+	//eventBus.$off("field-registering");
+	//eventBus.$off("field-deregistering");
+});
 
-		fillErrors(fieldErrors, errors, uid) {
-			if (Array.isArray(fieldErrors) && fieldErrors.length > 0) {
-				fieldErrors.forEach((error) => {
-					errors.push({
-						uid,
-						error
-					});
-				});
-			}
-		},
-
-		// Child field executed validation
-		onFieldValidated(fieldIsValid, fieldErrors, uid) {
-			// Remove old errors for this field
-			this.errors = this.errors.filter((e) => e.uid !== uid);
-
-			this.fillErrors(fieldErrors, this.errors, uid);
-
-			let isValid = this.errors.length === 0;
-			this.$emit("validated", isValid, this.errors, this);
-		},
-
-		onModelUpdated(newVal, schema) {
-			this.$emit("model-updated", newVal, schema);
-		},
-
-		// Validating the model properties
-		validate() {
-			return new Promise((resolve, reject) => {
-				this.clearValidationErrors();
-
-				let fieldsValidated = 0;
-
-				let formErrors = [];
-
-				this.eventBus.$on("field-deregistering", (...args) => {
-					// console.warn("Fields were deleted during validation process");
-					this.eventBus.$emit("fields-validation-terminated", formErrors);
-					reject(formErrors);
-				});
-
-				const counter = (isValid, fieldErrors, uid) => {
-					fieldsValidated++;
-
-					this.fillErrors(fieldErrors, formErrors, uid);
-
-					if (fieldsValidated === this.totalNumberOfFields) {
-						this.eventBus.$off("field-validated", counter);
-						if (this.options.validateAfterChanged || false) {
-							this.eventBus.$on("field-validated", this.onFieldValidated);
-						}
-						this.errors = formErrors;
-						let isValid = formErrors.length === 0;
-						this.$emit("validated", isValid, formErrors, this);
-						this.eventBus.$emit("fields-validation-terminated", formErrors);
-
-						if (isValid) {
-							resolve();
-						} else {
-							reject(formErrors);
-						}
-					}
-				};
-				if (this.options.validateAfterChanged || false) {
-					this.eventBus.$off("field-validated", this.onFieldValidated);
-				}
-				this.eventBus.$on("field-validated", counter);
-				this.eventBus.$emit("validate-fields", this);
+onMounted(() => {
+	if (props.options.validateAfterChanged || false) {
+		eventBus.$on("field-validated", onFieldValidated);
+	}
+	eventBus.$on("model-updated", onModelUpdated);
+	eventBus.$on("fields-validation-trigger", validate);
+	eventBus.$on("field-registering", () => {
+		totalNumberOfFields = totalNumberOfFields + 1;
+	});
+	eventBus.$on("field-deregistering", (_f: Record<string, any>) => {
+		totalNumberOfFields = totalNumberOfFields - 1;
+	});
+});
+/*
+const fieldVisible = (field: Record<string, any>) => {
+	if (typeof field.visible === 'function') return field.visible.call(this, props.model, field, this);
+	if (field.visible == null) return true;
+	return field.visible;
+};
+*/
+const fillErrors = (fieldErrors: string[], errors: { uid: string, error: string}[], uid: string) => {
+	if (Array.isArray(fieldErrors) && fieldErrors.length > 0) {
+		fieldErrors.forEach((error) => {
+			errors.push({
+				uid,
+				error
 			});
-		},
-
-		// Clear validation errors
-		clearValidationErrors() {
-			if (this.errors === undefined) {
-				console.warn('no this.errors in AbstractField');
-			} else {
-				this.errors.splice(0);
-			}
-			this.eventBus.$emit("clear-validation-errors", this.clearValidationErrors);
-		}
-	},
-
-	created() {
-		if (this.options.validateAfterChanged || false) {
-			this.eventBus.$on("field-validated", this.onFieldValidated);
-		}
-		this.eventBus.$on("model-updated", this.onModelUpdated);
-		this.eventBus.$on("fields-validation-trigger", this.validate);
-		this.eventBus.$on("field-registering", () => {
-			this.totalNumberOfFields = this.totalNumberOfFields + 1;
 		});
-		this.eventBus.$on("field-deregistering", (f) => {
-			this.totalNumberOfFields = this.totalNumberOfFields - 1;
-		});
-	},
-	beforeDestroy() {
-		this.eventBus.$off("field-validated");
-		this.eventBus.$off("model-updated");
-		this.eventBus.$off("fields-validation-trigger");
-		this.eventBus.$off("field-registering");
-		this.eventBus.$off("field-deregistering");
 	}
 };
+
+const $emit = defineEmits([
+	"model-updated",
+	"fields-validation-terminated",
+	"validated",
+	"validate-fields",
+	"clear-validation-errors"
+]);
+
+// Child field executed validation
+const onFieldValidated = (_fieldIsValid: boolean, fieldErrors: string[], uid: string) => {
+	// Remove old errors for this field
+	errors = errors.filter((e: any) => e.uid !== uid);
+
+	fillErrors(fieldErrors, errors, uid);
+
+	let isValid = errors.length === 0;
+	$emit("validated", isValid, errors, this);
+};
+
+const onModelUpdated = (newVal: any, schema: Record<string, any>) => {
+	$emit("model-updated", newVal, schema);
+};
+
+// Validating the model properties
+const validate = () => {
+	return new Promise((resolve, reject) => {
+		clearValidationErrors();
+
+		let fieldsValidated = 0;
+
+		let formErrors: Array<string> = [];
+
+		eventBus.$on("field-deregistering", () => {
+			// console.warn("Fields were deleted during validation process");
+			eventBus.$emit("fields-validation-terminated", formErrors);
+			reject(formErrors);
+		});
+
+		const counter = (_isValid: boolean, fieldErrors: string[], uid: string) => {
+			fieldsValidated++;
+
+			fillErrors(fieldErrors, formErrors, uid);
+
+			if (fieldsValidated === totalNumberOfFields) {
+				eventBus.$off("field-validated", counter);
+				if (props.options.validateAfterChanged || false) {
+					eventBus.$on("field-validated", onFieldValidated);
+				}
+				errors = formErrors;
+				let isValid = formErrors.length === 0;
+				$emit("validated", isValid, formErrors, this);
+				eventBus.$emit("fields-validation-terminated", formErrors);
+
+				if (isValid) {
+					resolve();
+				} else {
+					reject(formErrors);
+				}
+			}
+		};
+		if (props.options.validateAfterChanged || false) {
+			eventBus.$off("field-validated", onFieldValidated);
+		}
+		eventBus.$on("field-validated", counter);
+		eventBus.$emit("validate-fields", this);
+	});
+};
+
+// Clear validation errors
+const clearValidationErrors = () => {
+	if (errors === undefined) {
+		console.warn('no this.errors in AbstractField');
+	} else {
+		errors.splice(0);
+	}
+	eventBus.$emit("clear-validation-errors", clearValidationErrors);
+};
+
+const fields = computed(() => {
+	if (props.schema && props.schema.fields) {
+		return props.schema.fields;
+	}
+});
+watch(() => props.model, (newModel: any, oldModel: any) => {
+	if (oldModel === newModel) {
+		// model property changed, skip
+		return;
+	}
+
+	if (newModel != null) {
+		nextTick(() => {
+			// Model changed!
+			if (props.options.validateAfterLoad === true && props.isNewModel !== true) {
+				validate().then(() => {}, () => {});
+			} else {
+				clearValidationErrors();
+			}
+		});
+	}
+	//immediate
+});
 </script>
 
 <style>

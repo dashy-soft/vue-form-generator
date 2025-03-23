@@ -1,4 +1,4 @@
-export default (object, path, defaultValue) => {
+export default (object: Record<string, any>, path: string, defaultValue?: any) => {
 	const keys = Array.isArray(path) ? path : path.split('.');
 	let result = object;
 	for (let key of keys) {

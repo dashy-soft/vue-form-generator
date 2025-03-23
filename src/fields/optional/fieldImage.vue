@@ -25,7 +25,7 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -51,7 +51,7 @@ export default {
 				if (this.value && this.value.indexOf("data") === 0) return "<inline base64 image>";
 				else return this.value;
 			},
-			set(newValue) {
+			set(newValue: any) {
 				if (newValue && newValue.indexOf("http") === 0) {
 					this.value = newValue;
 				}
@@ -73,14 +73,15 @@ export default {
 			this.value = "";
 		},
 
-		fileChanged(event) {
+		fileChanged(event: InputEvent) {
+			const inputElement = event.target as HTMLInputElement;
 			let reader = new FileReader();
 			reader.onload = (e) => {
-				this.value = e.target.result;
+				this.value = inputElement.result;
 			};
 
-			if (event.target.files && event.target.files.length > 0) {
-				reader.readAsDataURL(event.target.files[0]);
+			if (inputElement.files && inputElement.files.length > 0) {
+				reader.readAsDataURL(inputElement.files[0]);
 			}
 		}
 	}

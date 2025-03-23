@@ -4,7 +4,7 @@
 		:class="{ 'contain-pips': containPips, 'contain-tooltip': containTooltip }"></div>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -19,7 +19,7 @@ export default {
 
 	watch: {
 		model: function() {
-			if (window.noUiSlider && this.slider && this.slider.noUiSlider) {
+			if ((window as any).noUiSlider && this.slider && this.slider.noUiSlider) {
 				this.slider.noUiSlider.set(this.value);
 			}
 		}
@@ -35,7 +35,7 @@ export default {
 	},
 
 	methods: {
-		onChange(value) {
+		onChange(value: any) {
 			if (Array.isArray(value)) {
 				// Array (range)
 				this.value = [parseFloat(value[0]), parseFloat(value[1])];
@@ -44,12 +44,12 @@ export default {
 				this.value = parseFloat(value);
 			}
 		},
-		formatValueToField(value) {
+		formatValueToField(value: any) {
 			if (this.slider !== null && typeof this.slider.noUiSlider !== "undefined") {
 				this.slider.noUiSlider.set(value);
 			}
 		},
-		formatValueToModel(val) {
+		formatValueToModel(val: any) {
 			if (typeof this.slider.noUiSlider !== "undefined") {
 				if (val instanceof Array) {
 					return [Number(val[0]), Number(val[1])];
@@ -73,7 +73,7 @@ export default {
 
 	mounted() {
 		this.$nextTick(() => {
-			if (window.noUiSlider) {
+			if ((window as any).noUiSlider) {
 				this.slider = this.$el;
 				const opts = {
 					start: this.getStartValue(),
@@ -83,7 +83,7 @@ export default {
 					},
 					...this.fieldOptions,
 				};
-				window.noUiSlider.create(this.slider, opts);
+				(window as any).noUiSlider.create(this.slider, opts);
 				this.slider.noUiSlider.on("change", this.onChange.bind(this));
 			} else {
 				console.warn(

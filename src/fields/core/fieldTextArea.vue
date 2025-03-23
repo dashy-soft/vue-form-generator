@@ -2,7 +2,7 @@
 	<div>
 	<textarea class="form-control"
 		v-model="value"
-		:id="fieldID"
+		:id="fieldUID"
 		:class="fieldClasses"
 		:disabled="disabled"
 		:maxlength="schema.max"
@@ -17,7 +17,7 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {

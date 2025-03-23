@@ -36,7 +36,7 @@
 					:key="getItemValue(item)"
 					:class="{'is-checked': isItemChecked(item)}">
 					<label>
-						<input :id="fieldID"
+						<input :id="fieldUID"
 							type="checkbox"
 							:checked="isItemChecked(item)"
 							:disabled="disabled"
@@ -50,8 +50,7 @@
 		</div>
 	</div>
 </template>
-
-<script>
+<script lang="ts">
 import clone from "../../utils/clone";
 import abstractField from "../abstractField";
 import { slugify } from "../../utils/schema";
@@ -84,14 +83,14 @@ export default {
 	},
 
 	methods: {
-		getInputName(item) {
+		getInputName(item: any) {
 			if (this.inputName && this.inputName.length > 0) {
 				return slugify(this.inputName + "_" + this.getItemValue(item));
 			}
 			return slugify(this.getItemValue(item));
 		},
 
-		getItemValue(item) {
+		getItemValue(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.schema["value"] !== "undefined") {
 					return item[this.schema.value];
@@ -106,7 +105,7 @@ export default {
 				return item;
 			}
 		},
-		getItemName(item) {
+		getItemName(item: any) {
 			if (item instanceof Object) {
 				if (typeof this.schema["name"] !== "undefined") {
 					return item[this.schema.name];
@@ -122,12 +121,12 @@ export default {
 			}
 		},
 
-		isItemChecked(item) {
+		isItemChecked(item: any) {
 			return this.value && this.value.indexOf(this.getItemValue(item)) !== -1;
 		},
 
-		onChanged(event, item) {
-			let isChecked = event.target.checked;
+		onChanged(event: InputEvent, item: any) {
+			let isChecked = (event.target as HTMLInputElement).checked;
 			if (this.value == null || !Array.isArray(this.value)) {
 				this.value = [];
 			}

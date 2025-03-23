@@ -9,7 +9,7 @@
 		:name="inputName">
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 import dateFieldHelper from "../../utils/dateFieldHelper";
 
@@ -28,7 +28,7 @@ export default {
 
 	mounted() {
 		this.$nextTick(() => {
-			if (window.Pikaday) {
+			if ((window as any).Pikaday) {
 				const opts = {
 						field: this.$el, // bind the datepicker to a form field
 						onSelect: () => {
@@ -37,7 +37,7 @@ export default {
 						// trigger: , // use a different element to trigger opening the datepicker, see [trigger example][] (default to `field`)
 						...this.fieldOptions,
 					};
-				this.picker = new window.Pikaday(opts);
+				this.picker = new (window as any).Pikaday(opts);
 			} else {
 				console.warn(
 					"Pikaday is missing. Please download from https://github.com/dbushell/Pikaday/ and load the script and CSS in the HTML head section!"

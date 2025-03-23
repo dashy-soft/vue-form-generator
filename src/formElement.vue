@@ -1,5 +1,5 @@
 <template>
-	<div class="form-element" 
+	<div class="form-element"
 		:class="[fieldRowClasses]"
 		:style="wrapperStyle">
 		<slot name="wrapper-hook"
@@ -11,14 +11,14 @@
 			:for="fieldID"
 			:style="labelStyle"
 			:class="field.labelClasses">
-			<slot name="label" 
+			<slot name="label"
 				:field="field"
 				:fieldID="fieldID"
 				:fieldComponent="fieldComponent"
 				:getValueFromOption="getValueFromOption"
 			/>
-			<slot name="help" 
-				:field="field" 
+			<slot name="help"
+				:field="field"
 				:getValueFromOption="getValueFromOption"
 			/>
 		</label>
@@ -57,8 +57,8 @@
 		</div>
 
 		<template v-if="fieldHasHint">
-			<slot name="hint" 
-				:field="field" 
+			<slot name="hint"
+				:field="field"
 				:getValueFromOption="getValueFromOption"
 			/>
 		</template>
@@ -73,17 +73,16 @@
 		</template>
 	</div>
 </template>
-<script>
-import isNil from "./utils/isNil";
-import { slugifyFormID } from "./utils/schema";
+<script lang="ts">
+import isNil from "./utils/isNil.js";
+import { slugifyFormID } from "./utils/schema.js";
 import formMixin from "./formMixin.js";
 import { resolveComponent } from 'vue';
 
-
-function cssStringToObject(cssString) {
+function cssStringToObject(cssString: string) {
   const regex = /([\w-]+)\s*:\s*([^;]+);?/g;
-  let match;
-  const cssObject = {};
+  let match: any;
+  const cssObject: Record<string, any> = {};
 
   while ((match = regex.exec(cssString)) !== null) {
     const propertyName = match[1];
@@ -94,7 +93,7 @@ function cssStringToObject(cssString) {
   return cssObject;
 }
 
-function filterCssRules(cssString) {
+function filterCssRules(cssString: string) {
 	const fullCssObject = cssStringToObject(cssString);
 	const allowed = [
 		'color',
@@ -148,7 +147,7 @@ export default {
 	},
 	data() {
 		return {
-			childErrors: [],
+			childErrors: [] as any[],
 			childTouched: false
 		};
 	},
@@ -221,7 +220,7 @@ export default {
 		}
 	},
 	methods: {
-		getValueFromOption(field, option, defaultValue = false) {
+		getValueFromOption(field: Record<string, any>, option: any, defaultValue = false) {
 			if (typeof field[option] === "function") {
 				return field[option].call(this, this.model, field, this);
 			}
@@ -232,13 +231,13 @@ export default {
 			return field[option];
 		},
 
-		buttonClickHandler(btn, field, event) {
+		buttonClickHandler(btn: any, field: Record<string, any>, event: any) {
 			return btn.onclick.call(this, this.model, field, event, this);
 		},
 		onFieldTouched() {
 			this.childTouched = true;
 		},
-		onChildValidated(errors) {
+		onChildValidated(errors: string[]) {
 			this.childErrors = errors;
 		}
 	}

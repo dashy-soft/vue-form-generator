@@ -5,16 +5,16 @@
 			:autocomplete="fieldOptions.autocomplete"
 			:disabled="disabled"
 			:name="inputName"
-			:id="fieldID">
+			:id="fieldUID">
 		<span class="label"
 			:data-on="fieldOptions.textOn || 'On'"
 			:data-off="fieldOptions.textOff || 'Off'"
-			:for="fieldID"></span>
+			:for="fieldUID"></span>
 		<span class="handle"></span>
 	</label>
 </template>
 
-<script>
+<script lang="ts">
 import abstractField from "../abstractField";
 
 export default {
@@ -22,13 +22,13 @@ export default {
 	mixins: [abstractField],
 
 	methods: {
-		formatValueToField(value) {
+		formatValueToField(value: any) {
 			if (value != null && this.fieldOptions.valueOn) return value === this.fieldOptions.valueOn;
 
 			return value;
 		},
 
-		formatValueToModel(value) {
+		formatValueToModel(value: any) {
 			if (value != null && this.fieldOptions.valueOn) {
 				if (value) return this.fieldOptions.valueOn;
 				else return this.fieldOptions.valueOff;

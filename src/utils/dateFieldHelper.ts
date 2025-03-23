@@ -12,14 +12,15 @@ export default {
 			return this.getDefaultInputFormat();
 		}
 	},
-	formatValueToField(value) {
+	formatValueToField(value: any) {
 		if (value != null) {
-			let dt;
+			let dt: Date | null;
 			if (typeof this.fieldOptions.format !== "undefined") {
 				dt = fecha.parse(value, this.fieldOptions.format);
 			} else {
 				dt = new Date(value);
 			}
+			if(dt === null) return;
 
 			return fecha.format(dt, this.getDateFormat());
 		}
@@ -27,9 +28,12 @@ export default {
 		return value;
 	},
 
-	formatValueToModel(value) {
+	formatValueToModel(value: any) {
 		if (value != null) {
 			let m = fecha.parse(value, this.getDateFormat());
+
+			if(m === null) return;
+
 			if (typeof this.fieldOptions.format !== "undefined") {
 				value = fecha.format(m, this.fieldOptions.format);
 			} else {
@@ -39,4 +43,4 @@ export default {
 
 		return value;
 	}
-};
+} as Record<string, any>;

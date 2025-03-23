@@ -10,10 +10,11 @@
 		v-attributes="'input'" >
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import abstractField from "../abstractField";
 
-export default {
+export default defineComponent({
 	name: "field-checkbox",
 	mixins: [abstractField],
 	computed: {
@@ -24,7 +25,7 @@ export default {
 			return this.fieldID + '-' + crypto.getRandomValues(array)[0];
 		}
 	}
-};
+});
 </script>
 
 <style>

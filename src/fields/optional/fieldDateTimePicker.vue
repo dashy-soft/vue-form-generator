@@ -8,7 +8,7 @@
       :placeholder="placeholder"
       :readonly="readonly"
       :name="inputName"
-      :id="fieldID">
+      :id="fieldUID">
 
     <span class="input-group-addon">
       <span class="glyphicon glyphicon-calendar"></span>
@@ -16,7 +16,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 /* global $ */
 import abstractField from "../abstractField";
 import defaults from "../../utils/defaults";

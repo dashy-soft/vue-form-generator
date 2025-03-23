@@ -1,4 +1,4 @@
-export default (value) => {
+export default (value: any) => {
 	if (value == null) return true;
 
 	if (Array.isArray(value) || typeof value === 'string') {
