@@ -1,6 +1,5 @@
 <template>
-	<div :class="`vue-form-generator ${theme}`">
-		v-if='schema != null'>
+	<div :class="`vue-form-generator ${theme}`" v-if='schema != null'>
 		<formGroup
 			:tag="tag"
 			:fields="fields"
