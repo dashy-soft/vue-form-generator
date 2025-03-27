@@ -1,5 +1,5 @@
 <template>
-	<div class="vue-form-generator"
+	<div :class="`vue-form-generator ${theme}`">
 		v-if='schema != null'>
 		<formGroup
 			:tag="tag"
@@ -145,6 +145,13 @@ const props = defineProps({
 		type: String,
 		default: "fieldset",
 		validator(value: any) {
+			return value.length > 0;
+		}
+	},
+	theme: {
+		type: String,
+		default: "default-theme",
+		validator(value) {
 			return value.length > 0;
 		}
 	}
@@ -301,7 +308,7 @@ watch(() => props.model, (newModel: any, oldModel: any) => {
 	box-sizing: border-box;
 }
 
-.vue-form-generator .form-control {
+.vue-form-generator.default-theme .form-control {
 	/* Default Bootstrap .form-control style */
 	display: block;
 
