@@ -3,11 +3,12 @@
   "version": "3.0.0-beta.10",
   "description": "A schema-based form generator component for Vue.js",
   "homepage": "https://github.com/vue-generators/vue-form-generator/",
-  "main": "dist/vfg.umd.min.js",
+  "main": "dist/vue-form-generator.js",
+  "type": "module",
   "scripts": {
     "serve": "vue-cli-service serve",
     "prebuild.bak": "npm run test:unit",
-    "build": "vue-cli-service build --no-clean --target lib --name vfg src/index.js --report",
+    "build": "vite build",
     "lint": "vue-cli-service lint",
     "test:unit": "nyc vue-cli-service test:unit --include ./tests/unit/setup.js",
     "coverall": "cat ./tests/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
@@ -15,7 +16,6 @@
     "changelog:full": "conventional-changelog -i CHANGELOG.md -s -r 0",
     "version": "bumped release"
   },
-  "types": "types.d.ts",
   "keywords": [
     "vue",
     "vuejs",
@@ -60,12 +60,13 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "dependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/tsconfig": "^0.7.0",
     "pico-emitter": "^1.2.1",
     "tiny-emitter": "^2.1.0",
-    "vite": "^6.2.2"
-  }
+    "vite": "^6.2.3",
+    "vite-plugin-dts": "^4.5.3"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
